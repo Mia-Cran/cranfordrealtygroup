@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy: #102c4a;
+  --color-navy-deep: #0b1f35;
+  --color-cream: #f4efe6;
+  --color-sand: #e8dcc8;
+  --color-gold: #e2b657;
+  --color-gold-light: #f0cc7a;
+  --color-gold-dark: #a37d2c;
+  --color-ink: #1c1917;
+  --color-ink-muted: #5c564e;
+  --font-sans: var(--font-figtree);
+  --font-serif: var(--font-cormorant);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans), sans-serif;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-navy);
+}
+
+.font-serif {
+  font-family: var(--font-serif), serif;
+}
+
+.hero-zoom {
+  animation: hero-zoom 22s ease-out forwards;
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.gold-glow {
+  box-shadow: 0 10px 30px -8px rgb(226 182 87 / 0.7);
+}
+
+.marquee-track {
+  animation: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
