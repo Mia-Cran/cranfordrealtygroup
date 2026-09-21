@@ -1,13 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ListingDetail } from "@/components/pages/ListingDetail";
-import { getListing, listings } from "@/content/listings";
+import { loadListings } from "@/lib/listingsStore";
 
-export const dynamicParams = true;
-
-export function generateStaticParams() {
-  return listings.map((listing) => ({ slug: listing.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
@@ -15,7 +11,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const listing = getListing(slug);
+  const listing = (await loadListings()).find((item) => item.slug === slug);
   if (!listing) return { title: "Home" };
   return {
     title: `${listing.address}, ${listing.city}`,
@@ -29,7 +25,7 @@ export default async function Page({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const listing = getListing(slug);
+  const listing = (await loadListings()).find((item) => item.slug === slug);
   if (!listing) notFound();
   return <ListingDetail listing={listing} />;
 }

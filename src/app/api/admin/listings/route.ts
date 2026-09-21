@@ -1,13 +1,15 @@
 import { NextResponse } from "next/server";
-import { listings, type Listing } from "@/content/listings";
+import type { Listing } from "@/content/listings";
 import { isAdmin } from "@/lib/adminAuth";
-import { saveListings } from "@/lib/listingsStore";
+import { loadListings, saveListings } from "@/lib/listingsStore";
+
+export const dynamic = "force-dynamic";
 
 export async function GET() {
   if (!(await isAdmin())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  return NextResponse.json({ listings });
+  return NextResponse.json({ listings: await loadListings() });
 }
 
 export async function PUT(request: Request) {

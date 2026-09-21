@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { ListingCard } from "@/components/ListingCard";
 import { PageHero } from "@/components/pages/BuyPage";
 import { useLanguage } from "@/components/LanguageProvider";
-import { activeListings } from "@/content/listings";
+import { useListings } from "@/lib/useListings";
 
 type Filter = "all" | "house" | "land";
 
@@ -13,13 +13,16 @@ export function ListingsPage() {
   const { t } = useLanguage();
   const [filter, setFilter] = useState<Filter>("all");
 
+  const listings = useListings();
   const homes = useMemo(() => {
-    return activeListings().filter((listing) => {
-      if (filter === "all") return true;
-      if (filter === "land") return listing.type === "land";
-      return listing.type !== "land";
-    });
-  }, [filter]);
+    return listings
+      .filter((listing) => listing.status !== "sold")
+      .filter((listing) => {
+        if (filter === "all") return true;
+        if (filter === "land") return listing.type === "land";
+        return listing.type !== "land";
+      });
+  }, [filter, listings]);
 
   return (
     <div className="pb-20">

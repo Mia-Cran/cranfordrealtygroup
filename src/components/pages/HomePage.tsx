@@ -7,8 +7,8 @@ import { FormEvent } from "react";
 import { ListingCard } from "@/components/ListingCard";
 import { TeamGrid } from "@/components/TeamGrid";
 import { useLanguage } from "@/components/LanguageProvider";
-import { activeListings, soldListings } from "@/content/listings";
 import { site } from "@/content/site";
+import { useListings } from "@/lib/useListings";
 
 const heroImage = "/hero-georgia.jpg";
 
@@ -21,8 +21,11 @@ const pathImages = {
 export function HomePage() {
   const { t } = useLanguage();
   const router = useRouter();
-  const featured = activeListings();
-  const sold = soldListings().slice(0, 3);
+  const listings = useListings();
+  const featured = listings.filter((listing) => listing.status !== "sold");
+  const sold = listings
+    .filter((listing) => listing.status === "sold")
+    .slice(0, 3);
   const cities = [...site.areas, ...site.areas];
 
   function onSearch(event: FormEvent<HTMLFormElement>) {

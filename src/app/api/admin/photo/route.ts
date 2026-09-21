@@ -1,5 +1,6 @@
 import { mkdir, writeFile } from "fs/promises";
 import path from "path";
+import { put } from "@vercel/blob";
 import { NextResponse } from "next/server";
 import { isAdmin } from "@/lib/adminAuth";
 
@@ -34,6 +35,15 @@ export async function POST(request: Request) {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "")
     .slice(0, 40)}.${ext}`;
+
+  if (process.env.BLOB_READ_WRITE_TOKEN) {
+    const blob = await put(`listings/${safe}`, file, {
+      access: "public",
+      addRandomSuffix: false,
+    });
+    return NextResponse.json({ url: blob.url });
+  }
+
   const folder = path.join(process.cwd(), "public/listings");
   await mkdir(folder, { recursive: true });
   await writeFile(path.join(folder, safe), Buffer.from(await file.arrayBuffer()));

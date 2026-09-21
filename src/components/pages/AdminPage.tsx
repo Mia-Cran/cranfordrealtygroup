@@ -113,7 +113,12 @@ export function AdminPage() {
     const next = editingSlug
       ? listings.map((item) => (item.slug === editingSlug ? listing : item))
       : [listing, ...listings.filter((item) => item.slug !== listing.slug)];
-    const ok = await saveAll(next);
+    const ok = await saveAll(
+      next,
+      editingSlug
+        ? "Saved. Refresh Home or Homes to see the change."
+        : "Added. Refresh Home or Homes to see it.",
+    );
     if (ok) {
       setDraft(emptyDraft());
       setEditingSlug(null);
@@ -179,10 +184,9 @@ export function AdminPage() {
           </p>
           <h1 className="mt-2 font-serif text-4xl text-navy">Update homes</h1>
           <p className="mt-3 max-w-2xl text-sm leading-6 text-ink-muted">
-            Add a listing, change a price, or mark a home sold. Changes save on this
-            computer and show on the site after you refresh Homes. When the website
-            is live on cranfordrealtygroup.com, this same page can keep working — we
-            just need to connect it during launch.
+            Add a home, change a price, swap the photo, or mark it sold. Bookmark{" "}
+            <span className="font-medium text-navy">/admin</span> — it is not in
+            the public menu. After you save, refresh Home or Homes to see it.
           </p>
         </div>
         <button

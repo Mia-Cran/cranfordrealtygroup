@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
-import { listings } from "@/content/listings";
+import { loadListings } from "@/lib/listingsStore";
 import { site } from "@/content/site";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const listings = await loadListings();
   const routes = ["", "/buy", "/sell", "/listings", "/about", "/contact", "/rentals", "/feedback"];
   return [
     ...routes.map((route) => ({

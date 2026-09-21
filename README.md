@@ -27,13 +27,12 @@ The first time someone uses the contact form, FormSubmit will send a confirmatio
 
 ## How to change a listing
 
-Open `src/content/listings.ts`.
+Open [http://localhost:3020/admin](http://localhost:3020/admin) (or `/admin` on the live site). Log in with the team password.
 
-- Change the price or status (`active`, `sold`, or `land`).
-- Copy an existing home block to add a new one.
-- Put your own photos in `public/listings/` and set `image` to `"/listings/your-photo.jpg"`.
+- Add a home, change a price, upload a photo, or mark it sold.
+- This page is not in the public menu. Bookmark it.
 
-Open `src/content/site.ts` to change phone numbers, the office address, or the team.
+Phone numbers, the office address, and the team are in `src/content/site.ts`.
 
 ## How to put this on cranfordrealtygroup.com
 
