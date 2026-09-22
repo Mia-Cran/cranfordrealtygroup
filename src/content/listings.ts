@@ -19,6 +19,7 @@ export type Listing = {
   yearBuilt?: number;
   mls?: string;
   image: string;
+  photos?: string[];
   summary: string;
   summaryEs: string;
 };

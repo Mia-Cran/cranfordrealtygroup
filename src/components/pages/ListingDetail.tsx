@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
@@ -10,6 +11,9 @@ import { site } from "@/content/site";
 
 export function ListingDetail({ listing }: { listing: Listing }) {
   const { t, locale } = useLanguage();
+  const photos = listing.photos?.length ? listing.photos : [listing.image];
+  const [photoIndex, setPhotoIndex] = useState(0);
+  const currentPhoto = photos[photoIndex] ?? listing.image;
   const statusLabel =
     listing.status === "sold"
       ? t.common.sold
@@ -20,15 +24,34 @@ export function ListingDetail({ listing }: { listing: Listing }) {
   return (
     <div className="pb-20">
       <div className="relative h-[48vh] min-h-[320px] bg-navy">
-        <Image
-          src={listing.image}
+        <img
+          src={currentPhoto}
           alt={`${listing.address}, ${listing.city}`}
-          fill
-          priority
-          className="object-cover"
+          className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-navy/35" />
+        {photos.length > 1 ? (
+          <p className="absolute bottom-4 right-4 rounded-full bg-navy/80 px-3 py-1 text-xs font-semibold text-white">
+            {photoIndex + 1} / {photos.length}
+          </p>
+        ) : null}
       </div>
+      {photos.length > 1 ? (
+        <div className="mx-auto flex max-w-6xl gap-2 overflow-x-auto px-4 py-3 sm:px-6">
+          {photos.map((src, index) => (
+            <button
+              key={src}
+              type="button"
+              onClick={() => setPhotoIndex(index)}
+              className={`relative h-16 w-24 shrink-0 overflow-hidden rounded-lg ring-2 ${
+                index === photoIndex ? "ring-gold" : "ring-transparent"
+              }`}
+              aria-label={`Photo ${index + 1} of ${photos.length}`}
+            >
+              <Image src={src} alt="" fill className="object-cover" sizes="96px" />
+            </button>
+          ))}
+        </div>
+      ) : null}
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_0.8fr]">
         <div>
           <Link href="/listings" className="text-sm font-semibold text-navy">
@@ -61,7 +84,9 @@ export function ListingDetail({ listing }: { listing: Listing }) {
           <p className="mt-8 max-w-2xl leading-8 text-ink">
             {locale === "es" ? listing.summaryEs : listing.summary}
           </p>
-          <p className="mt-4 text-sm text-ink-muted">{t.listing.photoNote}</p>
+          {photos.length <= 1 ? (
+            <p className="mt-4 text-sm text-ink-muted">{t.listing.photoNote}</p>
+          ) : null}
           {listing.mls ? (
             <p className="mt-4 text-sm text-ink-muted">
               {t.listing.mls} #{listing.mls}
