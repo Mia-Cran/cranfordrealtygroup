@@ -4,6 +4,17 @@ A simple website for buying, selling, and renting homes in Middle Georgia.
 
 You do **not** need the old GoHighLevel site anymore. This one is meant to be used like a phone book: call, text, or send a note.
 
+Live address: **https://www.cranfordrealtygroup.com**
+
+## SEO (same idea as B's Cozy Southern Creations)
+
+Every public page has a keyword-rich title, meta description, canonical URL, Open Graph + Twitter cards, and JSON-LD. Listings include RealEstateListing schema. Search engines can use:
+
+- `https://www.cranfordrealtygroup.com/sitemap.xml`
+- `https://www.cranfordrealtygroup.com/robots.txt`
+
+After deploy: in Google Search Console, inspect the homepage and submit the sitemap.
+
 ## How to look at it on your computer
 
 1. Open this project in Cursor.
