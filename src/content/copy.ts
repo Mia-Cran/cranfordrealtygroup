@@ -98,7 +98,61 @@ export const copy = {
     },
     areas: {
       title: "Where we work",
-      body: "If you're in one of these places, or somewhere close, we can help.",
+      body: "Middle Georgia is home base — Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and nearby — plus help farther north toward Suwanee when a move calls for it.",
+      link: "See all areas we serve",
+    },
+    areasPage: {
+      title: "Areas we serve",
+      subtitle:
+        "A Macon-based family team for buying, selling, and rentals across Middle Georgia and beyond.",
+      intro:
+        "People search for a realtor near them. Here is where Cranford Realty Group shows up in person — not a call center. Call or text and tell us your city; we'll tell you the next step in plain language.",
+      counties:
+        "Core counties include Bibb, Houston, Peach, and Baldwin, with additional help for relocating clients toward Suwanee and north metro Atlanta.",
+      formTitle: "Buying, selling, or renting in your city?",
+      formBody: "Tell us the town and what you need. We typically reply the same day.",
+      blurbs: {
+        Macon: {
+          heading: "Macon real estate",
+          body: "Our office is in Macon. We help buyers, sellers, and rental owners across north Macon, downtown, and the neighborhoods around Bibb County — with English and Spanish support.",
+        },
+        "Warner Robins": {
+          heading: "Warner Robins realtor",
+          body: "Warner Robins and Robins AFB moves are a big part of our work. We help with purchases, sales, and rentals for military and civilian families who want a clear local guide.",
+        },
+        Perry: {
+          heading: "Perry GA homes",
+          body: "Perry buyers and sellers get the same hands-on help: pricing based on nearby sales, showings that make sense, and a team that answers the phone.",
+        },
+        Byron: {
+          heading: "Byron GA real estate",
+          body: "Byron is growing fast. Whether you are selling, buying your first home, or placing a rental, we keep the process short and local.",
+        },
+        Kathleen: {
+          heading: "Kathleen GA realtor",
+          body: "Kathleen and south Houston County families call us for listings, buyer searches, and rental questions without the big-broker runaround.",
+        },
+        "Fort Valley": {
+          heading: "Fort Valley homes for sale",
+          body: "Fort Valley and Peach County clients get practical guidance on value, repairs worth doing, and how to list or buy without guesswork.",
+        },
+        Milledgeville: {
+          heading: "Milledgeville GA real estate",
+          body: "Milledgeville buyers and sellers work with a Middle Georgia team that will drive out, walk the home, and explain the market in everyday language.",
+        },
+        Bonaire: {
+          heading: "Bonaire GA homes",
+          body: "Bonaire searches often tie to Warner Robins work and schools. We narrow the options and set showings that fit your schedule.",
+        },
+        Lizella: {
+          heading: "Lizella GA realtor",
+          body: "Lizella and west Bibb County properties get careful pricing and marketing — especially when land, privacy, or acreage matters.",
+        },
+        Suwanee: {
+          heading: "Suwanee and north metro moves",
+          body: "Suwanee is farther north, and we treat it as relocation support: help leaving Middle Georgia, arriving from north metro, or coordinating a move with a local team you can actually reach.",
+        },
+      },
     },
     stats: {
       items: [
@@ -440,7 +494,61 @@ export const copy = {
     },
     areas: {
       title: "Dónde trabajamos",
-      body: "Si está en uno de estos lugares, o cerca, podemos ayudarle.",
+      body: "El centro de Georgia es nuestra base — Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y cerca — y también ayudamos más al norte hacia Suwanee cuando la mudanza lo pide.",
+      link: "Ver todas las zonas",
+    },
+    areasPage: {
+      title: "Zonas que servimos",
+      subtitle:
+        "Un equipo familiar con sede en Macon para comprar, vender y rentar en el centro de Georgia y más allá.",
+      intro:
+        "La gente busca un agente cerca. Aquí es donde Cranford Realty Group aparece en persona — no un centro de llamadas. Llame o envíe un texto con su ciudad; le decimos el siguiente paso en lenguaje claro.",
+      counties:
+        "Los condados principales incluyen Bibb, Houston, Peach y Baldwin, con ayuda adicional para mudanzas hacia Suwanee y el norte metro de Atlanta.",
+      formTitle: "¿Compra, venta o renta en su ciudad?",
+      formBody: "Díganos el pueblo y lo que necesita. Normalmente respondemos el mismo día.",
+      blurbs: {
+        Macon: {
+          heading: "Bienes raíces en Macon",
+          body: "Nuestra oficina está en Macon. Ayudamos a compradores, vendedores y dueños de rentas en el norte de Macon, el centro y Bibb — en inglés y español.",
+        },
+        "Warner Robins": {
+          heading: "Agente en Warner Robins",
+          body: "Warner Robins y mudanzas por Robins AFB son gran parte de nuestro trabajo. Ayudamos con compras, ventas y rentas para familias militares y civiles.",
+        },
+        Perry: {
+          heading: "Casas en Perry GA",
+          body: "Compradores y vendedores en Perry reciben la misma ayuda práctica: precio según ventas cercanas, visitas con sentido y un equipo que contesta.",
+        },
+        Byron: {
+          heading: "Bienes raíces en Byron GA",
+          body: "Byron crece rápido. Si vende, compra su primera casa o pone una renta, acortamos el proceso con un equipo local.",
+        },
+        Kathleen: {
+          heading: "Agente en Kathleen GA",
+          body: "Familias en Kathleen y el sur de Houston County nos llaman para anuncios, búsquedas y rentas sin rodeos de una gran franquicia.",
+        },
+        "Fort Valley": {
+          heading: "Casas en venta en Fort Valley",
+          body: "Clientes en Fort Valley y Peach County reciben guía clara sobre valor, reparaciones que valen la pena y cómo comprar o vender sin adivinar.",
+        },
+        Milledgeville: {
+          heading: "Bienes raíces en Milledgeville",
+          body: "En Milledgeville trabajamos con un equipo del centro de Georgia que va a la casa, la recorre y explica el mercado en lenguaje cotidiano.",
+        },
+        Bonaire: {
+          heading: "Casas en Bonaire GA",
+          body: "Las búsquedas en Bonaire suelen ligarse a Warner Robins. Filtramos opciones y agendamos visitas que encajen con su horario.",
+        },
+        Lizella: {
+          heading: "Agente en Lizella GA",
+          body: "En Lizella y el oeste de Bibb cuidamos el precio y el anuncio — sobre todo cuando importan el terreno, la privacidad o el acreaje.",
+        },
+        Suwanee: {
+          heading: "Mudanzas a Suwanee y el norte metro",
+          body: "Suwanee queda más al norte. Lo tratamos como apoyo de mudanza: salir del centro de Georgia, llegar desde el norte metro, o coordinar con un equipo al que sí pueda llamar.",
+        },
+      },
     },
     stats: {
       items: [
