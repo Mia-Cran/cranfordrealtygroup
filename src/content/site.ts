@@ -2,7 +2,7 @@ export const site = {
   name: "Cranford Realty Group",
   shortName: "CRG",
   legalName: "Cranford Realty Group, LLC",
-  tagline: "Buy or sell in Middle Georgia with a team you can actually talk to.",
+  tagline: "A bilingual real estate team in Middle Georgia you can actually talk to.",
   url: "https://www.cranfordrealtygroup.com",
   email: "info@Cranford-Realty-Group.com",
   listingsPhone: {
@@ -29,8 +29,24 @@ export const site = {
     "https://www.google.com/maps?q=168+Orange+St,+Macon,+GA+31201",
   mapEmbed:
     "https://maps.google.com/maps?q=168%20Orange%20St%2C%20Macon%2C%20GA%2031201&z=15&output=embed",
-  areas: ["Macon", "Warner Robins", "Perry", "Byron", "Bonaire", "Lizella"],
-  counties: ["Bibb County", "Houston County", "Peach County"],
+  areas: [
+    "Macon",
+    "Warner Robins",
+    "Perry",
+    "Byron",
+    "Kathleen",
+    "Fort Valley",
+    "Milledgeville",
+    "Bonaire",
+    "Lizella",
+    "Suwanee",
+  ],
+  counties: [
+    "Bibb County",
+    "Houston County",
+    "Peach County",
+    "Baldwin County",
+  ],
   /**
    * Zillow Rental Manager
    * Paste your public Zillow profile URL in profileUrl so "Our rentals" opens
@@ -53,9 +69,9 @@ export const site = {
       sms: "sms:+14787374973",
       initials: "MC",
       photo: "/team/maria-cranford.jpg",
-      bio: "Maria leads Cranford Realty Group and works with families buying, selling, and relocating across Middle Georgia.",
+      bio: "Maria leads Cranford Realty Group and works with families buying, selling, and relocating across Middle Georgia — in English or Spanish.",
       bioEs:
-        "Maria dirige Cranford Realty Group y trabaja con familias que compran, venden y se mudan en el centro de Georgia.",
+        "Maria dirige Cranford Realty Group y trabaja con familias que compran, venden y se mudan en el centro de Georgia — en inglés o español.",
     },
     {
       name: "Bertha Cranford",

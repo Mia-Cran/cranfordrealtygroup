@@ -39,6 +39,9 @@ export function Footer() {
                 {t.nav[item.key]}
               </Link>
             ))}
+            <Link href="/areas" className="text-white/80 hover:text-white">
+              {t.areasPage.title}
+            </Link>
           </nav>
         </div>
         <div className="text-sm leading-7 text-white/80">

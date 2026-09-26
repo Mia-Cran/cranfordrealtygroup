@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Figtree } from "next/font/google";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteShell } from "@/components/SiteShell";
+import { pageMetadata } from "@/content/seo";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -17,23 +18,30 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
+  ...pageMetadata({
+    title: "Cranford Realty Group | Bilingual Realtor in Macon & Middle Georgia",
+    description:
+      "Cranford Realty Group is a bilingual real estate team for Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and toward Suwanee. Buy, sell, or rent in English or Spanish. Call (478) 718-2783.",
+    path: "/",
+  }),
   metadataBase: new URL(site.url),
   title: {
-    default: "Cranford Realty Group | Homes in Macon & Warner Robins",
+    default:
+      "Cranford Realty Group | Bilingual Realtor in Macon & Middle Georgia",
     template: "%s | Cranford Realty Group",
   },
-  description:
-    "Buy, sell, or rent a home in Macon, Warner Robins, Perry, and nearby Middle Georgia. A local bilingual team you can actually call.",
-  icons: { icon: "/logo.png" },
-  openGraph: {
-    title: "Cranford Realty Group",
-    description:
-      "Local real estate help in Macon and Warner Robins. Call (478) 737-4973.",
-    url: site.url,
-    siteName: site.name,
-    locale: "en_US",
-    type: "website",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
+  category: "real estate",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
