@@ -19,15 +19,15 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   ...pageMetadata({
-    title: "Cranford Realty Group | Realtor in Macon, Warner Robins & Middle Georgia",
+    title: "Cranford Realty Group | Bilingual Realtor in Macon & Middle Georgia",
     description:
-      "Buy, sell, or rent with Cranford Realty Group — a bilingual family team for Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and toward Suwanee. Call (478) 718-2783.",
+      "Cranford Realty Group is a bilingual real estate team for Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and toward Suwanee. Buy, sell, or rent in English or Spanish. Call (478) 718-2783.",
     path: "/",
   }),
   metadataBase: new URL(site.url),
   title: {
     default:
-      "Cranford Realty Group | Realtor in Macon, Warner Robins & Middle Georgia",
+      "Cranford Realty Group | Bilingual Realtor in Macon & Middle Georgia",
     template: "%s | Cranford Realty Group",
   },
   robots: {

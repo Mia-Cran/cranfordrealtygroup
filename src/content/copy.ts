@@ -22,7 +22,7 @@ export const copy = {
       viewHomes: "See homes",
       viewHome: "View home",
       learnMore: "Learn more",
-      hablamos: "We speak Spanish",
+      hablamos: "Bilingual real estate team",
       serving: "Serving Middle Georgia",
       privacy: "Privacy",
       terms: "Terms",
@@ -42,10 +42,10 @@ export const copy = {
       feedback: "Feedback",
     },
     hero: {
-      kicker: "Cranford Realty Group · Middle Georgia & beyond",
+      kicker: "Bilingual real estate team · Middle Georgia & beyond",
       title: "Need to buy or sell? Call us. We'll walk you through it.",
       subtitle:
-        "A local family team for homes in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and farther up toward Suwanee. English and Spanish. No maze of buttons — just a real person.",
+        "Cranford Realty Group is a bilingual family team for homes in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and farther up toward Suwanee. English or Spanish — no maze of buttons, just a real person.",
       primary: "Call (478) 718-2783",
       secondary: "See homes for sale",
       intentLabel: "I want to",
@@ -104,9 +104,9 @@ export const copy = {
     areasPage: {
       title: "Areas we serve",
       subtitle:
-        "A Macon-based family team for buying, selling, and rentals across Middle Georgia and beyond.",
+        "A Macon-based bilingual family team for buying, selling, and rentals across Middle Georgia and beyond.",
       intro:
-        "People search for a realtor near them. Here is where Cranford Realty Group shows up in person — not a call center. Call or text and tell us your city; we'll tell you the next step in plain language.",
+        "People search for a realtor near them. Here is where Cranford Realty Group shows up in person — a bilingual team, not a call center. Call or text and tell us your city; we'll tell you the next step in English or Spanish.",
       counties:
         "Core counties include Bibb, Houston, Peach, and Baldwin, with additional help for relocating clients toward Suwanee and north metro Atlanta.",
       formTitle: "Buying, selling, or renting in your city?",
@@ -186,13 +186,13 @@ export const copy = {
       ],
     },
     bilingual: {
-      title: "Hablamos español",
-      body: "You do not have to translate the real estate process yourself. Tell us your preferred language and we'll stay in it — from the first call through closing.",
+      title: "We are a bilingual real estate team",
+      body: "English or Spanish — from the first call through closing. You do not have to translate the process yourself. Tell us your preferred language and we'll stay in it.",
       cta: "Contact us in Spanish",
     },
     footer: {
       blurb:
-        "Local real estate help for buying, selling, and renting in Middle Georgia.",
+        "A bilingual real estate team for buying, selling, and renting in Middle Georgia.",
       copyright: "Cranford Realty Group, LLC. All rights reserved.",
     },
     buy: {
@@ -277,13 +277,13 @@ export const copy = {
         "Ask us for the current listing photos and a showing time. We'll send them the same day when we can.",
     },
     about: {
-      title: "A family team in Middle Georgia",
+      title: "A bilingual family team in Middle Georgia",
       subtitle:
-        "Cranford Realty Group is a local brokerage — not a national website with a local sticker on it.",
+        "Cranford Realty Group is a local bilingual brokerage — not a national website with a local sticker on it.",
       story:
-        "We help people buy, sell, and rent homes in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and the towns around them — plus farther north toward Suwanee when a move calls for it. The work is the unglamorous kind that actually matters: answering the phone, showing up, explaining the next step, and staying on it until closing. Nick Dominy — an appraiser, landlord, and engineer — is part of that same family team when a house needs a clear look at value, rent, or condition.",
+        "We help people buy, sell, and rent homes in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and the towns around them — plus farther north toward Suwanee when a move calls for it. We work in English and Spanish. The work is the unglamorous kind that actually matters: answering the phone, showing up, explaining the next step, and staying on it until closing. Nick Dominy — an appraiser, landlord, and engineer — is part of that same family team when a house needs a clear look at value, rent, or condition.",
       teamTitle: "Who you'll talk to",
-      teamBody: "Call or text the person you already know — or start with the main number and we'll route you.",
+      teamBody: "Call or text the person you already know — or start with the main number and we'll route you. English or Spanish.",
     },
     contact: {
       title: "Call, text, or send a note",
@@ -347,7 +347,7 @@ export const copy = {
         "Use Zillow to apply and upload documents. Use the form or the phone if you want to talk through availability, showing times, or Section 8 before you apply.",
       landlordTitle: "Tired of managing your rental?",
       landlordBody:
-        "We're building toward 10+ Middle Georgia rentals — and looking for owners who are ready to stop handling tenants, showings, and late-night texts themselves. Hand the day-to-day to a local family team. Tell us the address and we'll call you back.",
+        "We're building toward 10+ Middle Georgia rentals — and looking for owners who are ready to stop handling tenants, showings, and late-night texts themselves. Hand the day-to-day to a local bilingual family team. Tell us the address and we'll call you back.",
       landlordStepsTitle: "What we take off your plate",
       landlordSteps: [
         {
@@ -418,7 +418,7 @@ export const copy = {
       viewHomes: "Ver casas",
       viewHome: "Ver casa",
       learnMore: "Saber más",
-      hablamos: "Hablamos español",
+      hablamos: "Equipo bilingüe de bienes raíces",
       serving: "Servimos el centro de Georgia",
       privacy: "Privacidad",
       terms: "Términos",
@@ -438,10 +438,10 @@ export const copy = {
       feedback: "Opiniones",
     },
     hero: {
-      kicker: "Cranford Realty Group · Centro de Georgia y más allá",
+      kicker: "Equipo bilingüe de bienes raíces · Centro de Georgia y más allá",
       title: "¿Necesita comprar o vender? Llámenos. Se lo explicamos paso a paso.",
       subtitle:
-        "Un equipo familiar para casas en Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y hacia Suwanee. Inglés y español. Sin un laberinto de botones — una persona de verdad.",
+        "Cranford Realty Group es un equipo familiar bilingüe para casas en Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y hacia Suwanee. Inglés o español — sin un laberinto de botones, una persona de verdad.",
       primary: "Llamar al (478) 718-2783",
       secondary: "Ver casas en venta",
       intentLabel: "Quiero",
@@ -500,9 +500,9 @@ export const copy = {
     areasPage: {
       title: "Zonas que servimos",
       subtitle:
-        "Un equipo familiar con sede en Macon para comprar, vender y rentar en el centro de Georgia y más allá.",
+        "Un equipo familiar bilingüe con sede en Macon para comprar, vender y rentar en el centro de Georgia y más allá.",
       intro:
-        "La gente busca un agente cerca. Aquí es donde Cranford Realty Group aparece en persona — no un centro de llamadas. Llame o envíe un texto con su ciudad; le decimos el siguiente paso en lenguaje claro.",
+        "La gente busca un agente cerca. Aquí es donde Cranford Realty Group aparece en persona — un equipo bilingüe, no un centro de llamadas. Llame o envíe un texto con su ciudad; le decimos el siguiente paso en inglés o español.",
       counties:
         "Los condados principales incluyen Bibb, Houston, Peach y Baldwin, con ayuda adicional para mudanzas hacia Suwanee y el norte metro de Atlanta.",
       formTitle: "¿Compra, venta o renta en su ciudad?",
@@ -582,13 +582,13 @@ export const copy = {
       ],
     },
     bilingual: {
-      title: "We speak English too",
-      body: "No tiene que traducir el proceso usted mismo. Díganos su idioma y nos quedamos en él — desde la primera llamada hasta el cierre.",
+      title: "Somos un equipo bilingüe de bienes raíces",
+      body: "Inglés o español — desde la primera llamada hasta el cierre. No tiene que traducir el proceso usted mismo. Díganos su idioma y nos quedamos en él.",
       cta: "Escríbanos en español",
     },
     footer: {
       blurb:
-        "Ayuda local para comprar, vender y rentar en el centro de Georgia.",
+        "Un equipo bilingüe de bienes raíces para comprar, vender y rentar en el centro de Georgia.",
       copyright: "Cranford Realty Group, LLC. Todos los derechos reservados.",
     },
     buy: {
@@ -673,13 +673,13 @@ export const copy = {
         "Pídanos las fotos actuales y un horario de visita. Las enviamos el mismo día cuando es posible.",
     },
     about: {
-      title: "Un equipo familiar en el centro de Georgia",
+      title: "Un equipo familiar bilingüe en el centro de Georgia",
       subtitle:
-        "Cranford Realty Group es una agencia local — no un sitio nacional con una etiqueta local.",
+        "Cranford Realty Group es una agencia local bilingüe — no un sitio nacional con una etiqueta local.",
       story:
-        "Ayudamos a comprar, vender y rentar casas en Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y los pueblos de alrededor — y más al norte hacia Suwanee cuando la mudanza lo pide. El trabajo es el que de verdad importa: contestar el teléfono, presentarse, explicar el siguiente paso y no soltarlo hasta el cierre. Nick Dominy — tasador, arrendador e ingeniero — forma parte de ese mismo equipo familiar cuando una casa necesita una mirada clara al valor, la renta o el estado.",
+        "Ayudamos a comprar, vender y rentar casas en Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y los pueblos de alrededor — y más al norte hacia Suwanee cuando la mudanza lo pide. Trabajamos en inglés y español. El trabajo es el que de verdad importa: contestar el teléfono, presentarse, explicar el siguiente paso y no soltarlo hasta el cierre. Nick Dominy — tasador, arrendador e ingeniero — forma parte de ese mismo equipo familiar cuando una casa necesita una mirada clara al valor, la renta o el estado.",
       teamTitle: "Con quién va a hablar",
-      teamBody: "Llame o envíe un texto a la persona que ya conoce — o use el número principal y lo dirigimos.",
+      teamBody: "Llame o envíe un texto a la persona que ya conoce — o use el número principal y lo dirigimos. Inglés o español.",
     },
     contact: {
       title: "Llame, envíe un texto o déjenos una nota",
@@ -743,7 +743,7 @@ export const copy = {
         "Use Zillow para solicitar y subir documentos. Use el formulario o el teléfono si quiere hablar de disponibilidad, visitas o Section 8 antes de aplicar.",
       landlordTitle: "¿Cansado de administrar su renta?",
       landlordBody:
-        "Estamos armando una cartera de 10+ rentas en el centro de Georgia — y buscamos dueños listos para dejar de manejar inquilinos, visitas y textos a deshora. Deje el día a día a un equipo familiar local. Díganos la dirección y le llamamos.",
+        "Estamos armando una cartera de 10+ rentas en el centro de Georgia — y buscamos dueños listos para dejar de manejar inquilinos, visitas y textos a deshora. Deje el día a día a un equipo familiar bilingüe local. Díganos la dirección y le llamamos.",
       landlordStepsTitle: "De qué nos encargamos",
       landlordSteps: [
         {
