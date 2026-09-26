@@ -4,9 +4,17 @@ import { FormEvent, useMemo, useState } from "react";
 import { useLanguage } from "@/components/LanguageProvider";
 import { site } from "@/content/site";
 
-type Interest = "buy" | "sell" | "rent" | "value" | "other";
+type Interest = "buy" | "sell" | "rent" | "landlord" | "value" | "other";
 
-const interestKeys: Interest[] = ["buy", "sell", "rent", "value", "other"];
+const interestKeys: Interest[] = [
+  "buy",
+  "sell",
+  "rent",
+  "landlord",
+  "value",
+  "other",
+];
+
 
 export function ContactForm({
   defaultInterest = "buy",
@@ -17,7 +25,9 @@ export function ContactForm({
 }) {
   const { t, locale } = useLanguage();
   const fallbackPhone =
-    defaultInterest === "rent" ? site.rentalsPhone : site.listingsPhone;
+    defaultInterest === "rent" || defaultInterest === "landlord"
+      ? site.rentalsPhone
+      : site.listingsPhone;
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle",
   );

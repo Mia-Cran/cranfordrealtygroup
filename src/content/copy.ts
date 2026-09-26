@@ -250,6 +250,7 @@ export const copy = {
         buy: "Buy a home",
         sell: "Sell a home",
         rent: "Find a rental",
+        landlord: "List / manage my rental",
         value: "Get a home value",
         other: "Something else",
       },
@@ -279,7 +280,7 @@ export const copy = {
     rentals: {
       title: "Rental homes",
       subtitle:
-        "We list and manage rentals through Zillow Rental Manager — applications, screening, and the public listing live there. Call us if you want a person to walk you through it.",
+        "Looking for a place to rent — or own a rental and want a local team to handle it? Start here.",
       cta: "Ask about a rental",
       zillowTitle: "Listed on Zillow",
       zillowBody:
@@ -290,10 +291,32 @@ export const copy = {
       applyTitle: "Apply or ask a question",
       applyBody:
         "Use Zillow to apply and upload documents. Use the form or the phone if you want to talk through availability, showing times, or Section 8 before you apply.",
-      landlordTitle: "Own a rental?",
+      landlordTitle: "Own a rental? We're looking to grow.",
       landlordBody:
-        "We can list your property on Zillow Rental Manager and help with showings and tenant questions. Tell us the address and we'll take the next step.",
-      landlordCta: "List a rental with us",
+        "Cranford Realty Group is expanding our Middle Georgia rental portfolio. If you own a house or small multifamily and want help listing it, screening tenants, and handling showings — tell us the address. A local family team will call you back.",
+      landlordStepsTitle: "What we take off your plate",
+      landlordSteps: [
+        {
+          title: "List it clearly",
+          body: "We put your rental on Zillow Rental Manager with the details renters need — so you are not rewriting the same ad every month.",
+        },
+        {
+          title: "Show the home",
+          body: "We schedule and handle showings so you are not juggling keys and last-minute texts after work.",
+        },
+        {
+          title: "Screen applicants",
+          body: "Applications and screening run through Zillow. You stay in the loop on who is serious — without sorting every inquiry alone.",
+        },
+        {
+          title: "Stay reachable",
+          body: "Owners get a real Middle Georgia number and a person who answers. English or Spanish.",
+        },
+      ],
+      landlordCta: "Talk about adding your rental",
+      ownerFormTitle: "Tell us about your rental",
+      ownerFormBody:
+        "Address, city, and a phone number is enough. We'll call or text you back about listing and management.",
       disclaimer:
         "Zillow and Zillow Rental Manager are trademarks of Zillow, Inc. Listings, applications, and screening are handled on Zillow's site.",
     },
@@ -569,6 +592,7 @@ export const copy = {
         buy: "Comprar una casa",
         sell: "Vender una casa",
         rent: "Buscar renta",
+        landlord: "Anunciar / administrar mi renta",
         value: "Saber el valor de mi casa",
         other: "Otra cosa",
       },
@@ -598,7 +622,7 @@ export const copy = {
     rentals: {
       title: "Casas en renta",
       subtitle:
-        "Publicamos y administramos rentas con Zillow Rental Manager — las solicitudes, la investigación y el anuncio público están allí. Llámenos si quiere que una persona se lo explique.",
+        "¿Busca dónde rentar — o tiene una propiedad y quiere un equipo local que se encargue? Empiece aquí.",
       cta: "Preguntar por una renta",
       zillowTitle: "Anunciadas en Zillow",
       zillowBody:
@@ -609,10 +633,32 @@ export const copy = {
       applyTitle: "Solicitar o preguntar",
       applyBody:
         "Use Zillow para solicitar y subir documentos. Use el formulario o el teléfono si quiere hablar de disponibilidad, visitas o Section 8 antes de aplicar.",
-      landlordTitle: "¿Tiene una casa para rentar?",
+      landlordTitle: "¿Tiene una renta? Queremos crecer.",
       landlordBody:
-        "Podemos anunciarla en Zillow Rental Manager y ayudar con visitas y preguntas de inquilinos. Díganos la dirección y damos el siguiente paso.",
-      landlordCta: "Anunciar una renta con nosotros",
+        "Cranford Realty Group está ampliando su cartera de rentas en el centro de Georgia. Si tiene una casa o un pequeño multifamiliar y quiere ayuda para anunciarla, filtrar inquilinos y manejar visitas — díganos la dirección. Un equipo familiar local le llama.",
+      landlordStepsTitle: "De qué nos encargamos",
+      landlordSteps: [
+        {
+          title: "Anuncio claro",
+          body: "Publicamos su renta en Zillow Rental Manager con lo que el inquilino necesita — sin que usted reescriba el mismo anuncio cada mes.",
+        },
+        {
+          title: "Visitas",
+          body: "Agendamos y hacemos las visitas para que usted no cargue con llaves y mensajes de último minuto después del trabajo.",
+        },
+        {
+          title: "Filtrar solicitantes",
+          body: "Las solicitudes e investigación van por Zillow. Usted se entera de quién va en serio — sin ordenar cada consulta solo.",
+        },
+        {
+          title: "Siempre alcanzables",
+          body: "Los dueños tienen un número real del centro de Georgia y una persona que contesta. Inglés o español.",
+        },
+      ],
+      landlordCta: "Hablar de sumar su renta",
+      ownerFormTitle: "Cuéntenos de su renta",
+      ownerFormBody:
+        "Con la dirección, la ciudad y un teléfono basta. Le llamamos o le escribimos sobre el anuncio y la administración.",
       disclaimer:
         "Zillow y Zillow Rental Manager son marcas de Zillow, Inc. Los anuncios, solicitudes e investigación se manejan en el sitio de Zillow.",
     },
