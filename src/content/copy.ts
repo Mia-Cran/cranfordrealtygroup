@@ -291,9 +291,9 @@ export const copy = {
       applyTitle: "Apply or ask a question",
       applyBody:
         "Use Zillow to apply and upload documents. Use the form or the phone if you want to talk through availability, showing times, or Section 8 before you apply.",
-      landlordTitle: "Own a rental? We're looking to grow.",
+      landlordTitle: "Tired of managing your rental?",
       landlordBody:
-        "Cranford Realty Group is expanding our Middle Georgia rental portfolio. If you own a house or small multifamily and want help listing it, screening tenants, and handling showings — tell us the address. A local family team will call you back.",
+        "We're building toward 10+ Middle Georgia rentals — and looking for owners who are ready to stop handling tenants, showings, and late-night texts themselves. Hand the day-to-day to a local family team. Tell us the address and we'll call you back.",
       landlordStepsTitle: "What we take off your plate",
       landlordSteps: [
         {
@@ -633,9 +633,9 @@ export const copy = {
       applyTitle: "Solicitar o preguntar",
       applyBody:
         "Use Zillow para solicitar y subir documentos. Use el formulario o el teléfono si quiere hablar de disponibilidad, visitas o Section 8 antes de aplicar.",
-      landlordTitle: "¿Tiene una renta? Queremos crecer.",
+      landlordTitle: "¿Cansado de administrar su renta?",
       landlordBody:
-        "Cranford Realty Group está ampliando su cartera de rentas en el centro de Georgia. Si tiene una casa o un pequeño multifamiliar y quiere ayuda para anunciarla, filtrar inquilinos y manejar visitas — díganos la dirección. Un equipo familiar local le llama.",
+        "Estamos armando una cartera de 10+ rentas en el centro de Georgia — y buscamos dueños listos para dejar de manejar inquilinos, visitas y textos a deshora. Deje el día a día a un equipo familiar local. Díganos la dirección y le llamamos.",
       landlordStepsTitle: "De qué nos encargamos",
       landlordSteps: [
         {
