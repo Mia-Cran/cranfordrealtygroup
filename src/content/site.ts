@@ -29,8 +29,24 @@ export const site = {
     "https://www.google.com/maps?q=168+Orange+St,+Macon,+GA+31201",
   mapEmbed:
     "https://maps.google.com/maps?q=168%20Orange%20St%2C%20Macon%2C%20GA%2031201&z=15&output=embed",
-  areas: ["Macon", "Warner Robins", "Perry", "Byron", "Bonaire", "Lizella"],
-  counties: ["Bibb County", "Houston County", "Peach County"],
+  areas: [
+    "Macon",
+    "Warner Robins",
+    "Perry",
+    "Byron",
+    "Kathleen",
+    "Fort Valley",
+    "Milledgeville",
+    "Bonaire",
+    "Lizella",
+    "Suwanee",
+  ],
+  counties: [
+    "Bibb County",
+    "Houston County",
+    "Peach County",
+    "Baldwin County",
+  ],
   /**
    * Zillow Rental Manager
    * Paste your public Zillow profile URL in profileUrl so "Our rentals" opens

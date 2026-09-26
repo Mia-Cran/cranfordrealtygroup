@@ -19,16 +19,16 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Cranford Realty Group | Homes in Macon & Warner Robins",
+    default: "Cranford Realty Group | Middle Georgia Homes",
     template: "%s | Cranford Realty Group",
   },
   description:
-    "Buy, sell, or rent a home in Macon, Warner Robins, Perry, and nearby Middle Georgia. A local bilingual team you can actually call.",
+    "Buy, sell, or rent in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and toward Suwanee. A local bilingual team you can actually call.",
   icons: { icon: "/logo.png" },
   openGraph: {
     title: "Cranford Realty Group",
     description:
-      "Local real estate help in Macon and Warner Robins. Call (478) 737-4973.",
+      "Local real estate help across Middle Georgia and beyond. Call (478) 737-4973.",
     url: site.url,
     siteName: site.name,
     locale: "en_US",

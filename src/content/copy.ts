@@ -42,10 +42,10 @@ export const copy = {
       feedback: "Feedback",
     },
     hero: {
-      kicker: "Cranford Realty Group · Macon & Warner Robins",
+      kicker: "Cranford Realty Group · Middle Georgia & beyond",
       title: "Need to buy or sell? Call us. We'll walk you through it.",
       subtitle:
-        "A local family team for homes in Macon, Warner Robins, Perry, Byron, and nearby towns. English and Spanish. No maze of buttons — just a real person.",
+        "A local family team for homes in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and farther up toward Suwanee. English and Spanish. No maze of buttons — just a real person.",
       primary: "Call (478) 718-2783",
       secondary: "See homes for sale",
       intentLabel: "I want to",
@@ -92,7 +92,7 @@ export const copy = {
         },
         {
           title: "Local on purpose",
-          body: "We live and work in Middle Georgia — Bibb, Houston, and Peach counties — not a call center in another state.",
+          body: "We live and work across Middle Georgia — Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and nearby — and can help with moves farther north toward Suwanee. Not a call center in another state.",
         },
       ],
     },
@@ -169,7 +169,7 @@ export const copy = {
         "If you've never bought a home, that's normal here. We'll explain pre-approval, earnest money, closing costs, and what to ignore on the internet.",
       relocateTitle: "Moving to the area",
       relocateBody:
-        "Warner Robins, Macon, Perry, and Byron are common landing spots for work, family, and Robins AFB. We can set up a search before you arrive.",
+        "Warner Robins, Macon, Perry, Byron, Kathleen, Fort Valley, and Milledgeville are common landing spots for work, family, and Robins AFB. Moving from or toward Suwanee and north metro? We can set up a search before you arrive.",
       calcTitle: "Monthly payment snapshot",
       calcBody:
         "This is a simple estimate — not a lender quote. Use it to get a feel for the number, then we'll connect you with financing options.",
@@ -211,7 +211,7 @@ export const copy = {
       empty: "Nothing in this filter right now. Call us and we'll look across the full market.",
       customSearch: "Want more options?",
       customSearchBody:
-        "These are our own listings. We can also search everything for sale in Bibb, Houston, and Peach counties and send you matches.",
+        "These are our own listings. We can also search everything for sale across Middle Georgia — and help with moves farther north toward Suwanee — then send you matches.",
     },
     listing: {
       details: "Details",
@@ -227,7 +227,7 @@ export const copy = {
       subtitle:
         "Cranford Realty Group is a local brokerage — not a national website with a local sticker on it.",
       story:
-        "We help people buy, sell, and rent homes in Macon, Warner Robins, and the towns around them. The work is the unglamorous kind that actually matters: answering the phone, showing up, explaining the next step, and staying on it until closing. Nick Dominy — an appraiser, landlord, and engineer — is part of that same family team when a house needs a clear look at value, rent, or condition.",
+        "We help people buy, sell, and rent homes in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and the towns around them — plus farther north toward Suwanee when a move calls for it. The work is the unglamorous kind that actually matters: answering the phone, showing up, explaining the next step, and staying on it until closing. Nick Dominy — an appraiser, landlord, and engineer — is part of that same family team when a house needs a clear look at value, rent, or condition.",
       teamTitle: "Who you'll talk to",
       teamBody: "Call or text the person you already know — or start with the main number and we'll route you.",
     },
@@ -384,10 +384,10 @@ export const copy = {
       feedback: "Opiniones",
     },
     hero: {
-      kicker: "Cranford Realty Group · Macon y Warner Robins",
+      kicker: "Cranford Realty Group · Centro de Georgia y más allá",
       title: "¿Necesita comprar o vender? Llámenos. Se lo explicamos paso a paso.",
       subtitle:
-        "Un equipo familiar para casas en Macon, Warner Robins, Perry, Byron y pueblos cercanos. Inglés y español. Sin un laberinto de botones — una persona de verdad.",
+        "Un equipo familiar para casas en Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y hacia Suwanee. Inglés y español. Sin un laberinto de botones — una persona de verdad.",
       primary: "Llamar al (478) 718-2783",
       secondary: "Ver casas en venta",
       intentLabel: "Quiero",
@@ -434,7 +434,7 @@ export const copy = {
         },
         {
           title: "Local de verdad",
-          body: "Vivimos y trabajamos en el centro de Georgia — condados de Bibb, Houston y Peach — no en un centro de llamadas de otro estado.",
+          body: "Vivimos y trabajamos en el centro de Georgia — Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y cerca — y podemos ayudar con mudanzas más al norte hacia Suwanee. No en un centro de llamadas de otro estado.",
         },
       ],
     },
@@ -511,7 +511,7 @@ export const copy = {
         "Si nunca ha comprado, es normal. Le explicamos la preaprobación, el depósito, los costos de cierre y qué puede ignorar en internet.",
       relocateTitle: "Mudanza a la zona",
       relocateBody:
-        "Warner Robins, Macon, Perry y Byron son destinos comunes por trabajo, familia y Robins AFB. Podemos armar una búsqueda antes de que llegue.",
+        "Warner Robins, Macon, Perry, Byron, Kathleen, Fort Valley y Milledgeville son destinos comunes por trabajo, familia y Robins AFB. ¿Mudanza desde o hacia Suwanee y el norte metro? Podemos armar una búsqueda antes de que llegue.",
       calcTitle: "Pago mensual estimado",
       calcBody:
         "Esto es una estimación sencilla, no una cotización de un prestamista. Sirve para tener una idea; después le conectamos con opciones de financiamiento.",
@@ -553,7 +553,7 @@ export const copy = {
       empty: "No hay nada en este filtro ahora. Llámenos y buscamos en todo el mercado.",
       customSearch: "¿Quiere más opciones?",
       customSearchBody:
-        "Estas son nuestras propias propiedades. También podemos buscar todo lo que está en venta en los condados de Bibb, Houston y Peach.",
+        "Estas son nuestras propias propiedades. También podemos buscar todo lo que está en venta en el centro de Georgia — y ayudar con mudanzas más al norte hacia Suwanee.",
     },
     listing: {
       details: "Detalles",
@@ -569,7 +569,7 @@ export const copy = {
       subtitle:
         "Cranford Realty Group es una agencia local — no un sitio nacional con una etiqueta local.",
       story:
-        "Ayudamos a comprar, vender y rentar casas en Macon, Warner Robins y los pueblos de alrededor. El trabajo es el que de verdad importa: contestar el teléfono, presentarse, explicar el siguiente paso y no soltarlo hasta el cierre. Nick Dominy — tasador, arrendador e ingeniero — forma parte de ese mismo equipo familiar cuando una casa necesita una mirada clara al valor, la renta o el estado.",
+        "Ayudamos a comprar, vender y rentar casas en Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y los pueblos de alrededor — y más al norte hacia Suwanee cuando la mudanza lo pide. El trabajo es el que de verdad importa: contestar el teléfono, presentarse, explicar el siguiente paso y no soltarlo hasta el cierre. Nick Dominy — tasador, arrendador e ingeniero — forma parte de ese mismo equipo familiar cuando una casa necesita una mirada clara al valor, la renta o el estado.",
       teamTitle: "Con quién va a hablar",
       teamBody: "Llame o envíe un texto a la persona que ya conoce — o use el número principal y lo dirigimos.",
     },
