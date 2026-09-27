@@ -140,7 +140,7 @@ export function HomePage() {
             >
               <Image
                 src={card.image}
-                alt=""
+                alt={`${card.title} — Cranford Realty Group`}
                 fill
                 className="object-cover transition duration-700 group-hover:scale-110"
               />
@@ -219,17 +219,24 @@ export function HomePage() {
 
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <h2 className="font-serif text-4xl text-navy sm:text-5xl">{t.areas.title}</h2>
-        <p className="mt-3 text-ink-muted">{t.areas.body}</p>
+        <p className="mt-3 max-w-3xl text-ink-muted">{t.areas.body}</p>
         <div className="mt-8 flex flex-wrap gap-3">
           {site.areas.map((area) => (
-            <span
+            <Link
               key={area}
-              className="rounded-full bg-white px-5 py-2 text-sm text-navy ring-1 ring-navy/10"
+              href="/areas"
+              className="rounded-full bg-white px-5 py-2 text-sm text-navy ring-1 ring-navy/10 transition hover:ring-navy/30"
             >
               {area}
-            </span>
+            </Link>
           ))}
         </div>
+        <Link
+          href="/areas"
+          className="mt-6 inline-flex text-sm font-semibold text-gold-dark"
+        >
+          {t.areas.link} →
+        </Link>
       </section>
 
       <section className="bg-white py-20">

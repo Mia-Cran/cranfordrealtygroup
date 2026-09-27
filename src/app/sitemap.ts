@@ -12,6 +12,7 @@ const staticRoutes: {
   { path: "/sell", priority: 0.9, changeFrequency: "weekly" },
   { path: "/listings", priority: 0.95, changeFrequency: "daily" },
   { path: "/rentals", priority: 0.9, changeFrequency: "weekly" },
+  { path: "/areas", priority: 0.85, changeFrequency: "monthly" },
   { path: "/about", priority: 0.7, changeFrequency: "monthly" },
   { path: "/contact", priority: 0.85, changeFrequency: "monthly" },
   { path: "/feedback", priority: 0.4, changeFrequency: "yearly" },

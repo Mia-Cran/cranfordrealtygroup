@@ -15,9 +15,15 @@ export const siteKeywords = [
   "buy home Warner Robins",
   "sell house Macon",
   "bilingual realtor Georgia",
+  "bilingual real estate team",
   "Cranford Realty Group",
   "Perry GA homes",
   "Byron GA real estate",
+  "Kathleen GA realtor",
+  "Fort Valley homes",
+  "Milledgeville real estate",
+  "landlord property management Macon",
+  ...site.areas.map((city) => `realtor ${city} GA`),
 ] as const;
 
 type PageSeoInput = {
@@ -90,9 +96,10 @@ export function pageMetadata({
 
 export const pages = {
   home: {
-    title: "Homes for Sale in Macon & Warner Robins | Cranford Realty Group",
+    title:
+      "Bilingual Realtor in Macon & Warner Robins | Cranford Realty Group",
     description:
-      "Buy, sell, or rent a home in Macon, Warner Robins, Perry, and Middle Georgia. Bilingual local realtors you can call, text, or meet at 168 Orange St.",
+      "Cranford Realty Group is a bilingual real estate team for Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and toward Suwanee. Buy, sell, or rent in English or Spanish.",
     path: "/",
     keywords: [
       ...siteKeywords,
@@ -103,7 +110,7 @@ export const pages = {
   buy: {
     title: "Buy a Home in Macon & Warner Robins | Cranford Realty Group",
     description:
-      "Buy a home in Macon, Warner Robins, Perry, or Byron with Cranford Realty Group. First-time buyers, relocations, and bilingual help welcome.",
+      "Buy a home in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, or toward Suwanee with Cranford Realty Group. First-time buyers and Robins AFB relocations welcome.",
     path: "/buy",
     keywords: [
       "buy home Macon GA",
@@ -116,7 +123,7 @@ export const pages = {
   sell: {
     title: "Sell Your Home in Middle Georgia | Cranford Realty Group",
     description:
-      "Find out what your Macon or Warner Robins home can sell for. Cranford Realty Group handles pricing, listing photos, showings, and closing.",
+      "Sell your home in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, or Milledgeville. Get a straight price opinion and a local bilingual listing team.",
     path: "/sell",
     keywords: [
       "sell house Macon GA",
@@ -128,7 +135,7 @@ export const pages = {
   listings: {
     title: "Homes for Sale in Macon & Middle Georgia | Cranford Realty Group",
     description:
-      "Browse current Cranford Realty Group listings in Macon and Middle Georgia, or call for help searching the full local market.",
+      "Browse current Cranford Realty Group listings in Macon and Middle Georgia, or ask us to search Warner Robins, Perry, Byron, Kathleen, Fort Valley, and Milledgeville.",
     path: "/listings",
     keywords: [
       "MLS listings Macon",
@@ -138,15 +145,28 @@ export const pages = {
     ],
   },
   rentals: {
-    title: "Macon & Warner Robins Rentals | Cranford Realty Group",
+    title:
+      "Rentals & Landlord Help in Middle Georgia | Cranford Realty Group",
     description:
-      "Find Middle Georgia rentals with Cranford Realty Group. Apply on Zillow Rental Manager or call about availability in Macon and Warner Robins.",
+      "Find a Middle Georgia rental on Zillow, or list yours with Cranford Realty Group. We help landlords in Macon, Warner Robins, Perry, Byron, and nearby who are ready to stop managing day-to-day.",
     path: "/rentals",
     keywords: [
       "Macon rentals",
       "Warner Robins apartments for rent",
       "Zillow Rental Manager Macon",
       "landlord property management Middle Georgia",
+      "tired of managing rental Macon",
+      ...siteKeywords,
+    ],
+  },
+  areas: {
+    title: "Areas We Serve in Middle Georgia | Cranford Realty Group",
+    description:
+      "Cranford Realty Group serves Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, Bonaire, Lizella, and toward Suwanee. Buy, sell, or rent with a bilingual local team.",
+    path: "/areas",
+    keywords: [
+      "realtor near me Middle Georgia",
+      "areas served Cranford Realty",
       ...siteKeywords,
     ],
   },

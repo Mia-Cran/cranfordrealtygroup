@@ -22,7 +22,7 @@ export const copy = {
       viewHomes: "See homes",
       viewHome: "View home",
       learnMore: "Learn more",
-      hablamos: "We speak Spanish",
+      hablamos: "Bilingual real estate team",
       serving: "Serving Middle Georgia",
       privacy: "Privacy",
       terms: "Terms",
@@ -42,10 +42,10 @@ export const copy = {
       feedback: "Feedback",
     },
     hero: {
-      kicker: "Cranford Realty Group · Macon & Warner Robins",
+      kicker: "Bilingual real estate team · Middle Georgia & beyond",
       title: "Need to buy or sell? Call us. We'll walk you through it.",
       subtitle:
-        "A local family team for homes in Macon, Warner Robins, Perry, Byron, and nearby towns. English and Spanish. No maze of buttons — just a real person.",
+        "Cranford Realty Group is a bilingual family team for homes in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and farther up toward Suwanee. English or Spanish — no maze of buttons, just a real person.",
       primary: "Call (478) 718-2783",
       secondary: "See homes for sale",
       intentLabel: "I want to",
@@ -92,13 +92,67 @@ export const copy = {
         },
         {
           title: "Local on purpose",
-          body: "We live and work in Middle Georgia — Bibb, Houston, and Peach counties — not a call center in another state.",
+          body: "We live and work across Middle Georgia — Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and nearby — and can help with moves farther north toward Suwanee. Not a call center in another state.",
         },
       ],
     },
     areas: {
       title: "Where we work",
-      body: "If you're in one of these places, or somewhere close, we can help.",
+      body: "Middle Georgia is home base — Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and nearby — plus help farther north toward Suwanee when a move calls for it.",
+      link: "See all areas we serve",
+    },
+    areasPage: {
+      title: "Areas we serve",
+      subtitle:
+        "A Macon-based bilingual family team for buying, selling, and rentals across Middle Georgia and beyond.",
+      intro:
+        "People search for a realtor near them. Here is where Cranford Realty Group shows up in person — a bilingual team, not a call center. Call or text and tell us your city; we'll tell you the next step in English or Spanish.",
+      counties:
+        "Core counties include Bibb, Houston, Peach, and Baldwin, with additional help for relocating clients toward Suwanee and north metro Atlanta.",
+      formTitle: "Buying, selling, or renting in your city?",
+      formBody: "Tell us the town and what you need. We typically reply the same day.",
+      blurbs: {
+        Macon: {
+          heading: "Macon real estate",
+          body: "Our office is in Macon. We help buyers, sellers, and rental owners across north Macon, downtown, and the neighborhoods around Bibb County — with English and Spanish support.",
+        },
+        "Warner Robins": {
+          heading: "Warner Robins realtor",
+          body: "Warner Robins and Robins AFB moves are a big part of our work. We help with purchases, sales, and rentals for military and civilian families who want a clear local guide.",
+        },
+        Perry: {
+          heading: "Perry GA homes",
+          body: "Perry buyers and sellers get the same hands-on help: pricing based on nearby sales, showings that make sense, and a team that answers the phone.",
+        },
+        Byron: {
+          heading: "Byron GA real estate",
+          body: "Byron is growing fast. Whether you are selling, buying your first home, or placing a rental, we keep the process short and local.",
+        },
+        Kathleen: {
+          heading: "Kathleen GA realtor",
+          body: "Kathleen and south Houston County families call us for listings, buyer searches, and rental questions without the big-broker runaround.",
+        },
+        "Fort Valley": {
+          heading: "Fort Valley homes for sale",
+          body: "Fort Valley and Peach County clients get practical guidance on value, repairs worth doing, and how to list or buy without guesswork.",
+        },
+        Milledgeville: {
+          heading: "Milledgeville GA real estate",
+          body: "Milledgeville buyers and sellers work with a Middle Georgia team that will drive out, walk the home, and explain the market in everyday language.",
+        },
+        Bonaire: {
+          heading: "Bonaire GA homes",
+          body: "Bonaire searches often tie to Warner Robins work and schools. We narrow the options and set showings that fit your schedule.",
+        },
+        Lizella: {
+          heading: "Lizella GA realtor",
+          body: "Lizella and west Bibb County properties get careful pricing and marketing — especially when land, privacy, or acreage matters.",
+        },
+        Suwanee: {
+          heading: "Suwanee and north metro moves",
+          body: "Suwanee is farther north, and we treat it as relocation support: help leaving Middle Georgia, arriving from north metro, or coordinating a move with a local team you can actually reach.",
+        },
+      },
     },
     stats: {
       items: [
@@ -132,13 +186,13 @@ export const copy = {
       ],
     },
     bilingual: {
-      title: "Hablamos español",
-      body: "You do not have to translate the real estate process yourself. Tell us your preferred language and we'll stay in it — from the first call through closing.",
+      title: "We are a bilingual real estate team",
+      body: "English or Spanish — from the first call through closing. You do not have to translate the process yourself. Tell us your preferred language and we'll stay in it.",
       cta: "Contact us in Spanish",
     },
     footer: {
       blurb:
-        "Local real estate help for buying, selling, and renting in Middle Georgia.",
+        "A bilingual real estate team for buying, selling, and renting in Middle Georgia.",
       copyright: "Cranford Realty Group, LLC. All rights reserved.",
     },
     buy: {
@@ -169,7 +223,7 @@ export const copy = {
         "If you've never bought a home, that's normal here. We'll explain pre-approval, earnest money, closing costs, and what to ignore on the internet.",
       relocateTitle: "Moving to the area",
       relocateBody:
-        "Warner Robins, Macon, Perry, and Byron are common landing spots for work, family, and Robins AFB. We can set up a search before you arrive.",
+        "Warner Robins, Macon, Perry, Byron, Kathleen, Fort Valley, and Milledgeville are common landing spots for work, family, and Robins AFB. Moving from or toward Suwanee and north metro? We can set up a search before you arrive.",
       calcTitle: "Monthly payment snapshot",
       calcBody:
         "This is a simple estimate — not a lender quote. Use it to get a feel for the number, then we'll connect you with financing options.",
@@ -211,7 +265,7 @@ export const copy = {
       empty: "Nothing in this filter right now. Call us and we'll look across the full market.",
       customSearch: "Want more options?",
       customSearchBody:
-        "These are our own listings. We can also search everything for sale in Bibb, Houston, and Peach counties and send you matches.",
+        "These are our own listings. We can also search everything for sale across Middle Georgia — and help with moves farther north toward Suwanee — then send you matches.",
     },
     listing: {
       details: "Details",
@@ -223,13 +277,13 @@ export const copy = {
         "Ask us for the current listing photos and a showing time. We'll send them the same day when we can.",
     },
     about: {
-      title: "A family team in Middle Georgia",
+      title: "A bilingual family team in Middle Georgia",
       subtitle:
-        "Cranford Realty Group is a local brokerage — not a national website with a local sticker on it.",
+        "Cranford Realty Group is a local bilingual brokerage — not a national website with a local sticker on it.",
       story:
-        "We help people buy, sell, and rent homes in Macon, Warner Robins, and the towns around them. The work is the unglamorous kind that actually matters: answering the phone, showing up, explaining the next step, and staying on it until closing. Nick Dominy — an appraiser, landlord, and engineer — is part of that same family team when a house needs a clear look at value, rent, or condition.",
+        "We help people buy, sell, and rent homes in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and the towns around them — plus farther north toward Suwanee when a move calls for it. We work in English and Spanish. The work is the unglamorous kind that actually matters: answering the phone, showing up, explaining the next step, and staying on it until closing. Nick Dominy — an appraiser, landlord, and engineer — is part of that same family team when a house needs a clear look at value, rent, or condition.",
       teamTitle: "Who you'll talk to",
-      teamBody: "Call or text the person you already know — or start with the main number and we'll route you.",
+      teamBody: "Call or text the person you already know — or start with the main number and we'll route you. English or Spanish.",
     },
     contact: {
       title: "Call, text, or send a note",
@@ -250,6 +304,7 @@ export const copy = {
         buy: "Buy a home",
         sell: "Sell a home",
         rent: "Find a rental",
+        landlord: "List / manage my rental",
         value: "Get a home value",
         other: "Something else",
       },
@@ -279,7 +334,7 @@ export const copy = {
     rentals: {
       title: "Rental homes",
       subtitle:
-        "We list and manage rentals through Zillow Rental Manager — applications, screening, and the public listing live there. Call us if you want a person to walk you through it.",
+        "Looking for a place to rent — or own a rental and want a local team to handle it? Start here.",
       cta: "Ask about a rental",
       zillowTitle: "Listed on Zillow",
       zillowBody:
@@ -290,10 +345,32 @@ export const copy = {
       applyTitle: "Apply or ask a question",
       applyBody:
         "Use Zillow to apply and upload documents. Use the form or the phone if you want to talk through availability, showing times, or Section 8 before you apply.",
-      landlordTitle: "Own a rental?",
+      landlordTitle: "Tired of managing your rental?",
       landlordBody:
-        "We can list your property on Zillow Rental Manager and help with showings and tenant questions. Tell us the address and we'll take the next step.",
-      landlordCta: "List a rental with us",
+        "We're building toward 10+ Middle Georgia rentals — and looking for owners who are ready to stop handling tenants, showings, and late-night texts themselves. Hand the day-to-day to a local bilingual family team. Tell us the address and we'll call you back.",
+      landlordStepsTitle: "What we take off your plate",
+      landlordSteps: [
+        {
+          title: "List it clearly",
+          body: "We put your rental on Zillow Rental Manager with the details renters need — so you are not rewriting the same ad every month.",
+        },
+        {
+          title: "Show the home",
+          body: "We schedule and handle showings so you are not juggling keys and last-minute texts after work.",
+        },
+        {
+          title: "Screen applicants",
+          body: "Applications and screening run through Zillow. You stay in the loop on who is serious — without sorting every inquiry alone.",
+        },
+        {
+          title: "Stay reachable",
+          body: "Owners get a real Middle Georgia number and a person who answers. English or Spanish.",
+        },
+      ],
+      landlordCta: "Talk about adding your rental",
+      ownerFormTitle: "Tell us about your rental",
+      ownerFormBody:
+        "Address, city, and a phone number is enough. We'll call or text you back about listing and management.",
       disclaimer:
         "Zillow and Zillow Rental Manager are trademarks of Zillow, Inc. Listings, applications, and screening are handled on Zillow's site.",
     },
@@ -341,7 +418,7 @@ export const copy = {
       viewHomes: "Ver casas",
       viewHome: "Ver casa",
       learnMore: "Saber más",
-      hablamos: "Hablamos español",
+      hablamos: "Equipo bilingüe de bienes raíces",
       serving: "Servimos el centro de Georgia",
       privacy: "Privacidad",
       terms: "Términos",
@@ -361,10 +438,10 @@ export const copy = {
       feedback: "Opiniones",
     },
     hero: {
-      kicker: "Cranford Realty Group · Macon y Warner Robins",
+      kicker: "Equipo bilingüe de bienes raíces · Centro de Georgia y más allá",
       title: "¿Necesita comprar o vender? Llámenos. Se lo explicamos paso a paso.",
       subtitle:
-        "Un equipo familiar para casas en Macon, Warner Robins, Perry, Byron y pueblos cercanos. Inglés y español. Sin un laberinto de botones — una persona de verdad.",
+        "Cranford Realty Group es un equipo familiar bilingüe para casas en Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y hacia Suwanee. Inglés o español — sin un laberinto de botones, una persona de verdad.",
       primary: "Llamar al (478) 718-2783",
       secondary: "Ver casas en venta",
       intentLabel: "Quiero",
@@ -411,13 +488,67 @@ export const copy = {
         },
         {
           title: "Local de verdad",
-          body: "Vivimos y trabajamos en el centro de Georgia — condados de Bibb, Houston y Peach — no en un centro de llamadas de otro estado.",
+          body: "Vivimos y trabajamos en el centro de Georgia — Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y cerca — y podemos ayudar con mudanzas más al norte hacia Suwanee. No en un centro de llamadas de otro estado.",
         },
       ],
     },
     areas: {
       title: "Dónde trabajamos",
-      body: "Si está en uno de estos lugares, o cerca, podemos ayudarle.",
+      body: "El centro de Georgia es nuestra base — Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y cerca — y también ayudamos más al norte hacia Suwanee cuando la mudanza lo pide.",
+      link: "Ver todas las zonas",
+    },
+    areasPage: {
+      title: "Zonas que servimos",
+      subtitle:
+        "Un equipo familiar bilingüe con sede en Macon para comprar, vender y rentar en el centro de Georgia y más allá.",
+      intro:
+        "La gente busca un agente cerca. Aquí es donde Cranford Realty Group aparece en persona — un equipo bilingüe, no un centro de llamadas. Llame o envíe un texto con su ciudad; le decimos el siguiente paso en inglés o español.",
+      counties:
+        "Los condados principales incluyen Bibb, Houston, Peach y Baldwin, con ayuda adicional para mudanzas hacia Suwanee y el norte metro de Atlanta.",
+      formTitle: "¿Compra, venta o renta en su ciudad?",
+      formBody: "Díganos el pueblo y lo que necesita. Normalmente respondemos el mismo día.",
+      blurbs: {
+        Macon: {
+          heading: "Bienes raíces en Macon",
+          body: "Nuestra oficina está en Macon. Ayudamos a compradores, vendedores y dueños de rentas en el norte de Macon, el centro y Bibb — en inglés y español.",
+        },
+        "Warner Robins": {
+          heading: "Agente en Warner Robins",
+          body: "Warner Robins y mudanzas por Robins AFB son gran parte de nuestro trabajo. Ayudamos con compras, ventas y rentas para familias militares y civiles.",
+        },
+        Perry: {
+          heading: "Casas en Perry GA",
+          body: "Compradores y vendedores en Perry reciben la misma ayuda práctica: precio según ventas cercanas, visitas con sentido y un equipo que contesta.",
+        },
+        Byron: {
+          heading: "Bienes raíces en Byron GA",
+          body: "Byron crece rápido. Si vende, compra su primera casa o pone una renta, acortamos el proceso con un equipo local.",
+        },
+        Kathleen: {
+          heading: "Agente en Kathleen GA",
+          body: "Familias en Kathleen y el sur de Houston County nos llaman para anuncios, búsquedas y rentas sin rodeos de una gran franquicia.",
+        },
+        "Fort Valley": {
+          heading: "Casas en venta en Fort Valley",
+          body: "Clientes en Fort Valley y Peach County reciben guía clara sobre valor, reparaciones que valen la pena y cómo comprar o vender sin adivinar.",
+        },
+        Milledgeville: {
+          heading: "Bienes raíces en Milledgeville",
+          body: "En Milledgeville trabajamos con un equipo del centro de Georgia que va a la casa, la recorre y explica el mercado en lenguaje cotidiano.",
+        },
+        Bonaire: {
+          heading: "Casas en Bonaire GA",
+          body: "Las búsquedas en Bonaire suelen ligarse a Warner Robins. Filtramos opciones y agendamos visitas que encajen con su horario.",
+        },
+        Lizella: {
+          heading: "Agente en Lizella GA",
+          body: "En Lizella y el oeste de Bibb cuidamos el precio y el anuncio — sobre todo cuando importan el terreno, la privacidad o el acreaje.",
+        },
+        Suwanee: {
+          heading: "Mudanzas a Suwanee y el norte metro",
+          body: "Suwanee queda más al norte. Lo tratamos como apoyo de mudanza: salir del centro de Georgia, llegar desde el norte metro, o coordinar con un equipo al que sí pueda llamar.",
+        },
+      },
     },
     stats: {
       items: [
@@ -451,13 +582,13 @@ export const copy = {
       ],
     },
     bilingual: {
-      title: "We speak English too",
-      body: "No tiene que traducir el proceso usted mismo. Díganos su idioma y nos quedamos en él — desde la primera llamada hasta el cierre.",
+      title: "Somos un equipo bilingüe de bienes raíces",
+      body: "Inglés o español — desde la primera llamada hasta el cierre. No tiene que traducir el proceso usted mismo. Díganos su idioma y nos quedamos en él.",
       cta: "Escríbanos en español",
     },
     footer: {
       blurb:
-        "Ayuda local para comprar, vender y rentar en el centro de Georgia.",
+        "Un equipo bilingüe de bienes raíces para comprar, vender y rentar en el centro de Georgia.",
       copyright: "Cranford Realty Group, LLC. Todos los derechos reservados.",
     },
     buy: {
@@ -488,7 +619,7 @@ export const copy = {
         "Si nunca ha comprado, es normal. Le explicamos la preaprobación, el depósito, los costos de cierre y qué puede ignorar en internet.",
       relocateTitle: "Mudanza a la zona",
       relocateBody:
-        "Warner Robins, Macon, Perry y Byron son destinos comunes por trabajo, familia y Robins AFB. Podemos armar una búsqueda antes de que llegue.",
+        "Warner Robins, Macon, Perry, Byron, Kathleen, Fort Valley y Milledgeville son destinos comunes por trabajo, familia y Robins AFB. ¿Mudanza desde o hacia Suwanee y el norte metro? Podemos armar una búsqueda antes de que llegue.",
       calcTitle: "Pago mensual estimado",
       calcBody:
         "Esto es una estimación sencilla, no una cotización de un prestamista. Sirve para tener una idea; después le conectamos con opciones de financiamiento.",
@@ -530,7 +661,7 @@ export const copy = {
       empty: "No hay nada en este filtro ahora. Llámenos y buscamos en todo el mercado.",
       customSearch: "¿Quiere más opciones?",
       customSearchBody:
-        "Estas son nuestras propias propiedades. También podemos buscar todo lo que está en venta en los condados de Bibb, Houston y Peach.",
+        "Estas son nuestras propias propiedades. También podemos buscar todo lo que está en venta en el centro de Georgia — y ayudar con mudanzas más al norte hacia Suwanee.",
     },
     listing: {
       details: "Detalles",
@@ -542,13 +673,13 @@ export const copy = {
         "Pídanos las fotos actuales y un horario de visita. Las enviamos el mismo día cuando es posible.",
     },
     about: {
-      title: "Un equipo familiar en el centro de Georgia",
+      title: "Un equipo familiar bilingüe en el centro de Georgia",
       subtitle:
-        "Cranford Realty Group es una agencia local — no un sitio nacional con una etiqueta local.",
+        "Cranford Realty Group es una agencia local bilingüe — no un sitio nacional con una etiqueta local.",
       story:
-        "Ayudamos a comprar, vender y rentar casas en Macon, Warner Robins y los pueblos de alrededor. El trabajo es el que de verdad importa: contestar el teléfono, presentarse, explicar el siguiente paso y no soltarlo hasta el cierre. Nick Dominy — tasador, arrendador e ingeniero — forma parte de ese mismo equipo familiar cuando una casa necesita una mirada clara al valor, la renta o el estado.",
+        "Ayudamos a comprar, vender y rentar casas en Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y los pueblos de alrededor — y más al norte hacia Suwanee cuando la mudanza lo pide. Trabajamos en inglés y español. El trabajo es el que de verdad importa: contestar el teléfono, presentarse, explicar el siguiente paso y no soltarlo hasta el cierre. Nick Dominy — tasador, arrendador e ingeniero — forma parte de ese mismo equipo familiar cuando una casa necesita una mirada clara al valor, la renta o el estado.",
       teamTitle: "Con quién va a hablar",
-      teamBody: "Llame o envíe un texto a la persona que ya conoce — o use el número principal y lo dirigimos.",
+      teamBody: "Llame o envíe un texto a la persona que ya conoce — o use el número principal y lo dirigimos. Inglés o español.",
     },
     contact: {
       title: "Llame, envíe un texto o déjenos una nota",
@@ -569,6 +700,7 @@ export const copy = {
         buy: "Comprar una casa",
         sell: "Vender una casa",
         rent: "Buscar renta",
+        landlord: "Anunciar / administrar mi renta",
         value: "Saber el valor de mi casa",
         other: "Otra cosa",
       },
@@ -598,7 +730,7 @@ export const copy = {
     rentals: {
       title: "Casas en renta",
       subtitle:
-        "Publicamos y administramos rentas con Zillow Rental Manager — las solicitudes, la investigación y el anuncio público están allí. Llámenos si quiere que una persona se lo explique.",
+        "¿Busca dónde rentar — o tiene una propiedad y quiere un equipo local que se encargue? Empiece aquí.",
       cta: "Preguntar por una renta",
       zillowTitle: "Anunciadas en Zillow",
       zillowBody:
@@ -609,10 +741,32 @@ export const copy = {
       applyTitle: "Solicitar o preguntar",
       applyBody:
         "Use Zillow para solicitar y subir documentos. Use el formulario o el teléfono si quiere hablar de disponibilidad, visitas o Section 8 antes de aplicar.",
-      landlordTitle: "¿Tiene una casa para rentar?",
+      landlordTitle: "¿Cansado de administrar su renta?",
       landlordBody:
-        "Podemos anunciarla en Zillow Rental Manager y ayudar con visitas y preguntas de inquilinos. Díganos la dirección y damos el siguiente paso.",
-      landlordCta: "Anunciar una renta con nosotros",
+        "Estamos armando una cartera de 10+ rentas en el centro de Georgia — y buscamos dueños listos para dejar de manejar inquilinos, visitas y textos a deshora. Deje el día a día a un equipo familiar bilingüe local. Díganos la dirección y le llamamos.",
+      landlordStepsTitle: "De qué nos encargamos",
+      landlordSteps: [
+        {
+          title: "Anuncio claro",
+          body: "Publicamos su renta en Zillow Rental Manager con lo que el inquilino necesita — sin que usted reescriba el mismo anuncio cada mes.",
+        },
+        {
+          title: "Visitas",
+          body: "Agendamos y hacemos las visitas para que usted no cargue con llaves y mensajes de último minuto después del trabajo.",
+        },
+        {
+          title: "Filtrar solicitantes",
+          body: "Las solicitudes e investigación van por Zillow. Usted se entera de quién va en serio — sin ordenar cada consulta solo.",
+        },
+        {
+          title: "Siempre alcanzables",
+          body: "Los dueños tienen un número real del centro de Georgia y una persona que contesta. Inglés o español.",
+        },
+      ],
+      landlordCta: "Hablar de sumar su renta",
+      ownerFormTitle: "Cuéntenos de su renta",
+      ownerFormBody:
+        "Con la dirección, la ciudad y un teléfono basta. Le llamamos o le escribimos sobre el anuncio y la administración.",
       disclaimer:
         "Zillow y Zillow Rental Manager son marcas de Zillow, Inc. Los anuncios, solicitudes e investigación se manejan en el sitio de Zillow.",
     },
