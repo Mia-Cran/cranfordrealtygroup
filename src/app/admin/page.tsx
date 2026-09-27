@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AdminPage } from "@/components/pages/AdminPage";
 
 export const metadata: Metadata = {
-  title: "Update homes",
+  title: { absolute: "Update homes | Cranford Realty Group" },
   robots: { index: false, follow: false },
 };
 

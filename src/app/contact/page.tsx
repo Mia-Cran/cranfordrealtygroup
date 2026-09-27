@@ -1,14 +1,23 @@
 import type { Metadata } from "next";
+import { PageJsonLd } from "@/components/PageJsonLd";
 import { ContactPage } from "@/components/pages/ContactPage";
-import { pageMetadata } from "@/content/seo";
+import { pageMetadata, pages } from "@/content/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Contact a Macon GA Realtor",
-  description:
-    "Call, text, or email Cranford Realty Group. Listings (478) 718-2783 · Rentals (478) 737-4973 · 168 Orange St, Macon, GA 31201.",
-  path: "/contact",
-});
+export const metadata: Metadata = pageMetadata(pages.contact);
 
 export default function Page() {
-  return <ContactPage />;
+  return (
+    <>
+      <PageJsonLd
+        title={pages.contact.title}
+        description={pages.contact.description}
+        path={pages.contact.path}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact" },
+        ]}
+      />
+      <ContactPage />
+    </>
+  );
 }

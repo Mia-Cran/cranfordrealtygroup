@@ -1,11 +1,16 @@
 import type { MetadataRoute } from "next";
-import { site } from "@/content/site";
+import { absoluteUrl } from "@/content/seo";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: "*", allow: "/", disallow: ["/admin", "/api/admin"] },
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/admin", "/admin/", "/api/admin", "/api/admin/"],
+      },
     ],
-    sitemap: `${site.url}/sitemap.xml`,
+    sitemap: absoluteUrl("/sitemap.xml"),
+    host: absoluteUrl("/").replace(/\/$/, ""),
   };
 }

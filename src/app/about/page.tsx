@@ -1,14 +1,23 @@
 import type { Metadata } from "next";
+import { PageJsonLd } from "@/components/PageJsonLd";
 import { AboutPage } from "@/components/pages/AboutPage";
-import { pageMetadata } from "@/content/seo";
+import { pageMetadata, pages } from "@/content/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "About Our Macon Real Estate Team",
-  description:
-    "Meet Maria, Bertha, Mayra, and Nick at Cranford Realty Group — a bilingual family brokerage in Macon serving Warner Robins and Middle Georgia.",
-  path: "/about",
-});
+export const metadata: Metadata = pageMetadata(pages.about);
 
 export default function Page() {
-  return <AboutPage />;
+  return (
+    <>
+      <PageJsonLd
+        title={pages.about.title}
+        description={pages.about.description}
+        path={pages.about.path}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ]}
+      />
+      <AboutPage />
+    </>
+  );
 }

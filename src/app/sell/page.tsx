@@ -1,14 +1,23 @@
 import type { Metadata } from "next";
+import { PageJsonLd } from "@/components/PageJsonLd";
 import { SellPage } from "@/components/pages/SellPage";
-import { pageMetadata } from "@/content/seo";
+import { pageMetadata, pages } from "@/content/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Sell Your Home in Middle Georgia",
-  description:
-    "Sell your home in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, or Milledgeville. Get a straight price opinion and a local listing team at Cranford Realty Group.",
-  path: "/sell",
-});
+export const metadata: Metadata = pageMetadata(pages.sell);
 
 export default function Page() {
-  return <SellPage />;
+  return (
+    <>
+      <PageJsonLd
+        title={pages.sell.title}
+        description={pages.sell.description}
+        path={pages.sell.path}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Sell", path: "/sell" },
+        ]}
+      />
+      <SellPage />
+    </>
+  );
 }

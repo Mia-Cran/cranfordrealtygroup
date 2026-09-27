@@ -1,14 +1,23 @@
 import type { Metadata } from "next";
+import { PageJsonLd } from "@/components/PageJsonLd";
 import { RentalsPage } from "@/components/pages/RentalsPage";
-import { pageMetadata } from "@/content/seo";
+import { pageMetadata, pages } from "@/content/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Rentals & Landlord Help in Middle Georgia",
-  description:
-    "Find a Middle Georgia rental on Zillow, or list your rental with Cranford Realty Group. We help landlords in Macon, Warner Robins, Perry, Byron, and nearby who are ready to stop managing day-to-day.",
-  path: "/rentals",
-});
+export const metadata: Metadata = pageMetadata(pages.rentals);
 
 export default function Page() {
-  return <RentalsPage />;
+  return (
+    <>
+      <PageJsonLd
+        title={pages.rentals.title}
+        description={pages.rentals.description}
+        path={pages.rentals.path}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Rentals", path: "/rentals" },
+        ]}
+      />
+      <RentalsPage />
+    </>
+  );
 }

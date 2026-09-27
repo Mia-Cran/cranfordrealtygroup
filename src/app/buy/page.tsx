@@ -1,14 +1,23 @@
 import type { Metadata } from "next";
+import { PageJsonLd } from "@/components/PageJsonLd";
 import { BuyPage } from "@/components/pages/BuyPage";
-import { pageMetadata } from "@/content/seo";
+import { pageMetadata, pages } from "@/content/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Buy a Home in Macon & Warner Robins",
-  description:
-    "Buy a home in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, or toward Suwanee with Cranford Realty Group. First-time buyers and Robins AFB relocations welcome.",
-  path: "/buy",
-});
+export const metadata: Metadata = pageMetadata(pages.buy);
 
 export default function Page() {
-  return <BuyPage />;
+  return (
+    <>
+      <PageJsonLd
+        title={pages.buy.title}
+        description={pages.buy.description}
+        path={pages.buy.path}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Buy", path: "/buy" },
+        ]}
+      />
+      <BuyPage />
+    </>
+  );
 }

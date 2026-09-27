@@ -1,14 +1,23 @@
 import type { Metadata } from "next";
+import { PageJsonLd } from "@/components/PageJsonLd";
 import { AreasPage } from "@/components/pages/AreasPage";
-import { pageMetadata } from "@/content/seo";
+import { pageMetadata, pages } from "@/content/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Areas We Serve",
-  description:
-    "Cranford Realty Group serves Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, Bonaire, Lizella, and toward Suwanee, GA. Buy, sell, or rent with a local bilingual team.",
-  path: "/areas",
-});
+export const metadata: Metadata = pageMetadata(pages.areas);
 
 export default function Page() {
-  return <AreasPage />;
+  return (
+    <>
+      <PageJsonLd
+        title={pages.areas.title}
+        description={pages.areas.description}
+        path={pages.areas.path}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Areas", path: "/areas" },
+        ]}
+      />
+      <AreasPage />
+    </>
+  );
 }

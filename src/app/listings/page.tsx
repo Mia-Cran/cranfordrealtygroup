@@ -1,14 +1,23 @@
 import type { Metadata } from "next";
+import { PageJsonLd } from "@/components/PageJsonLd";
 import { ListingsPage } from "@/components/pages/ListingsPage";
-import { pageMetadata } from "@/content/seo";
+import { pageMetadata, pages } from "@/content/seo";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Homes for Sale in Macon & Middle Georgia",
-  description:
-    "Browse Cranford Realty Group listings in Macon and Middle Georgia, or ask us to search Warner Robins, Perry, Byron, Kathleen, Fort Valley, and Milledgeville for you.",
-  path: "/listings",
-});
+export const metadata: Metadata = pageMetadata(pages.listings);
 
 export default function Page() {
-  return <ListingsPage />;
+  return (
+    <>
+      <PageJsonLd
+        title={pages.listings.title}
+        description={pages.listings.description}
+        path={pages.listings.path}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Homes", path: "/listings" },
+        ]}
+      />
+      <ListingsPage />
+    </>
+  );
 }
