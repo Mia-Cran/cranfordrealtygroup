@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent } from "react";
 import { ListingCard } from "@/components/ListingCard";
+import { HomesSlideshow } from "@/components/HomesSlideshow";
 import { TeamGrid } from "@/components/TeamGrid";
 import { useLanguage } from "@/components/LanguageProvider";
 import { site } from "@/content/site";
@@ -23,9 +24,7 @@ export function HomePage() {
   const router = useRouter();
   const listings = useListings();
   const featured = listings.filter((listing) => listing.status !== "sold");
-  const sold = listings
-    .filter((listing) => listing.status === "sold")
-    .slice(0, 3);
+  const sold = listings.filter((listing) => listing.status === "sold");
   const cities = [...site.areas, ...site.areas];
 
   function onSearch(event: FormEvent<HTMLFormElement>) {
@@ -157,6 +156,16 @@ export function HomePage() {
         </div>
       </section>
 
+      <section className="py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 className="font-serif text-4xl text-navy sm:text-5xl">{t.about.teamTitle}</h2>
+          <p className="mt-3 max-w-2xl text-ink-muted">{t.about.teamBody}</p>
+          <div className="mt-10">
+            <TeamGrid />
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex flex-wrap items-end justify-between gap-4">
@@ -168,26 +177,14 @@ export function HomePage() {
               {t.featured.viewAll} →
             </Link>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {featured.map((listing) => (
-              <ListingCard key={listing.slug} listing={listing} />
-            ))}
+          <div className="mt-10">
+            <HomesSlideshow listings={featured} />
           </div>
           <h3 className="mt-16 font-serif text-3xl text-navy">{t.featured.soldTitle}</h3>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {sold.map((listing) => (
               <ListingCard key={listing.slug} listing={listing} />
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="font-serif text-4xl text-navy sm:text-5xl">{t.about.teamTitle}</h2>
-          <p className="mt-3 max-w-2xl text-ink-muted">{t.about.teamBody}</p>
-          <div className="mt-10">
-            <TeamGrid />
           </div>
         </div>
       </section>
