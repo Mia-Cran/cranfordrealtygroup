@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Figtree } from "next/font/google";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteShell } from "@/components/SiteShell";
+import { pageMetadata, pages } from "@/content/seo";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -18,22 +19,14 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  ...pageMetadata(pages.home),
   title: {
-    default: "Cranford Realty Group | Homes in Macon & Warner Robins",
+    default: pages.home.title,
     template: "%s | Cranford Realty Group",
   },
-  description:
-    "Buy, sell, or rent a home in Macon, Warner Robins, Perry, and nearby Middle Georgia. A local bilingual team you can actually call.",
   icons: { icon: "/logo.png" },
-  openGraph: {
-    title: "Cranford Realty Group",
-    description:
-      "Local real estate help in Macon and Warner Robins. Call (478) 737-4973.",
-    url: site.url,
-    siteName: site.name,
-    locale: "en_US",
-    type: "website",
-  },
+  category: "real estate",
+  applicationName: site.name,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

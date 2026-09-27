@@ -1,12 +1,23 @@
 import type { Metadata } from "next";
+import { PageJsonLd } from "@/components/PageJsonLd";
 import { FeedbackPage } from "@/components/pages/FeedbackPage";
+import { pageMetadata, pages } from "@/content/seo";
 
-export const metadata: Metadata = {
-  title: "Feedback",
-  description:
-    "Tell Cranford Realty Group how we did. Leave a note after buying, selling, or renting in Middle Georgia.",
-};
+export const metadata: Metadata = pageMetadata(pages.feedback);
 
 export default function Page() {
-  return <FeedbackPage />;
+  return (
+    <>
+      <PageJsonLd
+        title={pages.feedback.title}
+        description={pages.feedback.description}
+        path={pages.feedback.path}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Feedback", path: "/feedback" },
+        ]}
+      />
+      <FeedbackPage />
+    </>
+  );
 }
