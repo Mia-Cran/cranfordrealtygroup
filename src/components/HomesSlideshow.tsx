@@ -49,8 +49,23 @@ export function HomesSlideshow({ listings }: { listings: Listing[] }) {
             <span className="inline-flex rounded-full bg-gold px-3 py-1 text-xs font-semibold uppercase tracking-wide text-navy">
               {statusLabel}
             </span>
+            {listing.alert ? (
+              <p
+                role="status"
+                className="mt-4 inline-flex max-w-full rounded-full border border-gold bg-gold px-4 py-2 text-xs font-semibold uppercase tracking-wide text-navy"
+              >
+                {locale === "es" && listing.alertEs
+                  ? listing.alertEs
+                  : listing.alert}
+              </p>
+            ) : null}
             <p className="mt-4 font-serif text-4xl text-gold sm:text-5xl">
               {formatPrice(listing.price)}
+              {listing.originalPrice ? (
+                <span className="ml-3 text-2xl text-white/55 line-through">
+                  {formatPrice(listing.originalPrice)}
+                </span>
+              ) : null}
             </p>
             <h3 className="mt-2 font-serif text-3xl sm:text-4xl">{listing.address}</h3>
             <p className="mt-2 text-white/80">

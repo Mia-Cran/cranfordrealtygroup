@@ -66,7 +66,22 @@ export function ListingDetail({ listing }: { listing: Listing }) {
           <p className="mt-2 text-lg text-ink-muted">
             {listing.city}, {listing.state} {listing.zip}
           </p>
-          <p className="mt-6 font-serif text-4xl text-navy">{formatPrice(listing.price)}</p>
+          {listing.alert ? (
+            <div
+              role="status"
+              className="mt-6 rounded-2xl border border-gold bg-gold/20 px-4 py-3 text-sm font-semibold text-navy"
+            >
+              {locale === "es" && listing.alertEs ? listing.alertEs : listing.alert}
+            </div>
+          ) : null}
+          <p className="mt-6 font-serif text-4xl text-navy">
+            {formatPrice(listing.price)}
+            {listing.originalPrice ? (
+              <span className="ml-3 text-2xl font-sans font-normal text-ink-muted line-through">
+                {formatPrice(listing.originalPrice)}
+              </span>
+            ) : null}
+          </p>
           <dl className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
             {listing.beds ? (
               <Stat label={t.common.beds} value={String(listing.beds)} />

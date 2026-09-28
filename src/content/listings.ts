@@ -22,6 +22,11 @@ export type Listing = {
   photos?: string[];
   summary: string;
   summaryEs: string;
+  /** Previous list price when a reduction is announced */
+  originalPrice?: number;
+  /** Short price/alert banner shown on listing surfaces */
+  alert?: string;
+  alertEs?: string;
 };
 
 export const listings: Listing[] = listingsData as Listing[];
