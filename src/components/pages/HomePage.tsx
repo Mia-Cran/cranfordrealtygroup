@@ -43,22 +43,33 @@ export function HomePage() {
 
   return (
     <div>
-      <section className="relative isolate min-h-[92vh] overflow-hidden bg-navy text-white">
+      <HomesSlideshow listings={featured} fullBleed />
+
+      <div className="overflow-hidden border-y border-navy/10 bg-navy py-3 text-gold">
+        <div className="marquee-track flex w-max gap-10 text-xs font-semibold uppercase tracking-[0.28em]">
+          {cities.map((city, index) => (
+            <span key={`${city}-${index}`} className="flex items-center gap-10">
+              {city}
+              <span className="text-white/30">·</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <section className="relative isolate overflow-hidden bg-navy py-20 text-white sm:py-24">
         <Image
           src={heroImage}
           alt="Georgia pines and rolling hills at sunset"
           fill
-          priority
-          className="hero-zoom object-cover"
+          className="hero-zoom object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/45 to-navy/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-navy/20" />
-        <div className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-center px-4 py-24 sm:px-6">
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-navy/50" />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gold">
             {t.hero.kicker}
           </p>
           <span className="mt-4 block h-px w-16 bg-gold" />
-          <h1 className="mt-6 max-w-3xl font-serif text-5xl leading-[1.05] sm:text-7xl">
+          <h1 className="mt-6 max-w-3xl font-serif text-4xl leading-[1.05] sm:text-6xl">
             {t.hero.title}
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-white/90">
@@ -107,34 +118,6 @@ export function HomePage() {
               {t.hero.go}
             </button>
           </form>
-        </div>
-      </section>
-
-      <div className="overflow-hidden border-y border-navy/10 bg-navy py-3 text-gold">
-        <div className="marquee-track flex w-max gap-10 text-xs font-semibold uppercase tracking-[0.28em]">
-          {cities.map((city, index) => (
-            <span key={`${city}-${index}`} className="flex items-center gap-10">
-              {city}
-              <span className="text-white/30">·</span>
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <h2 className="font-serif text-4xl text-navy sm:text-5xl">{t.featured.title}</h2>
-              <p className="mt-3 max-w-2xl text-ink-muted">{t.featured.subtitle}</p>
-            </div>
-            <Link href="/listings" className="text-sm font-semibold text-gold-dark">
-              {t.featured.viewAll} →
-            </Link>
-          </div>
-          <div className="mt-10">
-            <HomesSlideshow listings={featured} />
-          </div>
         </div>
       </section>
 

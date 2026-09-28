@@ -7,7 +7,13 @@ import { useLanguage } from "@/components/LanguageProvider";
 import type { Listing } from "@/content/listings";
 import { formatNumber, formatPrice } from "@/lib/format";
 
-export function HomesSlideshow({ listings }: { listings: Listing[] }) {
+export function HomesSlideshow({
+  listings,
+  fullBleed = false,
+}: {
+  listings: Listing[];
+  fullBleed?: boolean;
+}) {
   const { t, locale } = useLanguage();
   const [index, setIndex] = useState(0);
 
@@ -29,9 +35,16 @@ export function HomesSlideshow({ listings }: { listings: Listing[] }) {
         ? t.common.land
         : t.common.forSale;
 
+  const frameClass = fullBleed
+    ? "relative overflow-hidden bg-navy text-white"
+    : "relative overflow-hidden rounded-[2rem] bg-navy text-white shadow-xl";
+  const heightClass = fullBleed
+    ? "min-h-[78vh] sm:min-h-[85vh]"
+    : "min-h-[420px] sm:min-h-[520px]";
+
   return (
-    <div className="relative overflow-hidden rounded-[2rem] bg-navy text-white shadow-xl">
-      <div className="relative min-h-[420px] sm:min-h-[520px]">
+    <div className={frameClass}>
+      <div className={`relative ${heightClass}`}>
         <Image
           key={listing.slug}
           src={listing.image}
@@ -44,9 +57,14 @@ export function HomesSlideshow({ listings }: { listings: Listing[] }) {
         <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/55 to-navy/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy/85 via-transparent to-navy/10" />
 
-        <div className="relative flex min-h-[420px] flex-col justify-end gap-6 p-6 sm:min-h-[520px] sm:p-10 lg:flex-row lg:items-end lg:justify-between">
+        <div
+          className={`relative mx-auto flex max-w-6xl flex-col justify-end gap-6 px-4 py-10 sm:px-6 sm:py-14 lg:flex-row lg:items-end lg:justify-between ${heightClass}`}
+        >
           <div className="max-w-xl">
-            <span className="inline-flex rounded-full bg-gold px-3 py-1 text-xs font-semibold uppercase tracking-wide text-navy">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gold">
+              Cranford Realty Group
+            </p>
+            <span className="mt-4 inline-flex rounded-full bg-gold px-3 py-1 text-xs font-semibold uppercase tracking-wide text-navy">
               {statusLabel}
             </span>
             {listing.alert ? (
@@ -67,7 +85,7 @@ export function HomesSlideshow({ listings }: { listings: Listing[] }) {
                 </span>
               ) : null}
             </p>
-            <h3 className="mt-2 font-serif text-3xl sm:text-4xl">{listing.address}</h3>
+            <h2 className="mt-2 font-serif text-3xl sm:text-5xl">{listing.address}</h2>
             <p className="mt-2 text-white/80">
               {listing.city}, {listing.state} {listing.zip}
             </p>
@@ -122,18 +140,20 @@ export function HomesSlideshow({ listings }: { listings: Listing[] }) {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-2 border-t border-white/10 bg-navy/90 px-4 py-3 sm:px-6">
-        {listings.map((item, itemIndex) => (
-          <button
-            key={item.slug}
-            type="button"
-            onClick={() => setIndex(itemIndex)}
-            aria-label={`Show ${item.address}`}
-            className={`h-2.5 rounded-full transition ${
-              itemIndex === index ? "w-8 bg-gold" : "w-2.5 bg-white/35"
-            }`}
-          />
-        ))}
+      <div className="flex flex-wrap gap-2 border-t border-white/10 bg-navy px-4 py-3 sm:px-6">
+        <div className="mx-auto flex w-full max-w-6xl flex-wrap gap-2">
+          {listings.map((item, itemIndex) => (
+            <button
+              key={item.slug}
+              type="button"
+              onClick={() => setIndex(itemIndex)}
+              aria-label={`Show ${item.address}`}
+              className={`h-2.5 rounded-full transition ${
+                itemIndex === index ? "w-8 bg-gold" : "w-2.5 bg-white/35"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
