@@ -42,7 +42,7 @@ export function JsonLd() {
           })),
         ],
         knowsLanguage: ["English", "Spanish"],
-        sameAs: [] as string[],
+        sameAs: [site.facebookUrl] as string[],
         openingHoursSpecification: {
           "@type": "OpeningHoursSpecification",
           dayOfWeek: [

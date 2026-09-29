@@ -24,6 +24,20 @@ export function Footer() {
             {t.footer.blurb}
           </p>
           <p className="mt-4 text-sm text-gold">{t.common.hablamos}</p>
+          <a
+            href={site.facebookUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Cranford Realty Group on Facebook"
+            className="mt-5 inline-flex items-center gap-2 text-sm text-white/80 transition hover:text-white"
+          >
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gold text-navy">
+              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5" fill="currentColor">
+                <path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.25-1.5 1.5-1.5H16.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3z" />
+              </svg>
+            </span>
+            Facebook
+          </a>
         </div>
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">

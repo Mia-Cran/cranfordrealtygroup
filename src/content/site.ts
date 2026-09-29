@@ -54,6 +54,7 @@ export const site = {
     "Peach County",
     "Baldwin County",
   ],
+  facebookUrl: "https://www.facebook.com/cranfordrealtygroup",
   /**
    * Zillow Rental Manager
    * Paste your public Zillow profile URL in profileUrl so "Our rentals" opens
