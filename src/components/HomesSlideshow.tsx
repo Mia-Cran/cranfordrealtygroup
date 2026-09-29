@@ -51,22 +51,27 @@ export function HomesSlideshow({
           alt={`${listing.address}, ${listing.city}`}
           fill
           priority
-          className="object-cover transition duration-700"
+          className="object-cover brightness-110 saturate-110 transition duration-700"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/55 to-navy/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy/85 via-transparent to-navy/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/70 via-navy/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/75 via-transparent to-transparent" />
+
+        <div className="absolute inset-x-0 top-0 z-10">
+          <div className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 sm:pt-8">
+            <span className="inline-flex rounded-full bg-gold px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-navy shadow-lg">
+              {statusLabel}
+            </span>
+          </div>
+        </div>
 
         <div
           className={`relative mx-auto flex max-w-6xl flex-col justify-end gap-6 px-4 py-10 sm:px-6 sm:py-14 lg:flex-row lg:items-end lg:justify-between ${heightClass}`}
         >
-          <div className="max-w-xl">
+          <div className="max-w-xl [text-shadow:0_2px_12px_rgba(18,36,61,0.55)]">
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gold">
               Cranford Realty Group
             </p>
-            <span className="mt-4 inline-flex rounded-full bg-gold px-3 py-1 text-xs font-semibold uppercase tracking-wide text-navy">
-              {statusLabel}
-            </span>
             {listing.alert ? (
               <p
                 role="status"
@@ -85,11 +90,13 @@ export function HomesSlideshow({
                 </span>
               ) : null}
             </p>
-            <h2 className="mt-2 font-serif text-3xl sm:text-5xl">{listing.address}</h2>
-            <p className="mt-2 text-white/80">
+            <h2 className="mt-2 font-serif text-3xl font-semibold tracking-tight [font-variant-ligatures:no-common-ligatures] sm:text-5xl">
+              {listing.address}
+            </h2>
+            <p className="mt-2 text-white/90">
               {listing.city}, {listing.state} {listing.zip}
             </p>
-            <p className="mt-3 text-sm text-white/75">
+            <p className="mt-3 text-sm text-white/90">
               {[
                 listing.beds ? `${listing.beds} ${t.common.beds}` : null,
                 listing.baths ? `${listing.baths} ${t.common.baths}` : null,
@@ -101,7 +108,7 @@ export function HomesSlideshow({
                 .filter(Boolean)
                 .join(" · ")}
             </p>
-            <p className="mt-4 line-clamp-3 text-sm leading-6 text-white/80">
+            <p className="mt-4 line-clamp-3 text-sm leading-6 text-white/90">
               {locale === "es" ? listing.summaryEs : listing.summary}
             </p>
             <Link

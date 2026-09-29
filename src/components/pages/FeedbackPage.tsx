@@ -16,6 +16,14 @@ export function FeedbackPage() {
           <p className="mt-4 max-w-md leading-7 text-ink-muted">
             {t.feedback.subtitle}
           </p>
+          <div className="mt-8 max-w-md rounded-3xl bg-navy p-6 text-white sm:p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold">
+              {t.feedback.storyTitle}
+            </p>
+            <p className="mt-3 font-serif text-2xl leading-snug">
+              {t.feedback.story}
+            </p>
+          </div>
         </div>
         <FeedbackForm />
       </section>

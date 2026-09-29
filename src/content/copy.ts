@@ -314,7 +314,20 @@ export const copy = {
       title: "How did we do?",
       subtitle:
         "If we helped you buy, sell, or rent, we'd like to hear it. Honest notes help our family team get better — and kind ones make our day.",
+      storyTitle: "Built on word of mouth",
+      story:
+        "Almost every family we help found us because someone they trust sent them our way — a neighbor, a coworker, someone who knows our family. Your words keep that going. Thank you.",
       formTitle: "Leave feedback",
+      referredBy: "Who told you about us?",
+      referredByHint: "A friend, family member, coworker — we like to say thank you.",
+      referTitle: "Know someone buying, selling, or renting?",
+      referBody: "Leave their name and number and we'll reach out kindly — no pressure.",
+      friendName: "Their name",
+      friendPhone: "Their phone",
+      reviewTitle: "One more favor?",
+      reviewBody:
+        "A Google review helps the next family find us. It takes about a minute.",
+      reviewCta: "Leave a Google review",
       rating: "Overall experience",
       workWith: "You worked with us to",
       message: "Your feedback",
@@ -710,7 +723,20 @@ export const copy = {
       title: "¿Cómo le fue?",
       subtitle:
         "Si le ayudamos a comprar, vender o rentar, nos gustaría saberlo. Las notas honestas nos ayudan a mejorar — y las amables nos alegran el día.",
+      storyTitle: "Crecimos de boca en boca",
+      story:
+        "Casi todas las familias que ayudamos nos encontraron porque alguien de confianza les habló de nosotros — un vecino, un compañero de trabajo, alguien que conoce a nuestra familia. Sus palabras mantienen eso vivo. Gracias.",
       formTitle: "Dejar una opinión",
+      referredBy: "¿Quién le habló de nosotros?",
+      referredByHint: "Un amigo, un familiar, un compañero — nos gusta darles las gracias.",
+      referTitle: "¿Conoce a alguien que quiera comprar, vender o rentar?",
+      referBody: "Déjenos su nombre y número y le contactaremos con amabilidad — sin presión.",
+      friendName: "Su nombre",
+      friendPhone: "Su teléfono",
+      reviewTitle: "¿Un favor más?",
+      reviewBody:
+        "Una reseña en Google ayuda a la próxima familia a encontrarnos. Toma como un minuto.",
+      reviewCta: "Dejar una reseña en Google",
       rating: "Experiencia general",
       workWith: "Trabajó con nosotros para",
       message: "Su opinión",

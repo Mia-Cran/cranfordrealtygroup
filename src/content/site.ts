@@ -27,6 +27,10 @@ export const site = {
   },
   mapUrl:
     "https://www.google.com/maps?q=168+Orange+St,+Macon,+GA+31201",
+  // Swap in the direct "Ask for reviews" link from the Google Business Profile
+  // (Google Business → Read reviews → Get more reviews) when you have it.
+  googleReviewUrl:
+    "https://www.google.com/search?q=Cranford+Realty+Group+Macon+GA+reviews",
   mapEmbed:
     "https://maps.google.com/maps?q=168%20Orange%20St%2C%20Macon%2C%20GA%2031201&z=15&output=embed",
   areas: [

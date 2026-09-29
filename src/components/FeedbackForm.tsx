@@ -80,6 +80,15 @@ export function FeedbackForm() {
         </label>
       </div>
       <label className="grid gap-2 text-sm">
+        {labels.referredBy}{" "}
+        <span className="text-ink-muted">({labels.optional})</span>
+        <input
+          name="referredBy"
+          className="h-12 rounded-xl border border-navy/15 bg-cream px-4 outline-none ring-gold/40 focus:ring-2"
+        />
+        <span className="text-xs text-ink-muted">{labels.referredByHint}</span>
+      </label>
+      <label className="grid gap-2 text-sm">
         {labels.workWith}
         <select
           name="workWith"
@@ -130,6 +139,29 @@ export function FeedbackForm() {
         />
         {labels.share}
       </label>
+      <fieldset className="grid gap-3 rounded-2xl border border-gold/40 bg-cream p-4 sm:p-5">
+        <legend className="px-1 text-sm font-semibold text-navy">
+          {labels.referTitle}
+        </legend>
+        <p className="text-sm text-ink-muted">{labels.referBody}</p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <label className="grid gap-2 text-sm">
+            {labels.friendName}
+            <input
+              name="friendName"
+              className="h-12 rounded-xl border border-navy/15 bg-white px-4 outline-none ring-gold/40 focus:ring-2"
+            />
+          </label>
+          <label className="grid gap-2 text-sm">
+            {labels.friendPhone}
+            <input
+              name="friendPhone"
+              type="tel"
+              className="h-12 rounded-xl border border-navy/15 bg-white px-4 outline-none ring-gold/40 focus:ring-2"
+            />
+          </label>
+        </div>
+      </fieldset>
       <button
         type="submit"
         disabled={status === "sending"}
@@ -138,7 +170,19 @@ export function FeedbackForm() {
         {status === "sending" ? labels.sending : labels.submit}
       </button>
       {status === "sent" ? (
-        <p className="text-sm text-navy">{labels.sent}</p>
+        <div className="grid gap-3 rounded-2xl bg-navy p-5 text-white">
+          <p className="text-sm">{labels.sent}</p>
+          <p className="font-serif text-2xl">{labels.reviewTitle}</p>
+          <p className="text-sm text-white/80">{labels.reviewBody}</p>
+          <a
+            href={site.googleReviewUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-12 items-center justify-center rounded-full bg-gold px-6 text-sm font-semibold text-navy"
+          >
+            {labels.reviewCta}
+          </a>
+        </div>
       ) : null}
       {status === "error" ? (
         <p className="text-sm text-red-800">
