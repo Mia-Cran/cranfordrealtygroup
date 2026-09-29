@@ -23,6 +23,9 @@ export const siteKeywords = [
   "Fort Valley homes",
   "Milledgeville real estate",
   "landlord property management Macon",
+  "South Metro Atlanta realtor",
+  "Henry County real estate",
+  "Clayton County homes",
   ...site.areas.map((city) => `realtor ${city} GA`),
 ] as const;
 
@@ -99,7 +102,7 @@ export const pages = {
     title:
       "Bilingual Realtor in Macon & Warner Robins | Cranford Realty Group",
     description:
-      "Cranford Realty Group is a bilingual real estate team for Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and toward Suwanee. Buy, sell, or rent in English or Spanish.",
+      "Cranford Realty Group is a bilingual real estate team for Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and metro Atlanta (Suwanee, Stockbridge, Hampton, Jonesboro). Buy, sell, or rent in English or Spanish.",
     path: "/",
     keywords: [
       ...siteKeywords,
@@ -110,7 +113,7 @@ export const pages = {
   buy: {
     title: "Buy a Home in Macon & Warner Robins | Cranford Realty Group",
     description:
-      "Buy a home in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, or toward Suwanee with Cranford Realty Group. First-time buyers and Robins AFB relocations welcome.",
+      "Buy a home in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, or metro Atlanta (Suwanee, Stockbridge, Hampton, Jonesboro) with Cranford Realty Group. First-time buyers and Robins AFB relocations welcome.",
     path: "/buy",
     keywords: [
       "buy home Macon GA",
@@ -162,7 +165,7 @@ export const pages = {
   areas: {
     title: "Areas We Serve in Middle Georgia | Cranford Realty Group",
     description:
-      "Cranford Realty Group serves Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, Bonaire, Lizella, and toward Suwanee. Buy, sell, or rent with a bilingual local team.",
+      "Cranford Realty Group serves Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, Bonaire, Lizella, Suwanee, Stockbridge, Hampton, and Jonesboro. Buy, sell, or rent with a bilingual local team.",
     path: "/areas",
     keywords: [
       "realtor near me Middle Georgia",

@@ -45,7 +45,7 @@ export const copy = {
       kicker: "Bilingual real estate team · Middle Georgia & beyond",
       title: "Need to buy or sell? Call us. We'll walk you through it.",
       subtitle:
-        "Cranford Realty Group is a bilingual family team for homes in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and farther up toward Suwanee. English or Spanish — no maze of buttons, just a real person.",
+        "Cranford Realty Group is a bilingual family team for homes in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and metro Atlanta — Suwanee, Stockbridge, Hampton, and Jonesboro. English or Spanish — no maze of buttons, just a real person.",
       primary: "Call (478) 718-2783",
       secondary: "See homes for sale",
       intentLabel: "I want to",
@@ -92,13 +92,13 @@ export const copy = {
         },
         {
           title: "Local on purpose",
-          body: "We live and work across Middle Georgia — Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and nearby — and can help with moves farther north toward Suwanee. Not a call center in another state.",
+          body: "We live and work across Middle Georgia — Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and nearby — and we also serve metro Atlanta — Suwanee, Stockbridge, Hampton, and Jonesboro. Not a call center in another state.",
         },
       ],
     },
     areas: {
       title: "Where we work",
-      body: "Middle Georgia is home base — Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and nearby — plus help farther north toward Suwanee when a move calls for it.",
+      body: "Middle Georgia is home base — Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and nearby — plus metro Atlanta — Suwanee, Stockbridge, Hampton, and Jonesboro.",
       link: "See all areas we serve",
     },
     areasPage: {
@@ -108,7 +108,7 @@ export const copy = {
       intro:
         "People search for a realtor near them. Here is where Cranford Realty Group shows up in person — a bilingual team, not a call center. Call or text and tell us your city; we'll tell you the next step in English or Spanish.",
       counties:
-        "Core counties include Bibb, Houston, Peach, and Baldwin, with additional help for relocating clients toward Suwanee and north metro Atlanta.",
+        "Core counties include Bibb, Houston, Peach, and Baldwin, plus metro Atlanta: Gwinnett (Suwanee), Henry (Stockbridge and Hampton), and Clayton (Jonesboro).",
       formTitle: "Buying, selling, or renting in your city?",
       formBody: "Tell us the town and what you need. We typically reply the same day.",
       blurbs: {
@@ -149,8 +149,20 @@ export const copy = {
           body: "Lizella and west Bibb County properties get careful pricing and marketing — especially when land, privacy, or acreage matters.",
         },
         Suwanee: {
-          heading: "Suwanee and north metro moves",
-          body: "Suwanee is farther north, and we treat it as relocation support: help leaving Middle Georgia, arriving from north metro, or coordinating a move with a local team you can actually reach.",
+          heading: "Suwanee GA homes",
+          body: "North metro Atlanta buyers, sellers, and renters get the same family team — including help moving between Suwanee and Middle Georgia.",
+        },
+        Stockbridge: {
+          heading: "Stockbridge GA realtor",
+          body: "Stockbridge and Henry County families call us to buy, sell, or rent with a bilingual team that answers the phone and explains every step.",
+        },
+        Hampton: {
+          heading: "Hampton GA real estate",
+          body: "Hampton buyers and sellers get pricing based on nearby sales, showings that fit your schedule, and help in English or Spanish.",
+        },
+        Jonesboro: {
+          heading: "Jonesboro GA homes",
+          body: "Jonesboro and Clayton County clients get practical, local guidance for buying, selling, and rentals — without the big-broker runaround.",
         },
       },
     },
@@ -223,7 +235,7 @@ export const copy = {
         "If you've never bought a home, that's normal here. We'll explain pre-approval, earnest money, closing costs, and what to ignore on the internet.",
       relocateTitle: "Moving to the area",
       relocateBody:
-        "Warner Robins, Macon, Perry, Byron, Kathleen, Fort Valley, and Milledgeville are common landing spots for work, family, and Robins AFB. Moving from or toward Suwanee and north metro? We can set up a search before you arrive.",
+        "Warner Robins, Macon, Perry, Byron, Kathleen, Fort Valley, and Milledgeville are common landing spots for work, family, and Robins AFB. Moving from or toward metro Atlanta — Suwanee, Stockbridge, Hampton, or Jonesboro? We can set up a search before you arrive.",
       calcTitle: "Monthly payment snapshot",
       calcBody:
         "This is a simple estimate — not a lender quote. Use it to get a feel for the number, then we'll connect you with financing options.",
@@ -265,7 +277,7 @@ export const copy = {
       empty: "Nothing in this filter right now. Call us and we'll look across the full market.",
       customSearch: "Want more options?",
       customSearchBody:
-        "These are our own listings. We can also search everything for sale across Middle Georgia — and help with moves farther north toward Suwanee — then send you matches.",
+        "These are our own listings. We can also search everything for sale across Middle Georgia and metro Atlanta — Suwanee, Stockbridge, Hampton, and Jonesboro — then send you matches.",
     },
     listing: {
       details: "Details",
@@ -281,7 +293,7 @@ export const copy = {
       subtitle:
         "Cranford Realty Group is a local bilingual brokerage — not a national website with a local sticker on it.",
       story:
-        "We help people buy, sell, and rent homes in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and the towns around them — plus farther north toward Suwanee when a move calls for it. We work in English and Spanish. The work is the unglamorous kind that actually matters: answering the phone, showing up, explaining the next step, and staying on it until closing. Nick Dominy — an appraiser, landlord, and engineer — is part of that same family team when a house needs a clear look at value, rent, or condition.",
+        "We help people buy, sell, and rent homes in Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville, and the towns around them — plus metro Atlanta: Suwanee, Stockbridge, Hampton, and Jonesboro. We work in English and Spanish. The work is the unglamorous kind that actually matters: answering the phone, showing up, explaining the next step, and staying on it until closing. Nick Dominy — an appraiser, landlord, and engineer — is part of that same family team when a house needs a clear look at value, rent, or condition.",
       teamTitle: "Who you'll talk to",
       teamBody: "Call or text the person you already know — or start with the main number and we'll route you. English or Spanish.",
     },
@@ -454,7 +466,7 @@ export const copy = {
       kicker: "Equipo bilingüe de bienes raíces · Centro de Georgia y más allá",
       title: "¿Necesita comprar o vender? Llámenos. Se lo explicamos paso a paso.",
       subtitle:
-        "Cranford Realty Group es un equipo familiar bilingüe para casas en Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y hacia Suwanee. Inglés o español — sin un laberinto de botones, una persona de verdad.",
+        "Cranford Realty Group es un equipo familiar bilingüe para casas en Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y el área metropolitana de Atlanta — Suwanee, Stockbridge, Hampton y Jonesboro. Inglés o español — sin un laberinto de botones, una persona de verdad.",
       primary: "Llamar al (478) 718-2783",
       secondary: "Ver casas en venta",
       intentLabel: "Quiero",
@@ -501,13 +513,13 @@ export const copy = {
         },
         {
           title: "Local de verdad",
-          body: "Vivimos y trabajamos en el centro de Georgia — Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y cerca — y podemos ayudar con mudanzas más al norte hacia Suwanee. No en un centro de llamadas de otro estado.",
+          body: "Vivimos y trabajamos en el centro de Georgia — Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y cerca — y también atendemos el área metropolitana de Atlanta — Suwanee, Stockbridge, Hampton y Jonesboro. No en un centro de llamadas de otro estado.",
         },
       ],
     },
     areas: {
       title: "Dónde trabajamos",
-      body: "El centro de Georgia es nuestra base — Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y cerca — y también ayudamos más al norte hacia Suwanee cuando la mudanza lo pide.",
+      body: "El centro de Georgia es nuestra base — Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y cerca — y también el área metropolitana de Atlanta — Suwanee, Stockbridge, Hampton y Jonesboro.",
       link: "Ver todas las zonas",
     },
     areasPage: {
@@ -517,7 +529,7 @@ export const copy = {
       intro:
         "La gente busca un agente cerca. Aquí es donde Cranford Realty Group aparece en persona — un equipo bilingüe, no un centro de llamadas. Llame o envíe un texto con su ciudad; le decimos el siguiente paso en inglés o español.",
       counties:
-        "Los condados principales incluyen Bibb, Houston, Peach y Baldwin, con ayuda adicional para mudanzas hacia Suwanee y el norte metro de Atlanta.",
+        "Los condados principales incluyen Bibb, Houston, Peach y Baldwin, además del área metropolitana de Atlanta: Gwinnett (Suwanee), Henry (Stockbridge y Hampton) y Clayton (Jonesboro).",
       formTitle: "¿Compra, venta o renta en su ciudad?",
       formBody: "Díganos el pueblo y lo que necesita. Normalmente respondemos el mismo día.",
       blurbs: {
@@ -558,8 +570,20 @@ export const copy = {
           body: "En Lizella y el oeste de Bibb cuidamos el precio y el anuncio — sobre todo cuando importan el terreno, la privacidad o el acreaje.",
         },
         Suwanee: {
-          heading: "Mudanzas a Suwanee y el norte metro",
-          body: "Suwanee queda más al norte. Lo tratamos como apoyo de mudanza: salir del centro de Georgia, llegar desde el norte metro, o coordinar con un equipo al que sí pueda llamar.",
+          heading: "Casas en Suwanee GA",
+          body: "Compradores, vendedores e inquilinos del norte de Atlanta reciben el mismo equipo familiar — incluida ayuda para mudarse entre Suwanee y el centro de Georgia.",
+        },
+        Stockbridge: {
+          heading: "Realtor en Stockbridge GA",
+          body: "Familias de Stockbridge y el condado de Henry nos llaman para comprar, vender o rentar con un equipo bilingüe que contesta el teléfono y explica cada paso.",
+        },
+        Hampton: {
+          heading: "Bienes raíces en Hampton GA",
+          body: "En Hampton, compradores y vendedores reciben precios basados en ventas cercanas, visitas que se ajustan a su horario y ayuda en inglés o español.",
+        },
+        Jonesboro: {
+          heading: "Casas en Jonesboro GA",
+          body: "Clientes de Jonesboro y el condado de Clayton reciben orientación práctica y local para comprar, vender y rentar — sin complicaciones de las grandes agencias.",
         },
       },
     },
@@ -632,7 +656,7 @@ export const copy = {
         "Si nunca ha comprado, es normal. Le explicamos la preaprobación, el depósito, los costos de cierre y qué puede ignorar en internet.",
       relocateTitle: "Mudanza a la zona",
       relocateBody:
-        "Warner Robins, Macon, Perry, Byron, Kathleen, Fort Valley y Milledgeville son destinos comunes por trabajo, familia y Robins AFB. ¿Mudanza desde o hacia Suwanee y el norte metro? Podemos armar una búsqueda antes de que llegue.",
+        "Warner Robins, Macon, Perry, Byron, Kathleen, Fort Valley y Milledgeville son destinos comunes por trabajo, familia y Robins AFB. ¿Mudanza desde o hacia el área de Atlanta — Suwanee, Stockbridge, Hampton o Jonesboro? Podemos armar una búsqueda antes de que llegue.",
       calcTitle: "Pago mensual estimado",
       calcBody:
         "Esto es una estimación sencilla, no una cotización de un prestamista. Sirve para tener una idea; después le conectamos con opciones de financiamiento.",
@@ -674,7 +698,7 @@ export const copy = {
       empty: "No hay nada en este filtro ahora. Llámenos y buscamos en todo el mercado.",
       customSearch: "¿Quiere más opciones?",
       customSearchBody:
-        "Estas son nuestras propias propiedades. También podemos buscar todo lo que está en venta en el centro de Georgia — y ayudar con mudanzas más al norte hacia Suwanee.",
+        "Estas son nuestras propias propiedades. También podemos buscar todo lo que está en venta en el centro de Georgia y el área metropolitana de Atlanta — Suwanee, Stockbridge, Hampton y Jonesboro.",
     },
     listing: {
       details: "Detalles",
@@ -690,7 +714,7 @@ export const copy = {
       subtitle:
         "Cranford Realty Group es una agencia local bilingüe — no un sitio nacional con una etiqueta local.",
       story:
-        "Ayudamos a comprar, vender y rentar casas en Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y los pueblos de alrededor — y más al norte hacia Suwanee cuando la mudanza lo pide. Trabajamos en inglés y español. El trabajo es el que de verdad importa: contestar el teléfono, presentarse, explicar el siguiente paso y no soltarlo hasta el cierre. Nick Dominy — tasador, arrendador e ingeniero — forma parte de ese mismo equipo familiar cuando una casa necesita una mirada clara al valor, la renta o el estado.",
+        "Ayudamos a comprar, vender y rentar casas en Macon, Warner Robins, Perry, Byron, Kathleen, Fort Valley, Milledgeville y los pueblos de alrededor — y el área metropolitana de Atlanta: Suwanee, Stockbridge, Hampton y Jonesboro. Trabajamos en inglés y español. El trabajo es el que de verdad importa: contestar el teléfono, presentarse, explicar el siguiente paso y no soltarlo hasta el cierre. Nick Dominy — tasador, arrendador e ingeniero — forma parte de ese mismo equipo familiar cuando una casa necesita una mirada clara al valor, la renta o el estado.",
       teamTitle: "Con quién va a hablar",
       teamBody: "Llame o envíe un texto a la persona que ya conoce — o use el número principal y lo dirigimos. Inglés o español.",
     },

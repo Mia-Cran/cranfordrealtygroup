@@ -44,6 +44,9 @@ export const site = {
     "Bonaire",
     "Lizella",
     "Suwanee",
+    "Stockbridge",
+    "Hampton",
+    "Jonesboro",
   ],
   counties: [
     "Bibb County",

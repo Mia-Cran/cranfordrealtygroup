@@ -119,7 +119,7 @@ export function JsonLd() {
             name: "Where does Cranford Realty Group work?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: `We help buyers, sellers, and rental owners across Middle Georgia — including ${site.areas.join(", ")}.`,
+              text: `We help buyers, sellers, and rental owners across Middle Georgia and metro Atlanta — including ${site.areas.join(", ")}.`,
             },
           },
           {
