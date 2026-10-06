@@ -405,6 +405,22 @@ export const copy = {
         "Address, city, and a phone number is enough. We'll call or text you back about listing and management.",
       disclaimer:
         "Availability and rent can change. Call to confirm before you make plans.",
+      maintenanceTitle: "Current tenants",
+      maintenanceBody:
+        "If something in your rental needs a repair, send it here with photos. It goes straight to our email as a maintenance request.",
+      maintenanceCta: "Report a maintenance issue",
+      maintenanceAddress: "Rental address",
+      maintenanceIssue: "What's wrong?",
+      maintenancePhotos: "Photos of the issue",
+      maintenancePhotosHint: "You can add up to 5 pictures (about 8 MB total).",
+      maintenanceSubmit: "Send maintenance request",
+      maintenanceSending: "Sending…",
+      maintenanceSent:
+        "Got it. We received your maintenance request and will follow up.",
+      maintenanceError:
+        "The request didn't send. Call or text us — that always works.",
+      maintenanceTooMany: "Please choose no more than 5 photos.",
+      maintenanceTooBig: "Those photos are too large. Try fewer or smaller pictures.",
     },
     mortgage: {
       price: "Home price",
@@ -833,6 +849,22 @@ export const copy = {
         "Con la dirección, la ciudad y un teléfono basta. Le llamamos o le escribimos sobre el anuncio y la administración.",
       disclaimer:
         "La disponibilidad y la renta pueden cambiar. Llame para confirmar antes de hacer planes.",
+      maintenanceTitle: "Inquilinos actuales",
+      maintenanceBody:
+        "Si algo en su renta necesita reparación, envíelo aquí con fotos. Llega directo a nuestro correo como solicitud de mantenimiento.",
+      maintenanceCta: "Reportar un problema de mantenimiento",
+      maintenanceAddress: "Dirección de la renta",
+      maintenanceIssue: "¿Qué está mal?",
+      maintenancePhotos: "Fotos del problema",
+      maintenancePhotosHint: "Puede agregar hasta 5 fotos (unos 8 MB en total).",
+      maintenanceSubmit: "Enviar solicitud de mantenimiento",
+      maintenanceSending: "Enviando…",
+      maintenanceSent:
+        "Listo. Recibimos su solicitud de mantenimiento y le damos seguimiento.",
+      maintenanceError:
+        "La solicitud no se envió. Llámenos o envíe un texto — eso siempre funciona.",
+      maintenanceTooMany: "Elija no más de 5 fotos.",
+      maintenanceTooBig: "Esas fotos pesan demasiado. Pruebe con menos o más pequeñas.",
     },
     mortgage: {
       price: "Precio de la casa",

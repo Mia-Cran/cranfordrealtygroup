@@ -2,6 +2,7 @@
 
 import { ContactForm } from "@/components/ContactForm";
 import { ListingCard } from "@/components/ListingCard";
+import { MaintenanceForm } from "@/components/MaintenanceForm";
 import { PageHero } from "@/components/pages/BuyPage";
 import { useLanguage } from "@/components/LanguageProvider";
 import { site } from "@/content/site";
@@ -27,12 +28,20 @@ export function RentalsPage() {
               {t.rentals.availableBody}
             </p>
           </div>
-          <a
-            href={site.rentalsPhone.href}
-            className="inline-flex rounded-full bg-gold px-5 py-3 text-sm font-semibold text-navy"
-          >
-            {t.common.call} {site.rentalsPhone.display}
-          </a>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={site.rentalsPhone.href}
+              className="inline-flex rounded-full bg-gold px-5 py-3 text-sm font-semibold text-navy"
+            >
+              {t.common.call} {site.rentalsPhone.display}
+            </a>
+            <a
+              href="#maintenance"
+              className="inline-flex rounded-full border border-navy/15 px-5 py-3 text-sm font-semibold text-navy"
+            >
+              {t.rentals.maintenanceCta}
+            </a>
+          </div>
         </div>
         {rentals.length ? (
           <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -77,6 +86,28 @@ export function RentalsPage() {
           </div>
         </div>
         <p className="mt-6 text-xs text-ink-muted">{t.rentals.disclaimer}</p>
+      </section>
+
+      <section
+        id="maintenance"
+        className="mx-auto grid max-w-6xl gap-10 px-4 pb-16 sm:px-6 lg:grid-cols-2"
+      >
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-dark">
+            {t.common.rentalsLine}
+          </p>
+          <h2 className="mt-3 font-serif text-4xl text-navy">
+            {t.rentals.maintenanceTitle}
+          </h2>
+          <p className="mt-3 text-ink-muted">{t.rentals.maintenanceBody}</p>
+          <a
+            href={site.rentalsPhone.href}
+            className="mt-6 inline-block font-serif text-3xl text-navy"
+          >
+            {site.rentalsPhone.display}
+          </a>
+        </div>
+        <MaintenanceForm />
       </section>
 
       <section className="bg-navy px-4 py-16 text-white sm:px-6">
