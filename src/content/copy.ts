@@ -30,6 +30,7 @@ export const copy = {
       sold: "Sold",
       forSale: "For sale",
       forRent: "For rent",
+      rented: "Rented",
       callForRent: "Call for rent",
       perMonth: "/mo",
       land: "Land",
@@ -370,6 +371,9 @@ export const copy = {
         "Open a home for details, or call if you want to see it. We'll tell you the rent, what's available, and how to apply.",
       empty:
         "We're adding more rentals. Call or send a note and we'll tell you what's coming available.",
+      rentedTitle: "Recently rented",
+      rentedBody:
+        "These Cranford rentals are already rented. Call if you want to hear about homes that are coming available.",
       applyTitle: "Apply or ask a question",
       applyBody:
         "Call or use the form to ask about availability, a showing, or how to apply — including Section 8 questions. We handle it here, with a real person.",
@@ -454,6 +458,7 @@ export const copy = {
       sold: "Vendida",
       forSale: "En venta",
       forRent: "En renta",
+      rented: "Rentada",
       callForRent: "Llame por la renta",
       perMonth: "/mes",
       land: "Terreno",
@@ -794,6 +799,9 @@ export const copy = {
         "Abra una casa para ver detalles, o llame si quiere visitarla. Le decimos la renta, lo que hay disponible y cómo solicitar.",
       empty:
         "Estamos sumando más rentas. Llame o envíe una nota y le decimos lo que viene disponible.",
+      rentedTitle: "Rentadas recientemente",
+      rentedBody:
+        "Estas rentas de Cranford ya están ocupadas. Llame si quiere saber de casas que van a quedar disponibles.",
       applyTitle: "Solicitar o preguntar",
       applyBody:
         "Llame o use el formulario para preguntar por disponibilidad, una visita o cómo solicitar — incluso preguntas de Section 8. Lo manejamos aquí, con una persona de verdad.",

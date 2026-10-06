@@ -1,6 +1,6 @@
 import listingsData from "./listings-data.json";
 
-export type ListingStatus = "active" | "sold" | "land" | "rental";
+export type ListingStatus = "active" | "sold" | "land" | "rental" | "rented";
 export type ListingType = "house" | "land" | "multi-family";
 
 export type Listing = {
@@ -39,6 +39,10 @@ export function isRental(listing: Listing) {
   return listing.status === "rental";
 }
 
+export function isRentalHome(listing: Listing) {
+  return listing.status === "rental" || listing.status === "rented";
+}
+
 export function isForSale(listing: Listing) {
   return listing.status === "active" || listing.status === "land";
 }
@@ -49,6 +53,10 @@ export function activeListings() {
 
 export function rentalListings() {
   return listings.filter(isRental);
+}
+
+export function rentedListings() {
+  return listings.filter((listing) => listing.status === "rented");
 }
 
 export function soldListings() {

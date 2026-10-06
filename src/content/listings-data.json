@@ -18,6 +18,32 @@
     "summaryEs": "Casa de ladrillo en renta en el norte de Macon — 5 recámaras, 3 baños completos y unos 3,000 pies² en un solo piso. Oficina, comedor, patio cercado y fogata. Llame para la renta, disponibilidad y una visita."
   },
   {
+    "slug": "1474-westbury-dr-macon",
+    "status": "rented",
+    "type": "house",
+    "address": "1474 Westbury Dr",
+    "city": "Macon",
+    "state": "GA",
+    "zip": "31206",
+    "price": 0,
+    "image": "/listings/westbury.jpg",
+    "summary": "This Cranford Realty Group rental in Macon is currently rented. Call if you want to hear about homes that are coming available.",
+    "summaryEs": "Esta renta de Cranford Realty Group en Macon ya está ocupada. Llame si quiere saber de casas que van a quedar disponibles."
+  },
+  {
+    "slug": "311-lily-ave-macon",
+    "status": "rented",
+    "type": "house",
+    "address": "311 Lily Ave",
+    "city": "Macon",
+    "state": "GA",
+    "zip": "31204",
+    "price": 0,
+    "image": "/listings/lily-ave.jpg",
+    "summary": "This Cranford Realty Group rental in Macon is currently rented. Call if you want to hear about homes that are coming available.",
+    "summaryEs": "Esta renta de Cranford Realty Group en Macon ya está ocupada. Llame si quiere saber de casas que van a quedar disponibles."
+  },
+  {
     "slug": "515-amanda-way-macon",
     "status": "active",
     "type": "house",

@@ -15,7 +15,9 @@ export function ListingCard({ listing }: { listing: Listing }) {
         ? t.common.land
         : listing.status === "rental"
           ? t.common.forRent
-          : t.common.forSale;
+          : listing.status === "rented"
+            ? t.common.rented
+            : t.common.forSale;
 
   return (
     <Link

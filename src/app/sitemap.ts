@@ -35,7 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: absoluteUrl(`/listings/${listing.slug}`),
       lastModified,
       changeFrequency: "weekly" as const,
-      priority: listing.status === "sold" ? 0.5 : 0.8,
+      priority: listing.status === "sold" || listing.status === "rented" ? 0.5 : 0.8,
     })),
   ];
 }

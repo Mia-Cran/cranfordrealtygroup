@@ -224,9 +224,11 @@ export function listingMetadata(listing: Listing): Metadata {
       ? "Sold"
       : listing.status === "rental"
         ? "Home for rent"
-        : listing.type === "land"
-          ? "Land for sale"
-          : "Home for sale";
+        : listing.status === "rented"
+          ? "Rented"
+          : listing.type === "land"
+            ? "Land for sale"
+            : "Home for sale";
   const title = `${listing.address}, ${listing.city} GA | ${statusLabel} | Cranford Realty Group`;
   const priceBit = listing.price
     ? listing.status === "rental"
@@ -234,7 +236,9 @@ export function listingMetadata(listing: Listing): Metadata {
       : ` Listed at ${formatPrice(listing.price)}.`
     : listing.status === "rental"
       ? " Call for rent."
-      : "";
+      : listing.status === "rented"
+        ? " Currently rented."
+        : "";
   const bedBath =
     listing.beds && listing.baths
       ? ` ${listing.beds} bed, ${listing.baths} bath.`

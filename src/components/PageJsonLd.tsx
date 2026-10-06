@@ -1,6 +1,6 @@
 import { absoluteUrl, defaultOgImage } from "@/content/seo";
 import { site } from "@/content/site";
-import { isRental, type Listing } from "@/content/listings";
+import { isRentalHome, type Listing } from "@/content/listings";
 import { formatListingPrice } from "@/lib/format";
 
 type Crumb = { name: string; path: string };
@@ -64,12 +64,16 @@ export function ListingJsonLd({ listing }: { listing: Listing }) {
   const path = `/listings/${listing.slug}`;
   const url = absoluteUrl(path);
   const imageUrl = absoluteUrl(listing.image);
-  const rental = isRental(listing);
+  const rental = isRentalHome(listing);
   const availability =
-    listing.status === "sold"
+    listing.status === "sold" || listing.status === "rented"
       ? "https://schema.org/SoldOut"
       : "https://schema.org/InStock";
-  const priceLabels = { callForRent: "Call for rent", perMonth: "/mo" };
+  const priceLabels = {
+    callForRent: "Call for rent",
+    perMonth: "/mo",
+    rented: "Rented",
+  };
 
   const graph: Record<string, unknown>[] = [
     {

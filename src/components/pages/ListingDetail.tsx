@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { useLanguage } from "@/components/LanguageProvider";
-import { isRental, type Listing } from "@/content/listings";
+import { isRentalHome, type Listing } from "@/content/listings";
 import { formatListingPrice, formatNumber, formatPrice } from "@/lib/format";
 import { site } from "@/content/site";
 
@@ -14,7 +14,7 @@ export function ListingDetail({ listing }: { listing: Listing }) {
   const photos = listing.photos?.length ? listing.photos : [listing.image];
   const [photoIndex, setPhotoIndex] = useState(0);
   const currentPhoto = photos[photoIndex] ?? listing.image;
-  const rental = isRental(listing);
+  const rental = isRentalHome(listing);
   const phone = rental ? site.rentalsPhone : site.listingsPhone;
   const statusLabel =
     listing.status === "sold"
@@ -22,7 +22,9 @@ export function ListingDetail({ listing }: { listing: Listing }) {
       : listing.status === "land"
         ? t.common.land
         : rental
-          ? t.common.forRent
+          ? listing.status === "rented"
+            ? t.common.rented
+            : t.common.forRent
           : t.common.forSale;
 
   return (

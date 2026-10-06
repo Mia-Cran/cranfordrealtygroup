@@ -14,8 +14,9 @@ export function formatNumber(value: number) {
 
 export function formatListingPrice(
   listing: Pick<Listing, "status" | "price">,
-  labels: { callForRent: string; perMonth: string },
+  labels: { callForRent: string; perMonth: string; rented: string },
 ) {
+  if (listing.status === "rented") return labels.rented;
   if (listing.status === "rental") {
     if (!listing.price) return labels.callForRent;
     return `${formatPrice(listing.price)}${labels.perMonth}`;

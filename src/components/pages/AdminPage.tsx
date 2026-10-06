@@ -250,6 +250,7 @@ export function AdminPage() {
             >
               <option value="active">For sale</option>
               <option value="rental">For rent</option>
+              <option value="rented">Rented</option>
               <option value="land">Land</option>
               <option value="sold">Sold</option>
             </select>
@@ -412,7 +413,9 @@ export function AdminPage() {
                   ? listing.price
                     ? `$${listing.price.toLocaleString("en-US")}/mo`
                     : "Call for rent"
-                  : `$${listing.price.toLocaleString("en-US")}`}{" "}
+                  : listing.status === "rented"
+                    ? "Rented"
+                    : `$${listing.price.toLocaleString("en-US")}`}{" "}
                 ·{" "}
                 {listing.status === "sold"
                   ? "Sold"
@@ -420,7 +423,9 @@ export function AdminPage() {
                     ? "Land"
                     : listing.status === "rental"
                       ? "For rent"
-                      : "For sale"}
+                      : listing.status === "rented"
+                        ? "Rented"
+                        : "For sale"}
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -435,7 +440,7 @@ export function AdminPage() {
               >
                 Edit
               </button>
-              {listing.status !== "sold" && listing.status !== "rental" ? (
+              {listing.status !== "sold" && listing.status !== "rental" && listing.status !== "rented" ? (
                 <button
                   type="button"
                   className="rounded-full bg-cream px-4 py-2 text-sm font-semibold text-navy"

@@ -9,7 +9,9 @@ import { useListings } from "@/lib/useListings";
 
 export function RentalsPage() {
   const { t } = useLanguage();
-  const rentals = useListings().filter((listing) => listing.status === "rental");
+  const listings = useListings();
+  const rentals = listings.filter((listing) => listing.status === "rental");
+  const rented = listings.filter((listing) => listing.status === "rented");
 
   return (
     <div className="pb-20">
@@ -41,6 +43,21 @@ export function RentalsPage() {
         ) : (
           <p className="mt-10 text-ink-muted">{t.rentals.empty}</p>
         )}
+        {rented.length ? (
+          <div className="mt-16">
+            <h2 className="font-serif text-4xl text-navy">
+              {t.rentals.rentedTitle}
+            </h2>
+            <p className="mt-3 max-w-2xl leading-7 text-ink-muted">
+              {t.rentals.rentedBody}
+            </p>
+            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {rented.map((listing) => (
+                <ListingCard key={listing.slug} listing={listing} />
+              ))}
+            </div>
+          </div>
+        ) : null}
         <div className="mt-12 rounded-3xl bg-white p-8 ring-1 ring-navy/10">
           <h2 className="font-serif text-3xl text-navy">{t.rentals.applyTitle}</h2>
           <p className="mt-3 max-w-2xl leading-7 text-ink-muted">{t.rentals.applyBody}</p>
