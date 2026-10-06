@@ -3,7 +3,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { ListingCard } from "@/components/ListingCard";
 import { MaintenanceForm } from "@/components/MaintenanceForm";
-import { PageHero } from "@/components/pages/BuyPage";
 import { useLanguage } from "@/components/LanguageProvider";
 import { site } from "@/content/site";
 import { useListings } from "@/lib/useListings";
@@ -16,17 +15,21 @@ export function RentalsPage() {
 
   return (
     <div className="pb-20">
-      <PageHero title={t.rentals.title} subtitle={t.rentals.subtitle} />
-
-      <section className="bg-navy px-4 py-16 text-white sm:px-6">
+      <section className="bg-navy px-4 pt-10 pb-12 text-white sm:px-6 sm:pt-12 sm:pb-14">
         <div className="mx-auto max-w-6xl">
-          <h2 className="max-w-3xl font-serif text-4xl leading-tight sm:text-5xl">
+          <h1 className="max-w-4xl font-serif text-4xl leading-tight sm:text-6xl">
+            {t.rentals.title}
+          </h1>
+          <p className="mt-4 max-w-2xl text-lg leading-8 text-white/80">
+            {t.rentals.subtitle}
+          </p>
+          <h2 className="mt-8 max-w-3xl font-serif text-4xl leading-tight sm:mt-10 sm:text-5xl">
             {t.rentals.landlordTitle}
           </h2>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-white/80">
+          <p className="mt-4 max-w-2xl text-lg leading-8 text-white/80">
             {t.rentals.landlordBody}
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-wrap gap-3">
             <a
               href="#owner-form"
               className="inline-flex rounded-full bg-gold px-6 py-3 text-sm font-semibold text-navy"
