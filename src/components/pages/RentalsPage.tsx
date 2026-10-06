@@ -1,75 +1,63 @@
 "use client";
 
 import { ContactForm } from "@/components/ContactForm";
+import { ListingCard } from "@/components/ListingCard";
 import { PageHero } from "@/components/pages/BuyPage";
 import { useLanguage } from "@/components/LanguageProvider";
 import { site } from "@/content/site";
+import { useListings } from "@/lib/useListings";
 
 export function RentalsPage() {
   const { t } = useLanguage();
-  const hasProfile = Boolean(site.zillow.profileUrl);
+  const rentals = useListings().filter((listing) => listing.status === "rental");
 
   return (
     <div className="pb-20">
       <PageHero title={t.rentals.title} subtitle={t.rentals.subtitle} />
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <div className="grid gap-6 lg:grid-cols-2">
-          <article className="rounded-3xl bg-white p-8 ring-1 ring-navy/10">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-dark">
-              Zillow
-            </p>
-            <h2 className="mt-3 font-serif text-3xl text-navy">
-              {t.rentals.zillowTitle}
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div className="max-w-2xl">
+            <h2 className="font-serif text-4xl text-navy">
+              {t.rentals.availableTitle}
             </h2>
-            <p className="mt-4 leading-7 text-ink-muted">{t.rentals.zillowBody}</p>
-            <div className="mt-6 grid gap-3">
-              {hasProfile ? (
-                <a
-                  href={site.zillow.profileUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-navy px-5 py-3 text-sm font-semibold text-white"
-                >
-                  {t.rentals.ourListings}
-                </a>
-              ) : null}
-              <a
-                href={site.zillow.maconRentals}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-navy/15 px-5 py-3 text-sm font-semibold text-navy"
-              >
-                {t.rentals.browseMacon}
-              </a>
-              <a
-                href={site.zillow.warnerRobinsRentals}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-navy/15 px-5 py-3 text-sm font-semibold text-navy"
-              >
-                {t.rentals.browseWarner}
-              </a>
-            </div>
-          </article>
-          <article className="rounded-3xl bg-white p-8 ring-1 ring-navy/10">
-            <h2 className="font-serif text-3xl text-navy">{t.rentals.applyTitle}</h2>
-            <p className="mt-4 leading-7 text-ink-muted">{t.rentals.applyBody}</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href={site.rentalsPhone.href}
-                className="inline-flex rounded-full bg-gold px-5 py-3 text-sm font-semibold text-navy"
-              >
-                {t.common.call} {site.rentalsPhone.display}
-              </a>
-              <a
-                href="#rental-form"
-                className="inline-flex rounded-full border border-navy/15 px-5 py-3 text-sm font-semibold text-navy"
-              >
-                {t.rentals.cta}
-              </a>
-            </div>
-          </article>
+            <p className="mt-3 leading-7 text-ink-muted">
+              {t.rentals.availableBody}
+            </p>
+          </div>
+          <a
+            href={site.rentalsPhone.href}
+            className="inline-flex rounded-full bg-gold px-5 py-3 text-sm font-semibold text-navy"
+          >
+            {t.common.call} {site.rentalsPhone.display}
+          </a>
+        </div>
+        {rentals.length ? (
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {rentals.map((listing) => (
+              <ListingCard key={listing.slug} listing={listing} />
+            ))}
+          </div>
+        ) : (
+          <p className="mt-10 text-ink-muted">{t.rentals.empty}</p>
+        )}
+        <div className="mt-12 rounded-3xl bg-white p-8 ring-1 ring-navy/10">
+          <h2 className="font-serif text-3xl text-navy">{t.rentals.applyTitle}</h2>
+          <p className="mt-3 max-w-2xl leading-7 text-ink-muted">{t.rentals.applyBody}</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href={site.rentalsPhone.href}
+              className="inline-flex rounded-full bg-navy px-5 py-3 text-sm font-semibold text-white"
+            >
+              {t.common.call} {site.rentalsPhone.display}
+            </a>
+            <a
+              href="#rental-form"
+              className="inline-flex rounded-full border border-navy/15 px-5 py-3 text-sm font-semibold text-navy"
+            >
+              {t.rentals.cta}
+            </a>
+          </div>
         </div>
         <p className="mt-6 text-xs text-ink-muted">{t.rentals.disclaimer}</p>
       </section>

@@ -1,25 +1,34 @@
 [
   {
     "slug": "104-saint-thomas-pl-macon",
-    "status": "active",
+    "status": "rental",
     "type": "house",
     "address": "104 Saint Thomas Pl",
     "city": "Macon",
     "state": "GA",
     "zip": "31210",
-    "price": 355000,
-    "originalPrice": 360000,
-    "alert": "Price reduction: $5,000 off — now $355,000",
-    "alertEs": "Reducción de precio: $5,000 menos — ahora $355,000",
+    "price": 0,
     "beds": 5,
     "baths": 3,
     "sqft": 3013,
     "acres": 0.65,
     "yearBuilt": 1989,
-    "mls": "183697",
     "image": "/listings/104-saint-thomas.jpg",
-    "summary": "North Macon brick home with 5 bedrooms, 3 full baths, and about 3,000 sq ft on one floor. Office, dining room, fenced yard, and a firepit. Call Bertha or Maria for a showing.",
-    "summaryEs": "Casa de ladrillo en el norte de Macon con 5 recámaras, 3 baños completos y unos 3,000 pies² en un solo piso. Oficina, comedor, patio cercado y fogata. Llame a Bertha o Maria para visitarla."
+    "summary": "North Macon brick home for rent — 5 bedrooms, 3 full baths, and about 3,000 sq ft on one floor. Office, dining room, fenced yard, and a firepit. Call for rent, availability, and a showing.",
+    "summaryEs": "Casa de ladrillo en renta en el norte de Macon — 5 recámaras, 3 baños completos y unos 3,000 pies² en un solo piso. Oficina, comedor, patio cercado y fogata. Llame para la renta, disponibilidad y una visita."
+  },
+  {
+    "slug": "1474-westbury-dr-macon",
+    "status": "rental",
+    "type": "house",
+    "address": "1474 Westbury Dr",
+    "city": "Macon",
+    "state": "GA",
+    "zip": "31206",
+    "price": 0,
+    "image": "/listings/photo-coming-soon.jpg",
+    "summary": "Cranford Realty Group rental in Macon. Call to ask about rent, availability, and a showing. A photo will be added here soon.",
+    "summaryEs": "Renta de Cranford Realty Group en Macon. Llame para preguntar por la renta, disponibilidad y una visita. Pronto agregaremos una foto."
   },
   {
     "slug": "515-amanda-way-macon",

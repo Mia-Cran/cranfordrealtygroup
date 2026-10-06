@@ -29,6 +29,9 @@ export const copy = {
       office: "Office",
       sold: "Sold",
       forSale: "For sale",
+      forRent: "For rent",
+      callForRent: "Call for rent",
+      perMonth: "/mo",
       land: "Land",
       beds: "beds",
       baths: "baths",
@@ -36,6 +39,7 @@ export const copy = {
       acres: "acres",
       requestShowing: "Ask about this home",
       backToListings: "Back to homes",
+      backToRentals: "Back to rentals",
       skip: "Skip to content",
       listingsLine: "Homes for sale",
       rentalsLine: "Rentals",
@@ -66,7 +70,7 @@ export const copy = {
         "Want a number for your house? We'll tell you what it can sell for and what the next step actually is.",
       rentTitle: "Rent",
       rentBody:
-        "We list rentals on Zillow Rental Manager. See what's open, apply there, or call us first.",
+        "See Cranford Realty Group homes for rent on this site — then call or send a note to ask about rent, a showing, or how to apply.",
     },
     featured: {
       title: "Homes we're working on now",
@@ -359,17 +363,16 @@ export const copy = {
     rentals: {
       title: "Rental homes",
       subtitle:
-        "Looking for a place to rent — or own a rental and want a local team to handle it? Start here.",
+        "These are Cranford Realty Group rentals — not every rental in town. Looking for a place, or own a rental and want a local team to handle it? Start here.",
       cta: "Ask about a rental",
-      zillowTitle: "Listed on Zillow",
-      zillowBody:
-        "Zillow does not let us put their Rental Manager dashboard on this website. What we can do is send you to the live listings and applications, and keep a direct line to our team — including Nick Dominy, who works with rental property as a landlord.",
-      ourListings: "Our rentals on Zillow",
-      browseMacon: "Browse Macon rentals",
-      browseWarner: "Browse Warner Robins rentals",
+      availableTitle: "Our rentals",
+      availableBody:
+        "Open a home for details, or call if you want to see it. We'll tell you the rent, what's available, and how to apply.",
+      empty:
+        "We're adding more rentals. Call or send a note and we'll tell you what's coming available.",
       applyTitle: "Apply or ask a question",
       applyBody:
-        "Use Zillow to apply and upload documents. Use the form or the phone if you want to talk through availability, showing times, or Section 8 before you apply.",
+        "Call or use the form to ask about availability, a showing, or how to apply — including Section 8 questions. We handle it here, with a real person.",
       landlordTitle: "Tired of managing your rental?",
       landlordBody:
         "We're building toward 10+ Middle Georgia rentals — and looking for owners who are ready to stop handling tenants, showings, and late-night texts themselves. Hand the day-to-day to a local bilingual family team. Tell us the address and we'll call you back.",
@@ -377,7 +380,7 @@ export const copy = {
       landlordSteps: [
         {
           title: "List it clearly",
-          body: "We put your rental on Zillow Rental Manager with the details renters need — so you are not rewriting the same ad every month.",
+          body: "We put your rental on this website with the details renters need — so you are not rewriting the same ad every month.",
         },
         {
           title: "Show the home",
@@ -385,7 +388,7 @@ export const copy = {
         },
         {
           title: "Screen applicants",
-          body: "Applications and screening run through Zillow. You stay in the loop on who is serious — without sorting every inquiry alone.",
+          body: "We take applications and screen renters. You stay in the loop on who is serious — without sorting every inquiry alone.",
         },
         {
           title: "Stay reachable",
@@ -397,7 +400,7 @@ export const copy = {
       ownerFormBody:
         "Address, city, and a phone number is enough. We'll call or text you back about listing and management.",
       disclaimer:
-        "Zillow and Zillow Rental Manager are trademarks of Zillow, Inc. Listings, applications, and screening are handled on Zillow's site.",
+        "Availability and rent can change. Call to confirm before you make plans.",
     },
     mortgage: {
       price: "Home price",
@@ -450,6 +453,9 @@ export const copy = {
       office: "Oficina",
       sold: "Vendida",
       forSale: "En venta",
+      forRent: "En renta",
+      callForRent: "Llame por la renta",
+      perMonth: "/mes",
       land: "Terreno",
       beds: "recámaras",
       baths: "baños",
@@ -457,6 +463,7 @@ export const copy = {
       acres: "acres",
       requestShowing: "Preguntar por esta casa",
       backToListings: "Volver a las casas",
+      backToRentals: "Volver a las rentas",
       skip: "Saltar al contenido",
       listingsLine: "Casas en venta",
       rentalsLine: "Rentas",
@@ -487,7 +494,7 @@ export const copy = {
         "¿Quiere un número para su casa? Le decimos por cuánto puede venderse y cuál es el siguiente paso.",
       rentTitle: "Rentar",
       rentBody:
-        "Publicamos rentas en Zillow Rental Manager. Vea lo disponible, solicite allí o llámenos primero.",
+        "Vea en este sitio las casas en renta de Cranford Realty Group — luego llame o envíe una nota para preguntar por la renta, una visita o cómo solicitar.",
     },
     featured: {
       title: "Casas en las que trabajamos ahora",
@@ -780,17 +787,16 @@ export const copy = {
     rentals: {
       title: "Casas en renta",
       subtitle:
-        "¿Busca dónde rentar — o tiene una propiedad y quiere un equipo local que se encargue? Empiece aquí.",
+        "Estas son rentas de Cranford Realty Group — no todas las rentas del pueblo. ¿Busca dónde rentar, o tiene una propiedad y quiere un equipo local que se encargue? Empiece aquí.",
       cta: "Preguntar por una renta",
-      zillowTitle: "Anunciadas en Zillow",
-      zillowBody:
-        "Zillow no permite poner su panel de Rental Manager en este sitio. Lo que sí podemos hacer es enviarle a los anuncios y solicitudes en vivo, y dejarle una línea directa con nuestro equipo — incluido Nick Dominy, quien trabaja con propiedades en renta como arrendador.",
-      ourListings: "Nuestras rentas en Zillow",
-      browseMacon: "Ver rentas en Macon",
-      browseWarner: "Ver rentas en Warner Robins",
+      availableTitle: "Nuestras rentas",
+      availableBody:
+        "Abra una casa para ver detalles, o llame si quiere visitarla. Le decimos la renta, lo que hay disponible y cómo solicitar.",
+      empty:
+        "Estamos sumando más rentas. Llame o envíe una nota y le decimos lo que viene disponible.",
       applyTitle: "Solicitar o preguntar",
       applyBody:
-        "Use Zillow para solicitar y subir documentos. Use el formulario o el teléfono si quiere hablar de disponibilidad, visitas o Section 8 antes de aplicar.",
+        "Llame o use el formulario para preguntar por disponibilidad, una visita o cómo solicitar — incluso preguntas de Section 8. Lo manejamos aquí, con una persona de verdad.",
       landlordTitle: "¿Cansado de administrar su renta?",
       landlordBody:
         "Estamos armando una cartera de 10+ rentas en el centro de Georgia — y buscamos dueños listos para dejar de manejar inquilinos, visitas y textos a deshora. Deje el día a día a un equipo familiar bilingüe local. Díganos la dirección y le llamamos.",
@@ -798,7 +804,7 @@ export const copy = {
       landlordSteps: [
         {
           title: "Anuncio claro",
-          body: "Publicamos su renta en Zillow Rental Manager con lo que el inquilino necesita — sin que usted reescriba el mismo anuncio cada mes.",
+          body: "Publicamos su renta en este sitio con lo que el inquilino necesita — sin que usted reescriba el mismo anuncio cada mes.",
         },
         {
           title: "Visitas",
@@ -806,7 +812,7 @@ export const copy = {
         },
         {
           title: "Filtrar solicitantes",
-          body: "Las solicitudes e investigación van por Zillow. Usted se entera de quién va en serio — sin ordenar cada consulta solo.",
+          body: "Recibimos solicitudes y filtramos inquilinos. Usted se entera de quién va en serio — sin ordenar cada consulta solo.",
         },
         {
           title: "Siempre alcanzables",
@@ -818,7 +824,7 @@ export const copy = {
       ownerFormBody:
         "Con la dirección, la ciudad y un teléfono basta. Le llamamos o le escribimos sobre el anuncio y la administración.",
       disclaimer:
-        "Zillow y Zillow Rental Manager son marcas de Zillow, Inc. Los anuncios, solicitudes e investigación se manejan en el sitio de Zillow.",
+        "La disponibilidad y la renta pueden cambiar. Llame para confirmar antes de hacer planes.",
     },
     mortgage: {
       price: "Precio de la casa",

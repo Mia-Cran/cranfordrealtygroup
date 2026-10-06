@@ -127,7 +127,7 @@ export function JsonLd() {
             name: "Do you help with rental properties?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Yes. Renters can apply through Zillow Rental Manager. Landlords who are tired of day-to-day management can list with our local bilingual team. Call (478) 737-4973 or use the form on our rentals page.",
+              text: "Yes. Cranford Realty Group rental homes are listed on this website. Call (478) 737-4973 or use the form on our rentals page to ask about rent, a showing, or listing a property you own.",
             },
           },
           {

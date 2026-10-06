@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { useLanguage } from "@/components/LanguageProvider";
-import type { Listing } from "@/content/listings";
-import { formatNumber, formatPrice } from "@/lib/format";
+import { isRental, type Listing } from "@/content/listings";
+import { formatListingPrice, formatNumber, formatPrice } from "@/lib/format";
 import { site } from "@/content/site";
 
 export function ListingDetail({ listing }: { listing: Listing }) {
@@ -14,12 +14,16 @@ export function ListingDetail({ listing }: { listing: Listing }) {
   const photos = listing.photos?.length ? listing.photos : [listing.image];
   const [photoIndex, setPhotoIndex] = useState(0);
   const currentPhoto = photos[photoIndex] ?? listing.image;
+  const rental = isRental(listing);
+  const phone = rental ? site.rentalsPhone : site.listingsPhone;
   const statusLabel =
     listing.status === "sold"
       ? t.common.sold
       : listing.status === "land"
         ? t.common.land
-        : t.common.forSale;
+        : rental
+          ? t.common.forRent
+          : t.common.forSale;
 
   return (
     <div className="pb-20">
@@ -54,8 +58,11 @@ export function ListingDetail({ listing }: { listing: Listing }) {
       ) : null}
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_0.8fr]">
         <div>
-          <Link href="/listings" className="text-sm font-semibold text-navy">
-            ← {t.common.backToListings}
+          <Link
+            href={rental ? "/rentals" : "/listings"}
+            className="text-sm font-semibold text-navy"
+          >
+            ← {rental ? t.common.backToRentals : t.common.backToListings}
           </Link>
           <p className="mt-6 text-sm uppercase tracking-[0.2em] text-gold-dark">
             {statusLabel}
@@ -75,8 +82,8 @@ export function ListingDetail({ listing }: { listing: Listing }) {
             </div>
           ) : null}
           <p className="mt-6 font-serif text-4xl text-navy">
-            {formatPrice(listing.price)}
-            {listing.originalPrice ? (
+            {formatListingPrice(listing, t.common)}
+            {listing.status !== "rental" && listing.originalPrice ? (
               <span className="ml-3 text-2xl font-sans font-normal text-ink-muted line-through">
                 {formatPrice(listing.originalPrice)}
               </span>
@@ -112,12 +119,12 @@ export function ListingDetail({ listing }: { listing: Listing }) {
           <h2 className="font-serif text-3xl text-navy">{t.listing.next}</h2>
           <p className="mt-3 text-sm leading-6 text-ink-muted">{t.listing.nextBody}</p>
           <a
-            href={site.listingsPhone.href}
+            href={phone.href}
             className="mt-6 mb-6 inline-flex w-full items-center justify-center rounded-full bg-navy px-4 py-3 text-sm font-semibold text-white"
           >
-            {t.common.call} {site.listingsPhone.display}
+            {t.common.call} {phone.display}
           </a>
-          <ContactForm defaultInterest="buy" compact />
+          <ContactForm defaultInterest={rental ? "rent" : "buy"} compact />
         </div>
       </div>
     </div>
