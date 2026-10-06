@@ -66,7 +66,7 @@ export function RentalsPage() {
 
       <section
         id="owner-form"
-        className="mx-auto grid max-w-6xl gap-10 px-4 pb-16 sm:px-6 lg:grid-cols-2"
+        className="mx-auto grid max-w-6xl scroll-mt-28 gap-10 px-4 pb-16 sm:px-6 lg:grid-cols-2"
       >
         <div>
           <h2 className="font-serif text-4xl text-navy">
@@ -127,7 +127,7 @@ export function RentalsPage() {
         <p className="mt-6 text-xs text-ink-muted">{t.rentals.disclaimer}</p>
       </section>
 
-      <section id="maintenance" className="bg-white/60 py-16">
+      <section id="maintenance" className="scroll-mt-28 bg-white/60 py-16">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-dark">
@@ -150,7 +150,7 @@ export function RentalsPage() {
 
       <section
         id="rental-form"
-        className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2"
+        className="mx-auto grid max-w-6xl scroll-mt-28 gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2"
       >
         <div>
           <h2 className="font-serif text-4xl text-navy">{t.rentals.applyTitle}</h2>
