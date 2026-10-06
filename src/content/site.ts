@@ -47,18 +47,6 @@ export const site = {
     "Peach County",
     "Baldwin County",
   ],
-  /**
-   * Zillow Rental Manager
-   * Paste your public Zillow profile URL in profileUrl so "Our rentals" opens
-   * YOUR listings. Example: https://www.zillow.com/profile/your-zillow-username
-   * The dashboard itself cannot be embedded on this site — Zillow does not allow it.
-   */
-  zillow: {
-    rentalManager: "https://www.zillow.com/rental-manager/",
-    profileUrl: "",
-    maconRentals: "https://www.zillow.com/macon-ga/rentals/",
-    warnerRobinsRentals: "https://www.zillow.com/warner-robins-ga/rentals/",
-  },
   team: [
     {
       name: "Maria Cranford",

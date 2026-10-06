@@ -6,6 +6,7 @@ import { ListingCard } from "@/components/ListingCard";
 import { PageHero } from "@/components/pages/BuyPage";
 import { useLanguage } from "@/components/LanguageProvider";
 import { useListings } from "@/lib/useListings";
+import { isForSale } from "@/content/listings";
 
 type Filter = "all" | "house" | "land";
 
@@ -16,7 +17,7 @@ export function ListingsPage() {
   const listings = useListings();
   const homes = useMemo(() => {
     return listings
-      .filter((listing) => listing.status !== "sold")
+      .filter(isForSale)
       .filter((listing) => {
         if (filter === "all") return true;
         if (filter === "land") return listing.type === "land";

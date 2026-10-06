@@ -225,13 +225,17 @@ export function AdminPage() {
             onChange={(zip) => setDraft((current) => ({ ...current, zip }))}
           />
           <Field
-            label="Price"
+            label="Price or monthly rent"
             type="number"
             value={draft.price ? String(draft.price) : ""}
             onChange={(price) =>
               setDraft((current) => ({ ...current, price: Number(price) || 0 }))
             }
           />
+          <p className="-mt-4 text-xs text-ink-muted">
+            Sale price for homes. Monthly rent for rentals. Leave blank to show
+            “Call for rent”.
+          </p>
           <label className="grid gap-2 text-sm">
             Status
             <select
@@ -245,6 +249,7 @@ export function AdminPage() {
               className="h-12 rounded-xl border border-navy/15 bg-cream px-4"
             >
               <option value="active">For sale</option>
+              <option value="rental">For rent</option>
               <option value="land">Land</option>
               <option value="sold">Sold</option>
             </select>
@@ -402,12 +407,20 @@ export function AdminPage() {
             <div>
               <p className="font-serif text-2xl text-navy">{listing.address}</p>
               <p className="text-sm text-ink-muted">
-                {listing.city} · ${listing.price.toLocaleString("en-US")} ·{" "}
+                {listing.city} ·{" "}
+                {listing.status === "rental"
+                  ? listing.price
+                    ? `$${listing.price.toLocaleString("en-US")}/mo`
+                    : "Call for rent"
+                  : `$${listing.price.toLocaleString("en-US")}`}{" "}
+                ·{" "}
                 {listing.status === "sold"
                   ? "Sold"
                   : listing.status === "land"
                     ? "Land"
-                    : "For sale"}
+                    : listing.status === "rental"
+                      ? "For rent"
+                      : "For sale"}
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -422,7 +435,7 @@ export function AdminPage() {
               >
                 Edit
               </button>
-              {listing.status !== "sold" ? (
+              {listing.status !== "sold" && listing.status !== "rental" ? (
                 <button
                   type="button"
                   className="rounded-full bg-cream px-4 py-2 text-sm font-semibold text-navy"

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/components/LanguageProvider";
 import type { Listing } from "@/content/listings";
-import { formatNumber, formatPrice } from "@/lib/format";
+import { formatListingPrice, formatNumber } from "@/lib/format";
 
 export function ListingCard({ listing }: { listing: Listing }) {
   const { t, locale } = useLanguage();
@@ -13,7 +13,9 @@ export function ListingCard({ listing }: { listing: Listing }) {
       ? t.common.sold
       : listing.status === "land"
         ? t.common.land
-        : t.common.forSale;
+        : listing.status === "rental"
+          ? t.common.forRent
+          : t.common.forSale;
 
   return (
     <Link
@@ -37,7 +39,9 @@ export function ListingCard({ listing }: { listing: Listing }) {
         </span>
       </div>
       <div className="grid gap-2 p-5">
-        <p className="font-serif text-3xl text-navy">{formatPrice(listing.price)}</p>
+        <p className="font-serif text-3xl text-navy">
+          {formatListingPrice(listing, t.common)}
+        </p>
         <p className="font-medium text-ink">{listing.address}</p>
         <p className="text-sm text-ink-muted">
           {listing.city}, {listing.state} {listing.zip}

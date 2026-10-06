@@ -1,7 +1,7 @@
 import { absoluteUrl, defaultOgImage } from "@/content/seo";
 import { site } from "@/content/site";
-import type { Listing } from "@/content/listings";
-import { formatPrice } from "@/lib/format";
+import { isRental, type Listing } from "@/content/listings";
+import { formatListingPrice } from "@/lib/format";
 
 type Crumb = { name: string; path: string };
 
@@ -64,10 +64,12 @@ export function ListingJsonLd({ listing }: { listing: Listing }) {
   const path = `/listings/${listing.slug}`;
   const url = absoluteUrl(path);
   const imageUrl = absoluteUrl(listing.image);
+  const rental = isRental(listing);
   const availability =
     listing.status === "sold"
       ? "https://schema.org/SoldOut"
       : "https://schema.org/InStock";
+  const priceLabels = { callForRent: "Call for rent", perMonth: "/mo" };
 
   const graph: Record<string, unknown>[] = [
     {
@@ -91,8 +93,8 @@ export function ListingJsonLd({ listing }: { listing: Listing }) {
         {
           "@type": "ListItem",
           position: 2,
-          name: "Homes",
-          item: absoluteUrl("/listings"),
+          name: rental ? "Rentals" : "Homes",
+          item: absoluteUrl(rental ? "/rentals" : "/listings"),
         },
         {
           "@type": "ListItem",
@@ -113,8 +115,13 @@ export function ListingJsonLd({ listing }: { listing: Listing }) {
       datePosted: new Date().toISOString().slice(0, 10),
       offers: {
         "@type": "Offer",
-        price: listing.price,
-        priceCurrency: "USD",
+        ...(listing.price
+          ? {
+              price: listing.price,
+              priceCurrency: "USD",
+              ...(rental ? { unitText: "MONTH" } : {}),
+            }
+          : {}),
         availability,
         url,
         seller: { "@id": `${site.url}/#organization` },
@@ -148,7 +155,7 @@ export function ListingJsonLd({ listing }: { listing: Listing }) {
         {
           "@type": "PropertyValue",
           name: "Price display",
-          value: formatPrice(listing.price),
+          value: formatListingPrice(listing, priceLabels),
         },
         ...(listing.mls
           ? [

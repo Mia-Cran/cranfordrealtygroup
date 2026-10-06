@@ -146,14 +146,14 @@ export const pages = {
   },
   rentals: {
     title:
-      "Rentals & Landlord Help in Middle Georgia | Cranford Realty Group",
+      "Middle Georgia Rentals | Cranford Realty Group",
     description:
-      "Find a Middle Georgia rental on Zillow, or list yours with Cranford Realty Group. We help landlords in Macon, Warner Robins, Perry, Byron, and nearby who are ready to stop managing day-to-day.",
+      "See Cranford Realty Group rental homes in Macon and Middle Georgia. Call (478) 737-4973 to ask about rent, a showing, or listing your rental with our bilingual team.",
     path: "/rentals",
     keywords: [
       "Macon rentals",
-      "Warner Robins apartments for rent",
-      "Zillow Rental Manager Macon",
+      "Cranford Realty Group rentals",
+      "homes for rent Macon GA",
       "landlord property management Middle Georgia",
       "tired of managing rental Macon",
       ...siteKeywords,
@@ -219,11 +219,19 @@ export function listingMetadata(listing: Listing): Metadata {
   const statusLabel =
     listing.status === "sold"
       ? "Sold"
-      : listing.type === "land"
-        ? "Land for sale"
-        : "Home for sale";
+      : listing.status === "rental"
+        ? "Home for rent"
+        : listing.type === "land"
+          ? "Land for sale"
+          : "Home for sale";
   const title = `${listing.address}, ${listing.city} GA | ${statusLabel} | Cranford Realty Group`;
-  const priceBit = listing.price ? ` Listed at ${formatPrice(listing.price)}.` : "";
+  const priceBit = listing.price
+    ? listing.status === "rental"
+      ? ` Rent ${formatPrice(listing.price)}/mo.`
+      : ` Listed at ${formatPrice(listing.price)}.`
+    : listing.status === "rental"
+      ? " Call for rent."
+      : "";
   const bedBath =
     listing.beds && listing.baths
       ? ` ${listing.beds} bed, ${listing.baths} bath.`
@@ -239,7 +247,9 @@ export function listingMetadata(listing: Listing): Metadata {
     image: listing.image,
     imageAlt: `${listing.address} in ${listing.city}, Georgia`,
     keywords: [
-      `${listing.city} homes for sale`,
+      listing.status === "rental"
+        ? `${listing.city} homes for rent`
+        : `${listing.city} homes for sale`,
       `${listing.address} ${listing.city}`,
       `realtor ${listing.city} GA`,
       ...siteKeywords,

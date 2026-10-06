@@ -9,6 +9,7 @@ import { TeamGrid } from "@/components/TeamGrid";
 import { useLanguage } from "@/components/LanguageProvider";
 import { site } from "@/content/site";
 import { useListings } from "@/lib/useListings";
+import { isForSale } from "@/content/listings";
 
 const heroImage = "/hero-georgia.jpg";
 
@@ -22,7 +23,7 @@ export function HomePage() {
   const { t } = useLanguage();
   const router = useRouter();
   const listings = useListings();
-  const featured = listings.filter((listing) => listing.status !== "sold");
+  const featured = listings.filter(isForSale);
   const sold = listings
     .filter((listing) => listing.status === "sold")
     .slice(0, 3);
