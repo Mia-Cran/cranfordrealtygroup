@@ -1,6 +1,7 @@
 import { mkdir, writeFile } from "fs/promises";
 import path from "path";
 import { put } from "@vercel/blob";
+import { blobAccess } from "@/lib/listingsStore";
 import { NextResponse } from "next/server";
 import { isAdmin } from "@/lib/adminAuth";
 
@@ -37,11 +38,15 @@ export async function POST(request: Request) {
     .slice(0, 40)}.${ext}`;
 
   if (process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID) {
+    const access = blobAccess();
     const blob = await put(`listings/${safe}`, file, {
-      access: "public",
+      access,
       addRandomSuffix: false,
     });
-    return NextResponse.json({ url: blob.url });
+    // Private store: photos are served through our own /api/photo route.
+    return NextResponse.json({
+      url: access === "private" ? `/api/photo/${blob.pathname}` : blob.url,
+    });
   }
 
   const folder = path.join(process.cwd(), "public/listings");

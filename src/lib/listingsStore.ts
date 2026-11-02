@@ -1,6 +1,6 @@
 import { mkdir, readFile, writeFile } from "fs/promises";
 import path from "path";
-import { list, put } from "@vercel/blob";
+import { get, list, put } from "@vercel/blob";
 import seed from "@/content/listings-data.json";
 import type { Listing } from "@/content/listings";
 
@@ -15,8 +15,22 @@ function blobEnabled() {
   return Boolean(process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID);
 }
 
+/** The connected Blob store (BLOB_STORE_ID) is private; older token-based stores were public. */
+export function blobAccess(): "public" | "private" {
+  return process.env.BLOB_STORE_ID ? "private" : "public";
+}
+
 export async function loadListings(): Promise<Listing[]> {
-  if (blobEnabled()) {
+  if (blobEnabled() && blobAccess() === "private") {
+    try {
+      const result = await get(BLOB_PATH, { access: "private", useCache: false });
+      if (result && result.statusCode === 200) {
+        return (await new Response(result.stream).json()) as Listing[];
+      }
+    } catch {
+      // Nothing saved yet; fall back to the listings in the code.
+    }
+  } else if (blobEnabled()) {
     const { blobs } = await list({ prefix: "content/listings-data", limit: 10 });
     const match = blobs.find((blob) => blob.pathname.replace(/^\//, "") === BLOB_PATH) ?? blobs[0];
     if (match) {
@@ -40,7 +54,7 @@ export async function saveListings(listings: Listing[]) {
 
   if (blobEnabled()) {
     await put(BLOB_PATH, body, {
-      access: "public",
+      access: blobAccess(),
       addRandomSuffix: false,
       allowOverwrite: true,
       contentType: "application/json",
