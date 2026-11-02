@@ -36,7 +36,7 @@ export async function POST(request: Request) {
     .replace(/^-|-$/g, "")
     .slice(0, 40)}.${ext}`;
 
-  if (process.env.BLOB_READ_WRITE_TOKEN) {
+  if (process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID) {
     const blob = await put(`listings/${safe}`, file, {
       access: "public",
       addRandomSuffix: false,

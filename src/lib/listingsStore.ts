@@ -12,7 +12,7 @@ export const listingsFile = path.join(
 const BLOB_PATH = "content/listings-data.json";
 
 function blobEnabled() {
-  return Boolean(process.env.BLOB_READ_WRITE_TOKEN);
+  return Boolean(process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID);
 }
 
 export async function loadListings(): Promise<Listing[]> {
