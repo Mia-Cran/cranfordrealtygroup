@@ -45,6 +45,8 @@ export function AdminPage() {
   const [editingSlug, setEditingSlug] = useState<string | null>(null);
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
+  const [showSold, setShowSold] = useState(false);
+  const soldCount = listings.filter((item) => item.status === "sold").length;
 
   async function loadListings() {
     const response = await fetch("/api/admin/listings");
@@ -398,9 +400,22 @@ export function AdminPage() {
         {message ? <p className="text-sm text-navy">{message}</p> : null}
       </form>
 
-      <h2 className="mt-14 font-serif text-3xl text-navy">Homes on the site now</h2>
+      <div className="mt-14 flex flex-wrap items-end justify-between gap-3">
+        <h2 className="font-serif text-3xl text-navy">Homes on the site now</h2>
+        {soldCount ? (
+          <button
+            type="button"
+            className="text-sm font-semibold text-navy underline"
+            onClick={() => setShowSold((current) => !current)}
+          >
+            {showSold ? "Hide sold homes" : `Show sold homes (${soldCount})`}
+          </button>
+        ) : null}
+      </div>
       <div className="mt-6 grid gap-4">
-        {listings.map((listing) => (
+        {listings
+          .filter((listing) => showSold || listing.status !== "sold")
+          .map((listing) => (
           <article
             key={listing.slug}
             className="flex flex-wrap items-center justify-between gap-4 rounded-3xl bg-white p-5 ring-1 ring-navy/10"
