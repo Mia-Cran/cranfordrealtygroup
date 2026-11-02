@@ -9,7 +9,7 @@ import { TeamGrid } from "@/components/TeamGrid";
 import { useLanguage } from "@/components/LanguageProvider";
 import { site } from "@/content/site";
 import { useListings } from "@/lib/useListings";
-import { isForSale } from "@/content/listings";
+import { showOnHomesPage, soldLast } from "@/content/listings";
 
 const heroImage = "/hero-georgia.jpg";
 
@@ -23,7 +23,7 @@ export function HomePage() {
   const { t } = useLanguage();
   const router = useRouter();
   const listings = useListings();
-  const featured = listings.filter(isForSale);
+  const featured = listings.filter(showOnHomesPage).sort(soldLast);
   const cities = [...site.areas, ...site.areas];
 
   function onSearch(event: FormEvent<HTMLFormElement>) {

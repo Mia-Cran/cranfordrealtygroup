@@ -47,6 +47,18 @@ export function isForSale(listing: Listing) {
   return listing.status === "active" || listing.status === "land";
 }
 
+/** For-sale homes first, then homes we marked sold (only ones with our own photos, so they show with a SOLD band). */
+export function showOnHomesPage(listing: Listing) {
+  return (
+    isForSale(listing) ||
+    (listing.status === "sold" && !listing.image.includes("images.unsplash.com"))
+  );
+}
+
+export function soldLast(a: Listing, b: Listing) {
+  return Number(a.status === "sold") - Number(b.status === "sold");
+}
+
 export function activeListings() {
   return listings.filter(isForSale);
 }
