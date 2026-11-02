@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { SoldBanner } from "@/components/SoldBanner";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/components/LanguageProvider";
@@ -56,6 +57,7 @@ export function HomesSlideshow({
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/70 via-navy/25 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy/75 via-transparent to-transparent" />
+        {listing.status === "sold" ? <SoldBanner label={statusLabel} size="lg" /> : null}
 
         <div className="absolute inset-x-0 top-0 z-10">
           <div className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 sm:pt-8">

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
+import { SoldBanner } from "@/components/SoldBanner";
 import { useLanguage } from "@/components/LanguageProvider";
 import { isRentalHome, type Listing } from "@/content/listings";
 import { formatListingPrice, formatNumber, formatPrice } from "@/lib/format";
@@ -35,6 +36,7 @@ export function ListingDetail({ listing }: { listing: Listing }) {
           alt={`${listing.address}, ${listing.city}`}
           className="absolute inset-0 h-full w-full object-cover"
         />
+        {listing.status === "sold" ? <SoldBanner label={statusLabel} size="lg" /> : null}
         {photos.length > 1 ? (
           <p className="absolute bottom-4 right-4 rounded-full bg-navy/80 px-3 py-1 text-xs font-semibold text-white">
             {photoIndex + 1} / {photos.length}
