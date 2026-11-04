@@ -73,8 +73,8 @@ export function RentalsPage() {
             {t.rentals.ownerFormTitle}
           </h2>
           <p className="mt-3 text-ink-muted">{t.rentals.ownerFormBody}</p>
-          <p className="mt-6 font-serif text-2xl text-navy">Maria Cranford</p>
-          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold-dark">
+          <p className="mt-6 font-serif text-4xl text-navy">Maria Cranford</p>
+          <p className="mt-1 text-sm font-semibold uppercase tracking-[0.15em] text-gold-dark sm:text-base">
             {locale === "es" ? "Bróker y Administradora de Propiedades" : "Broker & Property Manager"}
           </p>
           <a
@@ -135,8 +135,8 @@ export function RentalsPage() {
               {t.rentals.maintenanceTitle}
             </h2>
             <p className="mt-3 text-ink-muted">{t.rentals.maintenanceBody}</p>
-            <p className="mt-6 font-serif text-2xl text-navy">Maria Cranford</p>
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold-dark">
+            <p className="mt-6 font-serif text-4xl text-navy">Maria Cranford</p>
+            <p className="mt-1 text-sm font-semibold uppercase tracking-[0.15em] text-gold-dark sm:text-base">
               {locale === "es" ? "Bróker y Administradora de Propiedades" : "Broker & Property Manager"}
             </p>
             <a
