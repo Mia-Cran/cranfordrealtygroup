@@ -96,12 +96,6 @@ export function RentalsPage() {
               {t.rentals.availableBody}
             </p>
           </div>
-          <a
-            href={site.rentalsPhone.href}
-            className="inline-flex rounded-full bg-gold px-5 py-3 text-sm font-semibold text-navy"
-          >
-            {locale === "es" ? "Llame a Maria" : "Call Maria"} {site.rentalsPhone.display}
-          </a>
         </div>
         {rentals.length ? (
           <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
