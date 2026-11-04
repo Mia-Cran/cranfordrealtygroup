@@ -20,7 +20,7 @@ export const NOV_2026_NEW_RENTALS: Listing[] = [
     price: 1650,
     beds: 4,
     baths: 2,
-    sqft: 1025,
+    sqft: 1300,
     yearBuilt: 1959,
     image: "/rentals/ingleside-2109/01.jpg",
     photos: photos("ingleside-2109", 15),
@@ -65,6 +65,13 @@ export const NOV_2026_NEW_RENTALS: Listing[] = [
     summaryEs: RENTED_ES,
   },
 ];
+
+/** Counts the basement in 2109 Ingleside's square footage (about 1,300 sq ft). */
+export function apply2109SqftUpdate(current: Listing[]): Listing[] {
+  return current.map((listing) =>
+    listing.slug === "2109-ingleside-ave-macon" ? { ...listing, sqft: 1300 } : listing,
+  );
+}
 
 /** Puts the real front photo on 3913 Blair Ct. */
 export function applyBlairPhotoUpdate(current: Listing[]): Listing[] {
