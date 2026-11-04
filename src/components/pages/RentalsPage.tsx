@@ -73,12 +73,13 @@ export function RentalsPage() {
             {t.rentals.ownerFormTitle}
           </h2>
           <p className="mt-3 text-ink-muted">{t.rentals.ownerFormBody}</p>
-          <p className="mt-6 text-sm font-semibold uppercase tracking-[0.15em] text-gold-dark">
-            Maria Cranford · {locale === "es" ? "Bróker y Administradora de Propiedades" : "Broker & Property Manager"}
+          <p className="mt-6 font-serif text-2xl text-navy">Maria Cranford</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold-dark">
+            {locale === "es" ? "Bróker y Administradora de Propiedades" : "Broker & Property Manager"}
           </p>
           <a
             href={site.rentalsPhone.href}
-            className="mt-1 inline-block font-serif text-3xl text-navy"
+            className="mt-2 inline-block font-serif text-3xl text-navy"
           >
             {site.rentalsPhone.display}
           </a>
@@ -134,12 +135,13 @@ export function RentalsPage() {
               {t.rentals.maintenanceTitle}
             </h2>
             <p className="mt-3 text-ink-muted">{t.rentals.maintenanceBody}</p>
-            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.15em] text-gold-dark">
-              Maria Cranford · {locale === "es" ? "Bróker y Administradora de Propiedades" : "Broker & Property Manager"}
+            <p className="mt-6 font-serif text-2xl text-navy">Maria Cranford</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold-dark">
+              {locale === "es" ? "Bróker y Administradora de Propiedades" : "Broker & Property Manager"}
             </p>
             <a
               href={site.rentalsPhone.href}
-              className="mt-1 inline-block font-serif text-3xl text-navy"
+              className="mt-2 inline-block font-serif text-3xl text-navy"
             >
               {site.rentalsPhone.display}
             </a>
