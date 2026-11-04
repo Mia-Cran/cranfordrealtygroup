@@ -1,7 +1,7 @@
 [
   {
     "slug": "104-saint-thomas-pl-macon",
-    "status": "rental",
+    "status": "rented",
     "type": "house",
     "address": "104 Saint Thomas Pl",
     "city": "Macon",
@@ -14,8 +14,8 @@
     "acres": 0.65,
     "yearBuilt": 1989,
     "image": "/listings/104-saint-thomas.jpg",
-    "summary": "North Macon brick home for rent — 5 bedrooms, 3 full baths, and about 3,000 sq ft on one floor. Office, dining room, fenced yard, and a firepit. Call for rent, availability, and a showing.",
-    "summaryEs": "Casa de ladrillo en renta en el norte de Macon — 5 recámaras, 3 baños completos y unos 3,000 pies² en un solo piso. Oficina, comedor, patio cercado y fogata. Llame para la renta, disponibilidad y una visita."
+    "summary": "This Cranford Realty Group rental in Macon is currently rented. Call if you want to hear about homes that are coming available.",
+    "summaryEs": "Esta renta de Cranford Realty Group en Macon ya está ocupada. Llame si quiere saber de casas que van a quedar disponibles."
   },
   {
     "slug": "1474-westbury-dr-macon",

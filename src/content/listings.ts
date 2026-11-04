@@ -27,6 +27,8 @@ export type Listing = {
   /** Short price/alert banner shown on listing surfaces */
   alert?: string;
   alertEs?: string;
+  /** RentRedi (or other) online application link for rentals */
+  applyUrl?: string;
 };
 
 export const listings: Listing[] = listingsData as Listing[];

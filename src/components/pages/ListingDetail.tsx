@@ -128,6 +128,16 @@ export function ListingDetail({ listing }: { listing: Listing }) {
           >
             {t.common.call} {phone.display}
           </a>
+          {listing.applyUrl && listing.status === "rental" ? (
+            <a
+              href={listing.applyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="-mt-2 mb-6 inline-flex w-full items-center justify-center rounded-full bg-gold px-4 py-3 text-sm font-semibold text-navy"
+            >
+              {locale === "es" ? "Solicitar en línea" : "Apply online"}
+            </a>
+          ) : null}
           <ContactForm defaultInterest={rental ? "rent" : "buy"} compact />
         </div>
       </div>

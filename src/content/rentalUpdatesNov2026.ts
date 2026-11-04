@@ -1,0 +1,78 @@
+import type { Listing } from "@/content/listings";
+
+const RENTED_EN =
+  "This Cranford Realty Group rental in Macon is currently rented. Call if you want to hear about homes that are coming available.";
+const RENTED_ES =
+  "Esta renta de Cranford Realty Group en Macon ya está ocupada. Llame si quiere saber de casas que van a quedar disponibles.";
+
+const photos = (dir: string, count: number) =>
+  Array.from({ length: count }, (_, i) => `/rentals/${dir}/${String(i + 1).padStart(2, "0")}.jpg`);
+
+export const NOV_2026_NEW_RENTALS: Listing[] = [
+  {
+    slug: "2109-ingleside-ave-macon",
+    status: "rental",
+    type: "multi-family",
+    address: "2109 Ingleside Ave",
+    city: "Macon",
+    state: "GA",
+    zip: "31204",
+    price: 1650,
+    beds: 4,
+    baths: 2,
+    sqft: 1025,
+    yearBuilt: 1959,
+    image: "/rentals/ingleside-2109/01.jpg",
+    photos: photos("ingleside-2109", 15),
+    applyUrl: "https://tenant.rentredi.com/getStarted/application/AGG121",
+    summary:
+      "Move-in ready 4 bedroom, 2 full bath duplex unit in Macon's Vineville area. Open living/dining combo, refrigerator, washer & dryer included, plus a basement for storage, a home office or flex space. Pet friendly ($300 one-time pet fee; waived for assistance animals). 12-month lease. Tenant pays power, water and gas (estimated about $150, $90 and $70 a month; estimates only, actual bills vary). Apply online or call Maria.",
+    summaryEs:
+      "Unidad dúplex de 4 recámaras y 2 baños completos en el área de Vineville en Macon. Sala/comedor abierto, refrigerador, lavadora y secadora incluidos, y sótano para almacenamiento, oficina o espacio flexible. Se aceptan mascotas (cuota única de $300; no aplica a animales de asistencia). Contrato de 12 meses. El inquilino paga luz, agua y gas (aprox. $150, $90 y $70 al mes; solo estimados). Solicite en línea o llame a Maria.",
+  },
+  {
+    slug: "2107-ingleside-ave-macon",
+    status: "rental",
+    type: "multi-family",
+    address: "2107 Ingleside Ave",
+    city: "Macon",
+    state: "GA",
+    zip: "31204",
+    price: 850,
+    beds: 1,
+    baths: 1,
+    sqft: 750,
+    yearBuilt: 1959,
+    image: "/rentals/ingleside-2107/01.jpg",
+    photos: photos("ingleside-2107", 9),
+    applyUrl: "https://tenant.rentredi.com/getStarted/application/LUV328",
+    summary:
+      "1 bedroom, 1 bath duplex unit in Macon's Vineville area with brand-new flooring and fresh paint throughout. Refrigerator, washer & dryer included. Pet friendly ($300 one-time pet fee; waived for assistance animals). 12-month lease. Tenant pays power, water and gas. Apply online or call Maria.",
+    summaryEs:
+      "Unidad dúplex de 1 recámara y 1 baño en el área de Vineville en Macon, con piso nuevo y pintura fresca. Refrigerador, lavadora y secadora incluidos. Se aceptan mascotas (cuota única de $300; no aplica a animales de asistencia). Contrato de 12 meses. El inquilino paga luz, agua y gas. Solicite en línea o llame a Maria.",
+  },
+  {
+    slug: "3913-blair-ct-macon",
+    status: "rented",
+    type: "house",
+    address: "3913 Blair Ct",
+    city: "Macon",
+    state: "GA",
+    zip: "31206",
+    price: 0,
+    image: "/listings/photo-coming-soon.jpg",
+    summary: RENTED_EN,
+    summaryEs: RENTED_ES,
+  },
+];
+
+/** Adds the November 2026 rentals that aren't on the site yet and marks 104 Saint Thomas as rented. */
+export function applyNov2026RentalUpdates(current: Listing[]): Listing[] {
+  const slugs = new Set(current.map((listing) => listing.slug));
+  const updated = current.map((listing) =>
+    listing.slug === "104-saint-thomas-pl-macon"
+      ? { ...listing, status: "rented" as const, price: 0, summary: RENTED_EN, summaryEs: RENTED_ES }
+      : listing,
+  );
+  return [...updated, ...NOV_2026_NEW_RENTALS.filter((listing) => !slugs.has(listing.slug))];
+}

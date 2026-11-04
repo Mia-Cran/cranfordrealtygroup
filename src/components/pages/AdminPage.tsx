@@ -32,6 +32,7 @@ function cleanListing(draft: Draft): Listing {
     acres: draft.acres ? Number(draft.acres) : undefined,
     yearBuilt: draft.yearBuilt ? Number(draft.yearBuilt) : undefined,
     mls: draft.mls || undefined,
+    applyUrl: draft.applyUrl?.trim() || undefined,
     summaryEs: draft.summaryEs || draft.summary,
   };
 }
@@ -317,6 +318,11 @@ export function AdminPage() {
                 acres: acres ? Number(acres) : undefined,
               }))
             }
+          />
+          <Field
+            label="Rental application link (optional)"
+            value={draft.applyUrl || ""}
+            onChange={(applyUrl) => setDraft((current) => ({ ...current, applyUrl }))}
           />
           <Field
             label="MLS number"

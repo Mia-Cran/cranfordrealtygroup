@@ -3,6 +3,7 @@ import path from "path";
 import { get, list, put } from "@vercel/blob";
 import seed from "@/content/listings-data.json";
 import type { Listing } from "@/content/listings";
+import { applyNov2026RentalUpdates } from "@/content/rentalUpdatesNov2026";
 
 export const listingsFile = path.join(
   process.cwd(),
@@ -20,7 +21,38 @@ export function blobAccess(): "public" | "private" {
   return process.env.BLOB_STORE_ID ? "private" : "public";
 }
 
+const MIGRATION_PATH = "content/migrations/2026-11-rentals.json";
+
+/** One-time update applied to the saved (Blob) listings, so later admin edits/removals stick. */
+async function applyMigrations(current: Listing[]): Promise<Listing[]> {
+  try {
+    const marker = await get(MIGRATION_PATH, { access: blobAccess(), useCache: false });
+    if (marker && marker.statusCode === 200) return current;
+  } catch {
+    // Not applied yet.
+  }
+  const next = applyNov2026RentalUpdates(current);
+  await saveListings(next);
+  await put(MIGRATION_PATH, '{"applied":true}', {
+    access: blobAccess(),
+    addRandomSuffix: false,
+    allowOverwrite: true,
+    contentType: "application/json",
+  });
+  return next;
+}
+
 export async function loadListings(): Promise<Listing[]> {
+  const current = await loadSavedListings();
+  if (!blobEnabled()) return current;
+  try {
+    return await applyMigrations(current);
+  } catch {
+    return current;
+  }
+}
+
+async function loadSavedListings(): Promise<Listing[]> {
   if (blobEnabled() && blobAccess() === "private") {
     try {
       const result = await get(BLOB_PATH, { access: "private", useCache: false });
