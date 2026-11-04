@@ -8,7 +8,7 @@ import { site } from "@/content/site";
 import { useListings } from "@/lib/useListings";
 
 export function RentalsPage() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const listings = useListings();
   const rentals = listings.filter((listing) => listing.status === "rental");
   const rented = listings.filter((listing) => listing.status === "rented");
@@ -73,9 +73,12 @@ export function RentalsPage() {
             {t.rentals.ownerFormTitle}
           </h2>
           <p className="mt-3 text-ink-muted">{t.rentals.ownerFormBody}</p>
+          <p className="mt-6 text-sm font-semibold uppercase tracking-[0.15em] text-gold-dark">
+            Maria Cranford · {locale === "es" ? "Bróker y Administradora de Propiedades" : "Broker & Property Manager"}
+          </p>
           <a
             href={site.rentalsPhone.href}
-            className="mt-6 inline-block font-serif text-3xl text-navy"
+            className="mt-1 inline-block font-serif text-3xl text-navy"
           >
             {site.rentalsPhone.display}
           </a>
@@ -137,9 +140,12 @@ export function RentalsPage() {
               {t.rentals.maintenanceTitle}
             </h2>
             <p className="mt-3 text-ink-muted">{t.rentals.maintenanceBody}</p>
+            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.15em] text-gold-dark">
+              Maria Cranford · {locale === "es" ? "Bróker y Administradora de Propiedades" : "Broker & Property Manager"}
+            </p>
             <a
               href={site.rentalsPhone.href}
-              className="mt-6 inline-block font-serif text-3xl text-navy"
+              className="mt-1 inline-block font-serif text-3xl text-navy"
             >
               {site.rentalsPhone.display}
             </a>
