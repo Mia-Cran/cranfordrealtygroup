@@ -100,8 +100,8 @@ export function HomesSlideshow({
             </p>
             <p className="mt-3 text-sm text-white/90">
               {[
-                listing.beds ? `${listing.beds} ${t.common.beds}` : null,
-                listing.baths ? `${listing.baths} ${t.common.baths}` : null,
+                listing.beds ? `${listing.beds} ${listing.beds === 1 ? (t.common.beds === "beds" ? "bed" : "recámara") : t.common.beds}` : null,
+                listing.baths ? `${listing.baths} ${listing.baths === 1 ? (t.common.baths === "baths" ? "bath" : "baño") : t.common.baths}` : null,
                 listing.sqft
                   ? `${formatNumber(listing.sqft)} ${t.common.sqft}`
                   : null,

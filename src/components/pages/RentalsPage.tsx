@@ -40,7 +40,7 @@ export function RentalsPage() {
               href={site.rentalsPhone.href}
               className="inline-flex rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white"
             >
-              {t.common.call} {site.rentalsPhone.display}
+              {locale === "es" ? "Llame a Maria" : "Call Maria"} {site.rentalsPhone.display}
             </a>
           </div>
         </div>
@@ -100,7 +100,7 @@ export function RentalsPage() {
             href={site.rentalsPhone.href}
             className="inline-flex rounded-full bg-gold px-5 py-3 text-sm font-semibold text-navy"
           >
-            {t.common.call} {site.rentalsPhone.display}
+            {locale === "es" ? "Llame a Maria" : "Call Maria"} {site.rentalsPhone.display}
           </a>
         </div>
         {rentals.length ? (

@@ -67,8 +67,8 @@ export function ListingCard({ listing }: { listing: Listing }) {
         </p>
         <p className="text-sm text-ink-muted">
           {[
-            listing.beds ? `${listing.beds} ${t.common.beds}` : null,
-            listing.baths ? `${listing.baths} ${t.common.baths}` : null,
+            listing.beds ? `${listing.beds} ${listing.beds === 1 ? (t.common.beds === "beds" ? "bed" : "recámara") : t.common.beds}` : null,
+            listing.baths ? `${listing.baths} ${listing.baths === 1 ? (t.common.baths === "baths" ? "bath" : "baño") : t.common.baths}` : null,
             listing.sqft ? `${formatNumber(listing.sqft)} ${t.common.sqft}` : null,
             listing.acres ? `${listing.acres} ${t.common.acres}` : null,
           ]
