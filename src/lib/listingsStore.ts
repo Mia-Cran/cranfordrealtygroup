@@ -3,7 +3,7 @@ import path from "path";
 import { get, list, put } from "@vercel/blob";
 import seed from "@/content/listings-data.json";
 import type { Listing } from "@/content/listings";
-import { applyNov2026RentalUpdates } from "@/content/rentalUpdatesNov2026";
+import { applyBlairPhotoUpdate, applyNov2026RentalUpdates } from "@/content/rentalUpdatesNov2026";
 
 export const listingsFile = path.join(
   process.cwd(),
@@ -21,24 +21,30 @@ export function blobAccess(): "public" | "private" {
   return process.env.BLOB_STORE_ID ? "private" : "public";
 }
 
-const MIGRATION_PATH = "content/migrations/2026-11-rentals.json";
+const MIGRATIONS: { path: string; apply: (current: Listing[]) => Listing[] }[] = [
+  { path: "content/migrations/2026-11-rentals.json", apply: applyNov2026RentalUpdates },
+  { path: "content/migrations/2026-11-blair-photo.json", apply: applyBlairPhotoUpdate },
+];
 
-/** One-time update applied to the saved (Blob) listings, so later admin edits/removals stick. */
+/** One-time updates applied to the saved (Blob) listings, so later admin edits/removals stick. */
 async function applyMigrations(current: Listing[]): Promise<Listing[]> {
-  try {
-    const marker = await get(MIGRATION_PATH, { access: blobAccess(), useCache: false });
-    if (marker && marker.statusCode === 200) return current;
-  } catch {
-    // Not applied yet.
+  let next = current;
+  for (const migration of MIGRATIONS) {
+    try {
+      const marker = await get(migration.path, { access: blobAccess(), useCache: false });
+      if (marker && marker.statusCode === 200) continue;
+    } catch {
+      // Not applied yet.
+    }
+    next = migration.apply(next);
+    await saveListings(next);
+    await put(migration.path, '{"applied":true}', {
+      access: blobAccess(),
+      addRandomSuffix: false,
+      allowOverwrite: true,
+      contentType: "application/json",
+    });
   }
-  const next = applyNov2026RentalUpdates(current);
-  await saveListings(next);
-  await put(MIGRATION_PATH, '{"applied":true}', {
-    access: blobAccess(),
-    addRandomSuffix: false,
-    allowOverwrite: true,
-    contentType: "application/json",
-  });
   return next;
 }
 

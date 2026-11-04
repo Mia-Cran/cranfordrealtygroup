@@ -60,11 +60,18 @@ export const NOV_2026_NEW_RENTALS: Listing[] = [
     state: "GA",
     zip: "31206",
     price: 0,
-    image: "/listings/photo-coming-soon.jpg",
+    image: "/rentals/blair-ct/01.jpg",
     summary: RENTED_EN,
     summaryEs: RENTED_ES,
   },
 ];
+
+/** Puts the real front photo on 3913 Blair Ct. */
+export function applyBlairPhotoUpdate(current: Listing[]): Listing[] {
+  return current.map((listing) =>
+    listing.slug === "3913-blair-ct-macon" ? { ...listing, image: "/rentals/blair-ct/01.jpg" } : listing,
+  );
+}
 
 /** Adds the November 2026 rentals that aren't on the site yet and marks 104 Saint Thomas as rented. */
 export function applyNov2026RentalUpdates(current: Listing[]): Listing[] {
