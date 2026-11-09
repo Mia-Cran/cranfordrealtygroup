@@ -73,43 +73,43 @@ export function ContactForm({
       className={`grid gap-4 ${compact ? "" : "rounded-3xl bg-white p-6 shadow-sm ring-1 ring-navy/10 sm:p-8"}`}
     >
       <div className="grid gap-4 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm">
+        <label className="grid min-w-0 gap-2 text-sm">
           {labels.name}
           <input
             required
             name="name"
             autoComplete="name"
-            className="h-12 rounded-xl border border-navy/15 bg-cream px-4 outline-none ring-gold/40 focus:ring-2"
+            className="h-12 w-full min-w-0 rounded-xl border border-navy/15 bg-cream px-4 outline-none ring-gold/40 focus:ring-2"
           />
         </label>
-        <label className="grid gap-2 text-sm">
+        <label className="grid min-w-0 gap-2 text-sm">
           {labels.phone}
           <input
             required
             name="phone"
             type="tel"
             autoComplete="tel"
-            className="h-12 rounded-xl border border-navy/15 bg-cream px-4 outline-none ring-gold/40 focus:ring-2"
+            className="h-12 w-full min-w-0 rounded-xl border border-navy/15 bg-cream px-4 outline-none ring-gold/40 focus:ring-2"
           />
         </label>
       </div>
-      <label className="grid gap-2 text-sm">
+      <label className="grid min-w-0 gap-2 text-sm">
         {labels.emailLabel}
         <input
           required
           name="email"
           type="email"
           autoComplete="email"
-          className="h-12 rounded-xl border border-navy/15 bg-cream px-4 outline-none ring-gold/40 focus:ring-2"
+          className="h-12 w-full min-w-0 rounded-xl border border-navy/15 bg-cream px-4 outline-none ring-gold/40 focus:ring-2"
         />
       </label>
       <div className="grid gap-4 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm">
+        <label className="grid min-w-0 gap-2 text-sm">
           {labels.interest}
           <select
             name="interest"
             defaultValue={defaultInterest}
-            className="h-12 rounded-xl border border-navy/15 bg-cream px-4 outline-none ring-gold/40 focus:ring-2"
+            className="h-12 w-full min-w-0 rounded-xl border border-navy/15 bg-cream px-4 outline-none ring-gold/40 focus:ring-2"
           >
             {interestKeys.map((key) => (
               <option key={key} value={key}>
@@ -118,16 +118,16 @@ export function ContactForm({
             ))}
           </select>
         </label>
-        <label className="grid gap-2 text-sm">
+        <label className="grid min-w-0 gap-2 text-sm">
           {labels.city}
           <input
             name="city"
             placeholder="Macon"
-            className="h-12 rounded-xl border border-navy/15 bg-cream px-4 outline-none ring-gold/40 focus:ring-2"
+            className="h-12 w-full min-w-0 rounded-xl border border-navy/15 bg-cream px-4 outline-none ring-gold/40 focus:ring-2"
           />
         </label>
       </div>
-      <label className="grid gap-2 text-sm">
+      <label className="grid min-w-0 gap-2 text-sm">
         {labels.notes}
         <textarea
           name="message"

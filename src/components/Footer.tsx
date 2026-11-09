@@ -14,10 +14,10 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
         <div className="md:col-span-2">
           <Image
-            src="/logo.png"
+            src="/logo-crg.png"
             alt={site.name}
-            width={651}
-            height={331}
+            width={799}
+            height={406}
             className="h-16 w-auto"
           />
           <p className="mt-4 max-w-md text-sm leading-6 text-white/70">

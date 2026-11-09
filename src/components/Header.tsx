@@ -25,10 +25,10 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link href="/" className="flex shrink-0 items-center" onClick={() => setOpen(false)}>
           <Image
-            src="/logo.png"
+            src="/logo-crg.png"
             alt={site.name}
-            width={651}
-            height={331}
+            width={799}
+            height={406}
             className="h-12 w-auto sm:h-14"
             priority
           />
