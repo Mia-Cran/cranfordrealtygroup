@@ -64,7 +64,8 @@ export const HUNTINGTON_LISTING: Listing = {
   beds: 3,
   baths: 1,
   image: "/listings/huntington/01.jpg",
-  photos: photos("huntington", 5),
+  // Front, kitchen, living room, dining room, 3 bedrooms, bathroom, back yard
+  photos: ["01", "03", "04", "06", "07", "08", "09", "05", "02"].map((n) => `/listings/huntington/${n}.jpg`),
   agent: "Mayra Dominy",
   summary:
     "Just listed: 3 bedroom, 1 bath brick ranch in Macon with new floors and an updated kitchen. Call Mayra at 478-733-1283 to see it.",
