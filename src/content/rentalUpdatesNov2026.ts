@@ -91,6 +91,10 @@ export function applyNov2026RentalUpdates(current: Listing[]): Listing[] {
   return [...updated, ...NOV_2026_NEW_RENTALS.filter((listing) => !slugs.has(listing.slug))];
 }
 
+const INGLESIDE_FRONT = "/listings/ingleside-2103/01.jpg";
+const INGLESIDE_ALERT = "New duplex listing coming soon!!";
+const INGLESIDE_ALERT_ES = "¡¡Nuevo dúplex a la venta muy pronto!!";
+
 /**
  * Ingleside is being sold instead of rented: drop the two rental cards and show one
  * "coming soon" for-sale card for the duplex until it's listed.
@@ -106,10 +110,10 @@ export function applyInglesideComingSoon(current: Listing[]): Listing[] {
     zip: "31204",
     price: 0,
     yearBuilt: 1959,
-    image: "/rentals/ingleside-2109/01.jpg",
-    photos: photos("ingleside-2109", 15),
-    alert: "Active listing coming soon!!!",
-    alertEs: "¡¡¡Próximamente a la venta!!!",
+    image: INGLESIDE_FRONT,
+    photos: [INGLESIDE_FRONT, ...photos("ingleside-2109", 15)],
+    alert: INGLESIDE_ALERT,
+    alertEs: INGLESIDE_ALERT_ES,
     summary:
       "Duplex in Macon's Vineville area coming to market soon. Two units: a 4 bedroom, 2 bath and a 1 bedroom, 1 bath. Call us for details before it's listed.",
     summaryEs:
@@ -117,4 +121,19 @@ export function applyInglesideComingSoon(current: Listing[]): Listing[] {
   };
   const ingleside = new Set(["2109-ingleside-ave-macon", "2107-ingleside-ave-macon", comingSoon.slug]);
   return [comingSoon, ...current.filter((listing) => !ingleside.has(listing.slug))];
+}
+
+/** New front photo and "New duplex listing coming soon!!" banner for 2103 Ingleside. */
+export function applyInglesideDuplexPhoto(current: Listing[]): Listing[] {
+  return current.map((listing) =>
+    listing.slug === "2103-ingleside-ave-macon"
+      ? {
+          ...listing,
+          image: INGLESIDE_FRONT,
+          photos: [INGLESIDE_FRONT, ...(listing.photos ?? []).filter((photo) => photo !== INGLESIDE_FRONT)],
+          alert: INGLESIDE_ALERT,
+          alertEs: INGLESIDE_ALERT_ES,
+        }
+      : listing,
+  );
 }

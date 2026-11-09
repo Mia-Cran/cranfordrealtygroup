@@ -8,6 +8,7 @@ import {
   apply2109SqftUpdate,
   applyBlairPhotoUpdate,
   applyInglesideComingSoon,
+  applyInglesideDuplexPhoto,
   applyNov2026RentalUpdates,
 } from "@/content/rentalUpdatesNov2026";
 
@@ -33,6 +34,7 @@ const MIGRATIONS: { path: string; apply: (current: Listing[]) => Listing[] }[] =
   { path: "content/migrations/2026-11-2109-sqft.json", apply: apply2109SqftUpdate },
   { path: "content/migrations/2026-11-rivoli-carillon.json", apply: applyNewListingsNov2026 },
   { path: "content/migrations/2026-11-ingleside-coming-soon.json", apply: applyInglesideComingSoon },
+  { path: "content/migrations/2026-11-ingleside-duplex-photo.json", apply: applyInglesideDuplexPhoto },
 ];
 
 /** One-time updates applied to the saved (Blob) listings, so later admin edits/removals stick. */
