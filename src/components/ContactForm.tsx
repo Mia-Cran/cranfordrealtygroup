@@ -109,7 +109,11 @@ export function ContactForm({
           <select
             name="interest"
             defaultValue={defaultInterest}
-            className="h-12 w-full min-w-0 rounded-xl border border-navy/15 bg-cream px-4 outline-none ring-gold/40 focus:ring-2"
+            className="h-12 w-full min-w-0 appearance-none rounded-xl border border-navy/15 bg-cream bg-[length:14px_14px] bg-[position:right_1rem_center] bg-no-repeat pl-4 pr-10 outline-none ring-gold/40 focus:ring-2"
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23102c4a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 8l5 5 5-5'/%3E%3C/svg%3E\")",
+            }}
           >
             {interestKeys.map((key) => (
               <option key={key} value={key}>
