@@ -17,7 +17,12 @@ export function ListingDetail({ listing }: { listing: Listing }) {
   const [photoIndex, setPhotoIndex] = useState(0);
   const currentPhoto = photos[photoIndex] ?? listing.image;
   const rental = isRentalHome(listing);
-  const phone = rental ? site.rentalsPhone : site.listingsPhone;
+  const agent = listing.agent ? site.team.find((member) => member.name === listing.agent) : undefined;
+  const phone = agent
+    ? { href: agent.phoneHref, display: agent.phoneDisplay }
+    : rental
+      ? site.rentalsPhone
+      : site.listingsPhone;
   const statusLabel =
     listing.status === "sold"
       ? t.common.sold
@@ -127,7 +132,7 @@ export function ListingDetail({ listing }: { listing: Listing }) {
             href={phone.href}
             className="mt-6 mb-6 inline-flex w-full items-center justify-center rounded-full bg-navy px-4 py-3 text-sm font-semibold text-white"
           >
-            {t.common.call} {phone.display}
+            {t.common.call} {agent ? `${agent.name.split(" ")[0]} · ` : ""}{phone.display}
           </a>
           {listing.applyUrl && listing.status === "rental" ? (
             <a

@@ -29,6 +29,8 @@ export type Listing = {
   alertEs?: string;
   /** RentRedi (or other) online application link for rentals */
   applyUrl?: string;
+  /** Team member (name as in site.team) who is the main contact for this listing */
+  agent?: string;
 };
 
 export const listings: Listing[] = listingsData as Listing[];

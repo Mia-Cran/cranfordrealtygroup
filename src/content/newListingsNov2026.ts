@@ -51,3 +51,29 @@ export function applyNewListingsNov2026(current: Listing[]): Listing[] {
   const slugs = new Set(current.map((listing) => listing.slug));
   return [...current, ...NOV_2026_NEW_LISTINGS.filter((listing) => !slugs.has(listing.slug))];
 }
+
+export const HUNTINGTON_LISTING: Listing = {
+  slug: "2581-huntington-dr-macon",
+  status: "active",
+  type: "house",
+  address: "2581 Huntington Dr",
+  city: "Macon",
+  state: "GA",
+  zip: "31204",
+  price: 149800,
+  beds: 3,
+  baths: 1,
+  image: "/listings/huntington/01.jpg",
+  photos: photos("huntington", 5),
+  agent: "Mayra Dominy",
+  summary:
+    "Just listed: 3 bedroom, 1 bath brick ranch in Macon with new floors and an updated kitchen. Call Mayra at 478-733-1283 to see it.",
+  summaryEs:
+    "Recién publicada: casa de ladrillo de una planta en Macon con 3 recámaras, 1 baño, pisos nuevos y cocina renovada. Llame a Mayra al 478-733-1283 para verla. Hablamos español.",
+};
+
+/** Adds 2581 Huntington Dr (Mayra's listing) to the active listings (once). */
+export function applyHuntingtonListing(current: Listing[]): Listing[] {
+  if (current.some((listing) => listing.slug === HUNTINGTON_LISTING.slug)) return current;
+  return [HUNTINGTON_LISTING, ...current];
+}
