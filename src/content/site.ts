@@ -115,6 +115,7 @@ export const nav = [
   { href: "/", key: "home" },
   { href: "/buy", key: "buy" },
   { href: "/sell", key: "sell" },
+  { href: "/mortgage-calculator", key: "calculator" },
   { href: "/listings", key: "listings" },
   { href: "/rentals", key: "rentals" },
   { href: "/about", key: "about" },

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
+import { MortgageCalculator } from "@/components/MortgageCalculator";
 import { SoldBanner } from "@/components/SoldBanner";
 import { useLanguage } from "@/components/LanguageProvider";
 import { isRentalHome, type Listing } from "@/content/listings";
@@ -141,6 +142,15 @@ export function ListingDetail({ listing }: { listing: Listing }) {
           <ContactForm defaultInterest={rental ? "rent" : "buy"} compact />
         </div>
       </div>
+      {listing.status === "active" && listing.price > 0 ? (
+        <section className="mt-16">
+          <h2 className="font-serif text-3xl text-navy sm:text-4xl">{t.mortgage.listingTitle}</h2>
+          <p className="mt-3 max-w-2xl text-ink-muted">{t.mortgage.listingBody}</p>
+          <div className="mt-8">
+            <MortgageCalculator key={listing.slug} initialPrice={listing.price} />
+          </div>
+        </section>
+      ) : null}
     </div>
   );
 }

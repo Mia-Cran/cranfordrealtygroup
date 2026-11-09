@@ -14,14 +14,21 @@ function monthlyPrincipal(price: number, down: number, rate: number, years: numb
   );
 }
 
-export function MortgageCalculator() {
+const roundTo = (value: number, step: number) => Math.round(value / step) * step;
+
+/**
+ * Monthly payment estimate. Pass `initialPrice` (e.g. a listing's price) to start
+ * from that home: 10% down, with yearly tax and insurance scaled from the price.
+ */
+export function MortgageCalculator({ initialPrice }: { initialPrice?: number } = {}) {
   const { t } = useLanguage();
-  const [price, setPrice] = useState(250000);
-  const [down, setDown] = useState(25000);
+  const startPrice = initialPrice && initialPrice > 0 ? initialPrice : 250000;
+  const [price, setPrice] = useState(startPrice);
+  const [down, setDown] = useState(roundTo(startPrice * 0.1, 500));
   const [rate, setRate] = useState(6.5);
   const [years, setYears] = useState(30);
-  const [tax, setTax] = useState(2400);
-  const [insurance, setInsurance] = useState(1400);
+  const [tax, setTax] = useState(roundTo(startPrice * 0.0096, 100));
+  const [insurance, setInsurance] = useState(roundTo(startPrice * 0.0056, 50));
 
   const pi = useMemo(
     () => monthlyPrincipal(price, down, rate, years),
@@ -56,6 +63,10 @@ export function MortgageCalculator() {
         <p className="mt-6 text-sm text-white/70">
           {t.mortgage.principal}: {formatPrice(Math.round(pi))}
         </p>
+        <p className="mt-2 text-sm text-white/70">
+          {t.mortgage.taxIns}: {formatPrice(Math.round(tax / 12 + insurance / 12))}
+        </p>
+        <p className="mt-6 text-xs leading-5 text-white/60">{t.mortgage.disclaimer}</p>
       </div>
     </div>
   );

@@ -123,6 +123,18 @@ export const pages = {
       ...siteKeywords,
     ],
   },
+  mortgageCalculator: {
+    title: "Mortgage Calculator for Macon & Middle Georgia | Cranford Realty Group",
+    description:
+      "Estimate your monthly mortgage payment with taxes and insurance for homes in Macon, Warner Robins, Perry, and Middle Georgia. Free and bilingual from Cranford Realty Group.",
+    path: "/mortgage-calculator",
+    keywords: [
+      "mortgage calculator Macon GA",
+      "monthly payment calculator Georgia",
+      "home affordability Warner Robins",
+      ...siteKeywords,
+    ],
+  },
   sell: {
     title: "Sell Your Home in Middle Georgia | Cranford Realty Group",
     description:

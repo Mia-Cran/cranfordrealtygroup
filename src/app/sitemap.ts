@@ -10,6 +10,7 @@ const staticRoutes: {
   { path: "/", priority: 1, changeFrequency: "weekly" },
   { path: "/buy", priority: 0.9, changeFrequency: "weekly" },
   { path: "/sell", priority: 0.9, changeFrequency: "weekly" },
+  { path: "/mortgage-calculator", priority: 0.8, changeFrequency: "monthly" },
   { path: "/listings", priority: 0.95, changeFrequency: "daily" },
   { path: "/rentals", priority: 0.9, changeFrequency: "weekly" },
   { path: "/areas", priority: 0.85, changeFrequency: "monthly" },

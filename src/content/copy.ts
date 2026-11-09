@@ -11,6 +11,7 @@ export const copy = {
       contact: "Contact",
       rentals: "Rentals",
       feedback: "Feedback",
+      calculator: "Calculator",
     },
     common: {
       call: "Call",
@@ -431,6 +432,17 @@ export const copy = {
       insurance: "Yearly insurance",
       monthly: "Estimated monthly payment",
       principal: "Principal & interest",
+      taxIns: "Taxes & insurance",
+      disclaimer:
+        "Estimate only, not a loan offer. Your lender will give you exact numbers, including any HOA dues or mortgage insurance.",
+      pageTitle: "Mortgage calculator",
+      pageSubtitle:
+        "See about what a home could cost you each month. Change the price, down payment, and rate to fit your plans.",
+      pageHelpTitle: "Want real numbers?",
+      pageHelpBody:
+        "Call us and we'll connect you with a local lender for pre-approval, in English or Spanish.",
+      listingTitle: "Estimate your monthly payment",
+      listingBody: "Started with this home's price and 10% down. Change any number to fit your plans.",
     },
     legal: {
       privacyTitle: "Privacy",
@@ -455,6 +467,7 @@ export const copy = {
       contact: "Contacto",
       rentals: "Rentas",
       feedback: "Opiniones",
+      calculator: "Calculadora",
     },
     common: {
       call: "Llamar",
@@ -875,6 +888,17 @@ export const copy = {
       insurance: "Seguro anual",
       monthly: "Pago mensual estimado",
       principal: "Capital e interés",
+      taxIns: "Impuestos y seguro",
+      disclaimer:
+        "Solo es un estimado, no una oferta de préstamo. Su prestamista le dará las cifras exactas, incluyendo cuotas de HOA o seguro hipotecario.",
+      pageTitle: "Calculadora de hipoteca",
+      pageSubtitle:
+        "Vea cuánto podría pagar al mes por una casa. Cambie el precio, el enganche y la tasa según sus planes.",
+      pageHelpTitle: "¿Quiere cifras reales?",
+      pageHelpBody:
+        "Llámenos y le conectamos con un prestamista local para su preaprobación, en inglés o español.",
+      listingTitle: "Calcule su pago mensual",
+      listingBody: "Empezamos con el precio de esta casa y 10% de enganche. Cambie cualquier número según sus planes.",
     },
     legal: {
       privacyTitle: "Privacidad",
