@@ -90,3 +90,31 @@ export function applyNov2026RentalUpdates(current: Listing[]): Listing[] {
   );
   return [...updated, ...NOV_2026_NEW_RENTALS.filter((listing) => !slugs.has(listing.slug))];
 }
+
+/**
+ * Ingleside is being sold instead of rented: drop the two rental cards and show one
+ * "coming soon" for-sale card for the duplex until it's listed.
+ */
+export function applyInglesideComingSoon(current: Listing[]): Listing[] {
+  const comingSoon: Listing = {
+    slug: "2103-ingleside-ave-macon",
+    status: "active",
+    type: "multi-family",
+    address: "2103 Ingleside Ave",
+    city: "Macon",
+    state: "GA",
+    zip: "31204",
+    price: 0,
+    yearBuilt: 1959,
+    image: "/rentals/ingleside-2109/01.jpg",
+    photos: photos("ingleside-2109", 15),
+    alert: "Active listing coming soon!!!",
+    alertEs: "¡¡¡Próximamente a la venta!!!",
+    summary:
+      "Duplex in Macon's Vineville area coming to market soon. Two units: a 4 bedroom, 2 bath and a 1 bedroom, 1 bath. Call us for details before it's listed.",
+    summaryEs:
+      "Dúplex en el área de Vineville en Macon que saldrá a la venta pronto. Dos unidades: una de 4 recámaras y 2 baños, y otra de 1 recámara y 1 baño. Llámenos para más detalles antes de que se publique.",
+  };
+  const ingleside = new Set(["2109-ingleside-ave-macon", "2107-ingleside-ave-macon", comingSoon.slug]);
+  return [comingSoon, ...current.filter((listing) => !ingleside.has(listing.slug))];
+}
