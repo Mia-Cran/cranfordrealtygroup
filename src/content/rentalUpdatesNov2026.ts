@@ -137,3 +137,12 @@ export function applyInglesideDuplexPhoto(current: Listing[]): Listing[] {
       : listing,
   );
 }
+
+/** 3865 Flamingo Dr sold. */
+export function applyFlamingoSold(current: Listing[]): Listing[] {
+  return current.map((listing) =>
+    listing.slug === "3865-flamingo-dr-macon"
+      ? { ...listing, status: "sold" as const, alert: undefined, alertEs: undefined }
+      : listing,
+  );
+}

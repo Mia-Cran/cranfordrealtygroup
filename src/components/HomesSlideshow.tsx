@@ -85,7 +85,7 @@ export function HomesSlideshow({
               </p>
             ) : null}
             <p className="mt-4 font-serif text-4xl text-gold sm:text-5xl">
-              {formatPrice(listing.price)}
+              {listing.price ? formatPrice(listing.price) : t.common.comingSoon}
               {listing.originalPrice ? (
                 <span className="ml-3 text-2xl text-white/55 line-through">
                   {formatPrice(listing.originalPrice)}

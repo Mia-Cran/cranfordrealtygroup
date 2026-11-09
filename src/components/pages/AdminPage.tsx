@@ -436,7 +436,9 @@ export function AdminPage() {
                     : "Call for rent"
                   : listing.status === "rented"
                     ? "Rented"
-                    : `$${listing.price.toLocaleString("en-US")}`}{" "}
+                    : listing.price
+                      ? `$${listing.price.toLocaleString("en-US")}`
+                      : "Coming soon"}{" "}
                 ·{" "}
                 {listing.status === "sold"
                   ? "Sold"
