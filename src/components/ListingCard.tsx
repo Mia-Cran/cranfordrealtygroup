@@ -38,9 +38,13 @@ export function ListingCard({ listing }: { listing: Listing }) {
         <span className="absolute left-4 top-4 rounded-full bg-navy/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
           {statusLabel}
         </span>
-        {listing.alert ? (
+        {listing.originalPrice || (listing.status === "active" && !listing.price) ? (
           <span className="absolute right-4 top-4 max-w-[55%] truncate rounded-full bg-gold px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-navy shadow">
-            {locale === "es" ? "Precio reducido" : "Price reduced"}
+            {listing.originalPrice
+              ? locale === "es"
+                ? "Precio reducido"
+                : "Price reduced"
+              : t.common.comingSoon}
           </span>
         ) : null}
         <span className="absolute inset-x-0 bottom-4 mx-auto w-fit rounded-full bg-gold px-4 py-2 text-xs font-semibold text-navy opacity-0 shadow-lg transition group-hover:opacity-100">
