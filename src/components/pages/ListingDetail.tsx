@@ -149,7 +149,7 @@ export function ListingDetail({ listing }: { listing: Listing }) {
       </div>
       {listing.status === "active" && listing.price > 0 ? (
         <section className="mx-auto max-w-6xl px-4 pt-4 sm:px-6">
-          <div className="max-w-4xl">
+          <div>
             <MortgageCalculator
               key={listing.slug}
               initialPrice={listing.price}
