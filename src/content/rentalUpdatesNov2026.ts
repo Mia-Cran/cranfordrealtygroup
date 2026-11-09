@@ -17,7 +17,7 @@ export const NOV_2026_NEW_RENTALS: Listing[] = [
     city: "Macon",
     state: "GA",
     zip: "31204",
-    price: 1650,
+    price: 1600,
     beds: 4,
     baths: 2,
     sqft: 1300,
