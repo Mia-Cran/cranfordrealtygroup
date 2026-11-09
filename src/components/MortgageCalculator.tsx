@@ -20,7 +20,11 @@ const roundTo = (value: number, step: number) => Math.round(value / step) * step
  * Monthly payment estimate. Pass `initialPrice` (e.g. a listing's price) to start
  * from that home: 10% down, with yearly tax and insurance scaled from the price.
  */
-export function MortgageCalculator({ initialPrice }: { initialPrice?: number } = {}) {
+export function MortgageCalculator({
+  initialPrice,
+  title,
+  subtitle,
+}: { initialPrice?: number; title?: string; subtitle?: string } = {}) {
   const { t } = useLanguage();
   const startPrice = initialPrice && initialPrice > 0 ? initialPrice : 250000;
   const [price, setPrice] = useState(startPrice);
@@ -38,6 +42,12 @@ export function MortgageCalculator({ initialPrice }: { initialPrice?: number } =
 
   return (
     <div className="grid gap-8 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-navy/10 lg:grid-cols-2 lg:p-8">
+      {title ? (
+        <div className="lg:col-span-2">
+          <h2 className="font-serif text-3xl text-navy sm:text-4xl">{title}</h2>
+          {subtitle ? <p className="mt-2 max-w-2xl text-ink-muted">{subtitle}</p> : null}
+        </div>
+      ) : null}
       <div className="grid gap-4">
         <Field label={t.mortgage.price} value={price} onChange={setPrice} step={5000} />
         <Field label={t.mortgage.down} value={down} onChange={setDown} step={1000} />
