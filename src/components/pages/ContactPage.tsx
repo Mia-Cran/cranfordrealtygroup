@@ -1,12 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/pages/BuyPage";
 import { useLanguage } from "@/components/LanguageProvider";
 import { site } from "@/content/site";
 
 export function ContactPage() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+  const mayra = site.team.find((member) => member.name === "Mayra Dominy");
 
   return (
     <div className="pb-20">
@@ -35,6 +37,29 @@ export function ContactPage() {
               {site.rentalsPhone.display}
             </p>
           </a>
+          {mayra ? (
+            <div className="flex items-center gap-5 rounded-3xl bg-white p-6 ring-1 ring-navy/10">
+              <Image
+                src={mayra.photo}
+                alt={mayra.name}
+                width={96}
+                height={96}
+                className="h-20 w-20 shrink-0 rounded-full object-cover ring-2 ring-gold"
+              />
+              <div className="min-w-0">
+                <p className="text-xs uppercase tracking-[0.2em] text-ink-muted">
+                  {locale === "es" ? mayra.roleEs : mayra.role} · Hablamos español
+                </p>
+                <p className="mt-1 font-serif text-2xl text-navy">{mayra.name}</p>
+                <a href={mayra.phoneHref} className="mt-1 block font-serif text-3xl text-navy">
+                  {mayra.phoneDisplay}
+                </a>
+                <a href={mayra.sms} className="mt-1 inline-block text-sm font-semibold text-gold-dark">
+                  {t.common.text} →
+                </a>
+              </div>
+            </div>
+          ) : null}
           <a
             href={`mailto:${site.email}`}
             className="block rounded-3xl bg-white p-6 ring-1 ring-navy/10"
