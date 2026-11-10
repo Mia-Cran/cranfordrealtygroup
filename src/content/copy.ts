@@ -443,7 +443,7 @@ export const copy = {
       pageHelpBody:
         "Call us and we'll connect you with a local lender for pre-approval, in English or Spanish.",
       listingTitle: "Estimate your monthly payment",
-      listingBody: "Started with this home's price and 10% down. Change any number to fit your plans.",
+      listingBody: "Enter a price, down payment and interest rate to see an estimated monthly payment.",
     },
     legal: {
       privacyTitle: "Privacy",
@@ -900,7 +900,7 @@ export const copy = {
       pageHelpBody:
         "Llámenos y le conectamos con un prestamista local para su preaprobación, en inglés o español.",
       listingTitle: "Calcule su pago mensual",
-      listingBody: "Empezamos con el precio de esta casa y 10% de enganche. Cambie cualquier número según sus planes.",
+      listingBody: "Escriba el precio, el enganche y la tasa de interés para ver un pago mensual estimado.",
     },
     legal: {
       privacyTitle: "Privacidad",

@@ -14,11 +14,9 @@ function monthlyPrincipal(price: number, down: number, rate: number, years: numb
   );
 }
 
-const roundTo = (value: number, step: number) => Math.round(value / step) * step;
-
 /**
- * Monthly payment estimate. Pass `initialPrice` (e.g. a listing's price) to start
- * from that home: 10% down, with yearly tax and insurance scaled from the price.
+ * Monthly payment estimate. Every box starts empty; the payment shows once a home
+ * price is entered. `initialPrice` (a listing's price) is only shown as a hint.
  */
 export function MortgageCalculator({
   initialPrice,
@@ -26,19 +24,22 @@ export function MortgageCalculator({
   subtitle,
 }: { initialPrice?: number; title?: string; subtitle?: string } = {}) {
   const { t } = useLanguage();
-  const startPrice = initialPrice && initialPrice > 0 ? initialPrice : 250000;
-  const [price, setPrice] = useState(startPrice);
-  const [down, setDown] = useState(roundTo(startPrice * 0.1, 500));
-  const [rate, setRate] = useState(6.5);
+  const hintPrice = initialPrice && initialPrice > 0 ? initialPrice : 250000;
+  const [price, setPrice] = useState("");
+  const [down, setDown] = useState("");
+  const [rate, setRate] = useState("");
   const [years, setYears] = useState(30);
-  const [tax, setTax] = useState(roundTo(startPrice * 0.0096, 100));
-  const [insurance, setInsurance] = useState(roundTo(startPrice * 0.0056, 50));
+  const [tax, setTax] = useState("");
+  const [insurance, setInsurance] = useState("");
 
+  const num = (value: string) => Number(value) || 0;
   const pi = useMemo(
-    () => monthlyPrincipal(price, down, rate, years),
+    () => monthlyPrincipal(num(price), num(down), num(rate), years),
     [price, down, rate, years],
   );
-  const monthly = pi + tax / 12 + insurance / 12;
+  const taxIns = num(tax) / 12 + num(insurance) / 12;
+  const ready = num(price) > 0;
+  const show = (amount: number) => (ready ? formatPrice(Math.round(amount)) : "—");
 
   return (
     <div className="grid gap-8 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-navy/10 lg:grid-cols-2 lg:p-8">
@@ -49,9 +50,9 @@ export function MortgageCalculator({
         </div>
       ) : null}
       <div className="grid gap-4">
-        <Field label={t.mortgage.price} value={price} onChange={setPrice} step={5000} />
-        <Field label={t.mortgage.down} value={down} onChange={setDown} step={1000} />
-        <Field label={t.mortgage.rate} value={rate} onChange={setRate} step={0.125} />
+        <Field label={t.mortgage.price} value={price} onChange={setPrice} step={5000} placeholder={`e.g. ${hintPrice.toLocaleString("en-US")}`} />
+        <Field label={t.mortgage.down} value={down} onChange={setDown} step={1000} placeholder={`e.g. ${Math.round(hintPrice * 0.1).toLocaleString("en-US")}`} />
+        <Field label={t.mortgage.rate} value={rate} onChange={setRate} step={0.125} placeholder="e.g. 6.5" />
         <label className="grid gap-2 text-sm">
           {t.mortgage.years}
           <select
@@ -64,17 +65,17 @@ export function MortgageCalculator({
             <option value={30}>30</option>
           </select>
         </label>
-        <Field label={t.mortgage.tax} value={tax} onChange={setTax} step={100} />
-        <Field label={t.mortgage.insurance} value={insurance} onChange={setInsurance} step={50} />
+        <Field label={t.mortgage.tax} value={tax} onChange={setTax} step={100} placeholder="e.g. 2,400" />
+        <Field label={t.mortgage.insurance} value={insurance} onChange={setInsurance} step={50} placeholder="e.g. 1,400" />
       </div>
       <div className="flex flex-col justify-center rounded-3xl bg-navy px-8 py-10 text-white">
         <p className="text-sm uppercase tracking-[0.2em] text-gold">{t.mortgage.monthly}</p>
-        <p className="mt-3 font-serif text-5xl">{formatPrice(Math.round(monthly))}</p>
+        <p className="mt-3 font-serif text-5xl">{show(pi + taxIns)}</p>
         <p className="mt-6 text-sm text-white/70">
-          {t.mortgage.principal}: {formatPrice(Math.round(pi))}
+          {t.mortgage.principal}: {show(pi)}
         </p>
         <p className="mt-2 text-sm text-white/70">
-          {t.mortgage.taxIns}: {formatPrice(Math.round(tax / 12 + insurance / 12))}
+          {t.mortgage.taxIns}: {show(taxIns)}
         </p>
         <p className="mt-6 text-xs leading-5 text-white/60">{t.mortgage.disclaimer}</p>
       </div>
@@ -87,15 +88,14 @@ function Field({
   value,
   onChange,
   step,
+  placeholder,
 }: {
   label: string;
-  value: number;
-  onChange: (value: number) => void;
+  value: string;
+  onChange: (value: string) => void;
   step: number;
+  placeholder?: string;
 }) {
-  // Keep what the person typed (including an empty box) so clearing a field
-  // doesn't leave a stuck "0"; the math treats an empty box as 0.
-  const [text, setText] = useState(String(value));
   return (
     <label className="grid gap-2 text-sm">
       {label}
@@ -104,14 +104,10 @@ function Field({
         inputMode="decimal"
         min={0}
         step={step}
-        value={text}
-        onFocus={(event) => event.target.select()}
-        onChange={(event) => {
-          const next = event.target.value;
-          setText(next);
-          onChange(Number(next) || 0);
-        }}
-        className="h-12 rounded-xl border border-navy/15 bg-cream px-4"
+        value={value}
+        placeholder={placeholder}
+        onChange={(event) => onChange(event.target.value)}
+        className="h-12 rounded-xl border border-navy/15 bg-cream px-4 placeholder:text-ink-muted/50"
       />
     </label>
   );
