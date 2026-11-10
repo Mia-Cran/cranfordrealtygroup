@@ -93,15 +93,24 @@ function Field({
   onChange: (value: number) => void;
   step: number;
 }) {
+  // Keep what the person typed (including an empty box) so clearing a field
+  // doesn't leave a stuck "0"; the math treats an empty box as 0.
+  const [text, setText] = useState(String(value));
   return (
     <label className="grid gap-2 text-sm">
       {label}
       <input
         type="number"
+        inputMode="decimal"
         min={0}
         step={step}
-        value={value}
-        onChange={(event) => onChange(Number(event.target.value) || 0)}
+        value={text}
+        onFocus={(event) => event.target.select()}
+        onChange={(event) => {
+          const next = event.target.value;
+          setText(next);
+          onChange(Number(next) || 0);
+        }}
         className="h-12 rounded-xl border border-navy/15 bg-cream px-4"
       />
     </label>
