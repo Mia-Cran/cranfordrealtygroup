@@ -16,15 +16,13 @@ function monthlyPrincipal(price: number, down: number, rate: number, years: numb
 
 /**
  * Monthly payment estimate. Every box starts empty; the payment shows once a home
- * price is entered. `initialPrice` (a listing's price) is only shown as a hint.
+ * price is entered.
  */
 export function MortgageCalculator({
-  initialPrice,
   title,
   subtitle,
 }: { initialPrice?: number; title?: string; subtitle?: string } = {}) {
   const { t } = useLanguage();
-  const hintPrice = initialPrice && initialPrice > 0 ? initialPrice : 250000;
   const [price, setPrice] = useState("");
   const [down, setDown] = useState("");
   const [rate, setRate] = useState("");
@@ -50,9 +48,9 @@ export function MortgageCalculator({
         </div>
       ) : null}
       <div className="grid gap-4">
-        <Field label={t.mortgage.price} value={price} onChange={setPrice} step={5000} placeholder={`e.g. ${hintPrice.toLocaleString("en-US")}`} />
-        <Field label={t.mortgage.down} value={down} onChange={setDown} step={1000} placeholder={`e.g. ${Math.round(hintPrice * 0.1).toLocaleString("en-US")}`} />
-        <Field label={t.mortgage.rate} value={rate} onChange={setRate} step={0.125} placeholder="e.g. 6.5" />
+        <Field label={t.mortgage.price} value={price} onChange={setPrice} step={5000} />
+        <Field label={t.mortgage.down} value={down} onChange={setDown} step={1000} />
+        <Field label={t.mortgage.rate} value={rate} onChange={setRate} step={0.125} />
         <label className="grid gap-2 text-sm">
           {t.mortgage.years}
           <select
@@ -65,8 +63,8 @@ export function MortgageCalculator({
             <option value={30}>30</option>
           </select>
         </label>
-        <Field label={t.mortgage.tax} value={tax} onChange={setTax} step={100} placeholder="e.g. 2,400" />
-        <Field label={t.mortgage.insurance} value={insurance} onChange={setInsurance} step={50} placeholder="e.g. 1,400" />
+        <Field label={t.mortgage.tax} value={tax} onChange={setTax} step={100} />
+        <Field label={t.mortgage.insurance} value={insurance} onChange={setInsurance} step={50} />
       </div>
       <div className="flex flex-col justify-center rounded-3xl bg-navy px-8 py-10 text-white">
         <p className="text-sm uppercase tracking-[0.2em] text-gold">{t.mortgage.monthly}</p>
