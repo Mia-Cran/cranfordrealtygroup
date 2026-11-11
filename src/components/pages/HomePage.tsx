@@ -255,14 +255,14 @@ export function HomePage() {
                 <a href={site.listingsPhone.href} className="block font-serif text-3xl sm:text-4xl">
                   {site.listingsPhone.display}
                 </a>
-                <p className="mt-1 text-sm text-white/80">Bertha Cranford</p>
+                <p className="mt-1 text-xl font-semibold text-white">Bertha Cranford</p>
               </div>
               {mayra ? (
                 <div>
                   <a href={mayra.phoneHref} className="block font-serif text-3xl sm:text-4xl">
                     {mayra.phoneDisplay}
                   </a>
-                  <p className="mt-1 text-sm text-white/80">{mayra.name}</p>
+                  <p className="mt-1 text-xl font-semibold text-white">{mayra.name}</p>
                 </div>
               ) : null}
             </div>
