@@ -48,7 +48,9 @@ export function MortgageCalculator({
   const [term, setTerm] = useState("");
   const [result, setResult] = useState<Result | null>(null);
 
-  const run = () => setResult(calculate(Number(amount) || 0, Number(rate) || 0, Number(term) || 0));
+  // Accept any number people type, with or without commas or a $ sign (e.g. "68,500").
+  const num = (value: string) => Number(value.replace(/[$,%\s]/g, "")) || 0;
+  const run = () => setResult(calculate(num(amount), num(rate), num(term)));
   const money = (value: number | undefined) => (result && value !== undefined ? formatPrice(Math.round(value)) : "—");
 
   return (
@@ -69,9 +71,9 @@ export function MortgageCalculator({
             run();
           }}
         >
-          <Field label={m.amount} value={amount} onChange={setAmount} prefix="$" step={1000} />
-          <Field label={m.rate} value={rate} onChange={setRate} suffix="%" step={0.125} />
-          <Field label={m.term} value={term} onChange={setTerm} suffix={m.yearsUnit} step={1} />
+          <Field label={m.amount} value={amount} onChange={setAmount} prefix="$" />
+          <Field label={m.rate} value={rate} onChange={setRate} suffix="%" />
+          <Field label={m.term} value={term} onChange={setTerm} suffix={m.yearsUnit} />
           <button
             type="submit"
             className="mt-2 h-12 rounded-full text-sm font-semibold uppercase tracking-wide text-white shadow"
@@ -110,14 +112,12 @@ function Field({
   onChange,
   prefix,
   suffix,
-  step,
 }: {
   label: string;
   value: string;
   onChange: (value: string) => void;
   prefix?: string;
   suffix?: string;
-  step: number;
 }) {
   return (
     <label className="grid gap-1.5 text-sm">
@@ -125,12 +125,11 @@ function Field({
       <span className="flex items-center gap-2">
         {prefix ? <span className="text-base">{prefix}</span> : null}
         <input
-          type="number"
+          type="text"
           inputMode="decimal"
-          min={0}
-          step={step}
+          autoComplete="off"
           value={value}
-          onChange={(event) => onChange(event.target.value)}
+          onChange={(event) => onChange(event.target.value.replace(/[^0-9.,]/g, ""))}
           className="h-11 w-full min-w-0 rounded-lg border border-[#003140]/20 bg-white/80 px-3 text-base"
         />
         {suffix ? <span className="shrink-0 text-sm">{suffix}</span> : null}
