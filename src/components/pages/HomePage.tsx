@@ -21,6 +21,7 @@ const pathImages = {
 
 export function HomePage() {
   const { t } = useLanguage();
+  const mayra = site.team.find((member) => member.name === "Mayra Dominy");
   const router = useRouter();
   const listings = useListings();
   const featured = listings.filter(showOnHomesPage).sort(soldLast);
@@ -249,9 +250,22 @@ export function HomePage() {
           </div>
           <div className="rounded-3xl bg-white/5 p-8 ring-1 ring-white/15">
             <p className="text-sm uppercase tracking-[0.2em] text-gold">{t.common.getInTouch}</p>
-            <a href={site.listingsPhone.href} className="mt-4 block font-serif text-5xl">
-              {site.listingsPhone.display}
-            </a>
+            <div className="mt-4 grid gap-5 sm:grid-cols-2">
+              <div>
+                <a href={site.listingsPhone.href} className="block font-serif text-3xl sm:text-4xl">
+                  {site.listingsPhone.display}
+                </a>
+                <p className="mt-1 text-sm text-white/80">Bertha Cranford</p>
+              </div>
+              {mayra ? (
+                <div>
+                  <a href={mayra.phoneHref} className="block font-serif text-3xl sm:text-4xl">
+                    {mayra.phoneDisplay}
+                  </a>
+                  <p className="mt-1 text-sm text-white/80">{mayra.name}</p>
+                </div>
+              ) : null}
+            </div>
             <p className="mt-2 text-sm text-white/60">
               {t.common.listingsLine}
             </p>
