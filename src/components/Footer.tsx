@@ -6,7 +6,8 @@ import { useLanguage } from "@/components/LanguageProvider";
 import { nav, site } from "@/content/site";
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+  const mayra = site.team.find((member) => member.name === "Mayra Dominy");
   const year = new Date().getFullYear();
 
   return (
@@ -67,21 +68,29 @@ export function Footer() {
             <br />
             {site.address.city}, {site.address.state} {site.address.zip}
           </p>
-          <p>
-            {t.common.listingsLine}
-            <br />
-            <a className="hover:text-white" href={site.listingsPhone.href}>
-              {site.listingsPhone.display}
-            </a>
+          <p className="mt-4 text-lg font-semibold text-gold">
+            {locale === "es" ? "Casas en venta" : "Homes For Sale"}
           </p>
-          <p>
-            {t.common.rentalsLine}
-            <br />
-            <a className="hover:text-white" href={site.rentalsPhone.href}>
-              {site.rentalsPhone.display}
-            </a>
+          <p className="font-semibold text-white">Bertha Cranford</p>
+          <a className="block hover:text-white" href={site.listingsPhone.href}>
+            {site.listingsPhone.display}
+          </a>
+          {mayra ? (
+            <>
+              <p className="mt-1 font-semibold text-white">{mayra.name}</p>
+              <a className="block hover:text-white" href={mayra.phoneHref}>
+                {mayra.phoneDisplay}
+              </a>
+            </>
+          ) : null}
+          <p className="mt-4 text-lg font-semibold text-gold">
+            {locale === "es" ? "Rentas" : "Rentals"}
           </p>
-          <p>
+          <p className="font-semibold text-white">Maria Cranford</p>
+          <a className="block hover:text-white" href={site.rentalsPhone.href}>
+            {site.rentalsPhone.display}
+          </a>
+          <p className="mt-4">
             <a className="hover:text-white" href={`mailto:${site.email}`}>
               {site.email}
             </a>
