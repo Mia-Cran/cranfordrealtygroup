@@ -18,6 +18,9 @@ export function ListingDetail({ listing }: { listing: Listing }) {
   const currentPhoto = photos[photoIndex] ?? listing.image;
   const rental = isRentalHome(listing);
   const agent = listing.agent ? site.team.find((member) => member.name === listing.agent) : undefined;
+  const contacts = (listing.agents ?? [])
+    .map((name) => site.team.find((member) => member.name === name))
+    .filter((member): member is NonNullable<typeof member> => Boolean(member));
   const phone = agent
     ? { href: agent.phoneHref, display: agent.phoneDisplay }
     : rental
@@ -128,12 +131,26 @@ export function ListingDetail({ listing }: { listing: Listing }) {
         <div className="rounded-3xl bg-white p-6 ring-1 ring-navy/10 sm:p-8">
           <h2 className="font-serif text-3xl text-navy">{t.listing.next}</h2>
           <p className="mt-3 text-sm leading-6 text-ink-muted">{t.listing.nextBody}</p>
-          <a
-            href={phone.href}
-            className="mt-6 mb-6 inline-flex w-full items-center justify-center rounded-full bg-navy px-4 py-3 text-sm font-semibold text-white"
-          >
-            {t.common.call} {agent ? `${agent.name.split(" ")[0]} · ` : ""}{phone.display}
-          </a>
+          {contacts.length ? (
+            <div className="mt-6 mb-6 grid gap-2">
+              {contacts.map((member) => (
+                <a
+                  key={member.name}
+                  href={member.phoneHref}
+                  className="inline-flex w-full items-center justify-center rounded-full bg-navy px-4 py-3 text-sm font-semibold text-white"
+                >
+                  {t.common.call} {member.name.split(" ")[0]} · {member.phoneDisplay}
+                </a>
+              ))}
+            </div>
+          ) : (
+            <a
+              href={phone.href}
+              className="mt-6 mb-6 inline-flex w-full items-center justify-center rounded-full bg-navy px-4 py-3 text-sm font-semibold text-white"
+            >
+              {t.common.call} {agent ? `${agent.name.split(" ")[0]} · ` : ""}{phone.display}
+            </a>
+          )}
           {listing.applyUrl && listing.status === "rental" ? (
             <a
               href={listing.applyUrl}

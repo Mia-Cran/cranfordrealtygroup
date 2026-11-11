@@ -3,7 +3,7 @@ import path from "path";
 import { get, list, put } from "@vercel/blob";
 import seed from "@/content/listings-data.json";
 import type { Listing } from "@/content/listings";
-import { applyHuntingtonListing, applyNewListingsNov2026 } from "@/content/newListingsNov2026";
+import { applyHuntingtonListing, applyNewListingsNov2026, applyOglethorpeListing } from "@/content/newListingsNov2026";
 import {
   apply2109SqftUpdate,
   applyBlairPhotoUpdate,
@@ -38,6 +38,7 @@ const MIGRATIONS: { path: string; apply: (current: Listing[]) => Listing[] }[] =
   { path: "content/migrations/2026-11-ingleside-duplex-photo.json", apply: applyInglesideDuplexPhoto },
   { path: "content/migrations/2026-11-flamingo-sold.json", apply: applyFlamingoSold },
   { path: "content/migrations/2026-11-huntington.json", apply: applyHuntingtonListing },
+  { path: "content/migrations/2026-11-oglethorpe.json", apply: applyOglethorpeListing },
 ];
 
 /** One-time updates applied to the saved (Blob) listings, so later admin edits/removals stick. */

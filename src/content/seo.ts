@@ -240,7 +240,9 @@ export function listingMetadata(listing: Listing): Metadata {
           ? "Rented"
           : listing.type === "land"
             ? "Land for sale"
-            : "Home for sale";
+            : listing.type === "commercial"
+              ? "Commercial property for sale"
+              : "Home for sale";
   const title = `${listing.address}, ${listing.city} GA | ${statusLabel} | Cranford Realty Group`;
   const priceBit = listing.price
     ? listing.status === "rental"

@@ -273,6 +273,7 @@ export function AdminPage() {
               <option value="house">House</option>
               <option value="multi-family">Multi-family</option>
               <option value="land">Land</option>
+              <option value="commercial">Commercial</option>
             </select>
           </label>
           <Field

@@ -1,7 +1,7 @@
 import listingsData from "./listings-data.json";
 
 export type ListingStatus = "active" | "sold" | "land" | "rental" | "rented";
-export type ListingType = "house" | "land" | "multi-family";
+export type ListingType = "house" | "land" | "multi-family" | "commercial";
 
 export type Listing = {
   slug: string;
@@ -31,6 +31,8 @@ export type Listing = {
   applyUrl?: string;
   /** Team member (name as in site.team) who is the main contact for this listing */
   agent?: string;
+  /** Several contacts, in the order to call them (names as in site.team) */
+  agents?: string[];
 };
 
 export const listings: Listing[] = listingsData as Listing[];

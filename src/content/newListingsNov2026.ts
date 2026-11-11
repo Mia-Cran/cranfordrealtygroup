@@ -78,3 +78,27 @@ export function applyHuntingtonListing(current: Listing[]): Listing[] {
   if (current.some((listing) => listing.slug === HUNTINGTON_LISTING.slug)) return current;
   return [HUNTINGTON_LISTING, ...current];
 }
+
+export const OGLETHORPE_LISTING: Listing = {
+  slug: "3245-ga-49-oglethorpe",
+  status: "active",
+  type: "commercial",
+  address: "3245 GA-49",
+  city: "Oglethorpe",
+  state: "GA",
+  zip: "31068",
+  price: 130000,
+  image: "/listings/oglethorpe/01.jpg",
+  photos: photos("oglethorpe", 16),
+  agents: ["Bertha Cranford", "Mayra Dominy", "Maria Cranford"],
+  summary:
+    "Commercial building for sale in Oglethorpe on a large open lot. Inside is a big open main room plus a kitchen area, smaller rooms for offices or storage, and a restroom. Call Bertha, Mayra, or Maria to see it.",
+  summaryEs:
+    "Edificio comercial en venta en Oglethorpe, en un terreno grande y abierto. Por dentro tiene un salón principal amplio, área de cocina, cuartos más pequeños para oficina o almacenaje, y un baño. Llame a Bertha, Mayra o Maria para verlo. Hablamos español.",
+};
+
+/** Adds the Oglethorpe commercial property at the top of the listings (once). */
+export function applyOglethorpeListing(current: Listing[]): Listing[] {
+  if (current.some((listing) => listing.slug === OGLETHORPE_LISTING.slug)) return current;
+  return [OGLETHORPE_LISTING, ...current];
+}
