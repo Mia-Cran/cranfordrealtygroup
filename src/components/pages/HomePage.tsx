@@ -20,7 +20,7 @@ const pathImages = {
 };
 
 export function HomePage() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const mayra = site.team.find((member) => member.name === "Mayra Dominy");
   const router = useRouter();
   const listings = useListings();
@@ -250,7 +250,10 @@ export function HomePage() {
           </div>
           <div className="rounded-3xl bg-white/5 p-8 ring-1 ring-white/15">
             <p className="text-sm uppercase tracking-[0.2em] text-gold">{t.common.getInTouch}</p>
-            <div className="mt-4 grid gap-5 sm:grid-cols-2">
+            <h3 className="mt-5 text-2xl font-semibold text-gold">
+              {locale === "es" ? "Casas en venta" : "Homes For Sale"}
+            </h3>
+            <div className="mt-3 grid gap-5 sm:grid-cols-2">
               <div>
                 <a href={site.listingsPhone.href} className="block font-serif text-3xl sm:text-4xl">
                   {site.listingsPhone.display}
@@ -266,14 +269,14 @@ export function HomePage() {
                 </div>
               ) : null}
             </div>
-            <p className="mt-2 text-sm text-white/60">
-              {t.common.listingsLine}
-            </p>
-            <a href={site.rentalsPhone.href} className="mt-5 block font-serif text-3xl">
+            <h3 className="mt-8 text-2xl font-semibold text-gold">
+              {locale === "es" ? "Rentas" : "Rentals"}
+            </h3>
+            <p className="mt-3 text-xl font-semibold text-white">Maria Cranford</p>
+            <a href={site.rentalsPhone.href} className="mt-1 block font-serif text-3xl sm:text-4xl">
               {site.rentalsPhone.display}
             </a>
-            <p className="mt-2 text-sm text-white/60">{t.common.rentalsLine}</p>
-            <a href={`mailto:${site.email}`} className="mt-3 block text-white/80">
+            <a href={`mailto:${site.email}`} className="mt-6 block text-white/80">
               {site.email}
             </a>
             <p className="mt-6 text-white/70">
