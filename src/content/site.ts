@@ -43,6 +43,7 @@ export const site = {
     "Milledgeville",
     "Bonaire",
     "Lizella",
+    "Oglethorpe",
     "Suwanee",
     "Stockbridge",
     "Hampton",

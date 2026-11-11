@@ -22,6 +22,7 @@ export const siteKeywords = [
   "Kathleen GA realtor",
   "Fort Valley homes",
   "Milledgeville real estate",
+  "Oglethorpe GA real estate",
   "landlord property management Macon",
   "South Metro Atlanta realtor",
   "Henry County real estate",

@@ -155,6 +155,10 @@ export const copy = {
           heading: "Lizella GA realtor",
           body: "Lizella and west Bibb County properties get careful pricing and marketing — especially when land, privacy, or acreage matters.",
         },
+        Oglethorpe: {
+          heading: "Oglethorpe GA real estate",
+          body: "Oglethorpe and Macon County buyers and sellers get a local team that will drive out, walk the property, and help with homes, land, and commercial buildings.",
+        },
         Suwanee: {
           heading: "Suwanee GA homes",
           body: "North metro Atlanta buyers, sellers, and renters get the same family team — including help moving between Suwanee and Middle Georgia.",
@@ -623,6 +627,10 @@ export const copy = {
         Lizella: {
           heading: "Agente en Lizella GA",
           body: "En Lizella y el oeste de Bibb cuidamos el precio y el anuncio — sobre todo cuando importan el terreno, la privacidad o el acreaje.",
+        },
+        Oglethorpe: {
+          heading: "Bienes raíces en Oglethorpe GA",
+          body: "En Oglethorpe y el condado de Macon trabajamos con compradores y vendedores de casas, terrenos y edificios comerciales — vamos a la propiedad y le explicamos todo.",
         },
         Suwanee: {
           heading: "Casas en Suwanee GA",
