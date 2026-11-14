@@ -10,6 +10,7 @@ import {
   applyInglesideComingSoon,
   applyInglesideDuplexPhoto,
   applyFlamingoSold,
+  applyInglesideRentalsBack,
   applyNov2026RentalUpdates,
 } from "@/content/rentalUpdatesNov2026";
 
@@ -39,6 +40,7 @@ const MIGRATIONS: { path: string; apply: (current: Listing[]) => Listing[] }[] =
   { path: "content/migrations/2026-11-flamingo-sold.json", apply: applyFlamingoSold },
   { path: "content/migrations/2026-11-huntington.json", apply: applyHuntingtonListing },
   { path: "content/migrations/2026-11-oglethorpe.json", apply: applyOglethorpeListing },
+  { path: "content/migrations/2026-11-ingleside-rentals-back.json", apply: applyInglesideRentalsBack },
 ];
 
 /** One-time updates applied to the saved (Blob) listings, so later admin edits/removals stick. */

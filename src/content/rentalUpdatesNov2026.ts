@@ -146,3 +146,36 @@ export function applyFlamingoSold(current: Listing[]): Listing[] {
       : listing,
   );
 }
+
+const INGLESIDE_2107_PHOTOS = [
+  "/rentals/ingleside-2107/01.jpg",
+  "/rentals/ingleside-2107-update/01-living.jpg",
+  "/rentals/ingleside-2107-update/02-kitchen.jpg",
+  "/rentals/ingleside-2107-update/03-laundry.jpg",
+  "/rentals/ingleside-2107-update/04-bedroom.jpg",
+  "/rentals/ingleside-2107-update/05-bath.jpg",
+  "/rentals/ingleside-2107-update/06-bath.jpg",
+  "/rentals/ingleside-2107/09.jpg",
+];
+
+/**
+ * Ingleside is back for rent (Nov 13, 2026): drop the "coming soon" for-sale card and
+ * put 2109 ($1,600) and 2107 ($850, new photos) back on the rentals page, with RentRedi apply links.
+ */
+export function applyInglesideRentalsBack(current: Listing[]): Listing[] {
+  const [base2109, base2107] = NOV_2026_NEW_RENTALS;
+  const unit2109: Listing = { ...base2109, price: 1600, sqft: 1300 };
+  const unit2107: Listing = {
+    ...base2107,
+    price: 850,
+    applyUrl: "https://tenant.rentredi.com/getStarted/application/NDE623",
+    image: INGLESIDE_2107_PHOTOS[0],
+    photos: INGLESIDE_2107_PHOTOS,
+    summary:
+      "Freshly updated 1 bedroom, 1 bath duplex unit in Macon's Vineville area with brand-new flooring and fresh paint throughout. Refrigerator, washer & dryer included. Pet friendly ($300 one-time, non-refundable pet fee; waived for assistance animals). 12-month lease. Tenant pays power, water/sewer and gas. Apply online or call Maria.",
+    summaryEs:
+      "Unidad dúplex de 1 recámara y 1 baño recién renovada en el área de Vineville en Macon, con piso nuevo y pintura fresca. Refrigerador, lavadora y secadora incluidos. Se aceptan mascotas (cuota única de $300, no reembolsable; no aplica a animales de asistencia). Contrato de 12 meses. El inquilino paga luz, agua/alcantarillado y gas. Solicite en línea o llame a Maria.",
+  };
+  const ingleside = new Set([unit2109.slug, unit2107.slug, "2103-ingleside-ave-macon"]);
+  return [unit2109, unit2107, ...current.filter((listing) => !ingleside.has(listing.slug))];
+}
