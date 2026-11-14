@@ -179,3 +179,13 @@ export function applyInglesideRentalsBack(current: Listing[]): Listing[] {
   const ingleside = new Set([unit2109.slug, unit2107.slug, "2103-ingleside-ave-macon"]);
   return [unit2109, unit2107, ...current.filter((listing) => !ingleside.has(listing.slug))];
 }
+
+/**
+ * 2103 Ingleside will rent or sell, whichever comes first: keep both rental units up
+ * and bring back the "New duplex listing coming soon!!" for-sale card.
+ */
+export function applyInglesideForSaleToo(current: Listing[]): Listing[] {
+  const [comingSoon] = applyInglesideComingSoon([]);
+  const withoutCard = current.filter((listing) => listing.slug !== comingSoon.slug);
+  return [comingSoon, ...withoutCard];
+}
