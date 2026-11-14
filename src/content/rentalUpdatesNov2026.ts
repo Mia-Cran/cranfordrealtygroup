@@ -189,3 +189,24 @@ export function applyInglesideForSaleToo(current: Listing[]): Listing[] {
   const withoutCard = current.filter((listing) => listing.slug !== comingSoon.slug);
   return [comingSoon, ...withoutCard];
 }
+
+const PET_EN =
+  "Pet friendly ($300 one-time, non-refundable pet fee). Service animal: fee waived. Emotional support animal: $150 with a letter from a mental health professional explaining why it is needed.";
+const PET_ES =
+  "Se aceptan mascotas (cuota única de $300, no reembolsable). Animal de servicio: sin cuota. Animal de apoyo emocional: $150 con una carta de un profesional de salud mental que explique por qué lo necesita.";
+
+/** New pet / service animal / ESA wording on both Ingleside rentals. */
+export function applyInglesidePetPolicy(current: Listing[]): Listing[] {
+  const fix = (text: string | undefined, en: boolean) =>
+    (text ?? "").replace(
+      en
+        ? /Pet friendly \(\$300 one-time(, non-refundable)? pet fee; waived for assistance animals\)\./
+        : /Se aceptan mascotas \(cuota única de \$300(, no reembolsable)?; no aplica a animales de asistencia\)\./,
+      en ? PET_EN : PET_ES,
+    );
+  return current.map((listing) =>
+    listing.slug === "2109-ingleside-ave-macon" || listing.slug === "2107-ingleside-ave-macon"
+      ? { ...listing, summary: fix(listing.summary, true), summaryEs: fix(listing.summaryEs, false) }
+      : listing,
+  );
+}
