@@ -31,7 +31,7 @@ export const NOV_2026_NEW_LISTINGS: Listing[] = [
     city: "Macon",
     state: "GA",
     zip: "31210",
-    price: 345000,
+    price: 440000,
     beds: 4,
     baths: 3.5,
     sqft: 2265,
@@ -101,4 +101,13 @@ export const OGLETHORPE_LISTING: Listing = {
 export function applyOglethorpeListing(current: Listing[]): Listing[] {
   if (current.some((listing) => listing.slug === OGLETHORPE_LISTING.slug)) return current;
   return [OGLETHORPE_LISTING, ...current];
+}
+
+/** 330 Carillon Lane is listed at $440,000. */
+export function applyCarillonPrice(current: Listing[]): Listing[] {
+  return current.map((listing) =>
+    listing.slug === "330-carillon-ln-macon"
+      ? { ...listing, price: 440000, originalPrice: undefined }
+      : listing,
+  );
 }
