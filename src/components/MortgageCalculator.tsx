@@ -102,6 +102,14 @@ export function MortgageCalculator({
         </div>
       </div>
       <p className="mt-5 text-center text-xs opacity-70">{m.disclaimer}</p>
+      <a
+        href="https://www.mortgagecalculator.net/embeddable/v2/?size=2&textColor=003140&backgroundColor=e7f0f3"
+        target="_blank"
+        rel="noopener"
+        className="mt-4 block w-full rounded bg-[#075269] py-2 text-center font-sans text-xs font-bold uppercase tracking-wide text-white no-underline hover:bg-[#0a6a86]"
+      >
+        Powered By www.MortgageCalculator.net
+      </a>
     </div>
   );
 }
