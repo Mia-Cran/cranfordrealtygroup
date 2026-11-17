@@ -5,6 +5,7 @@ import seed from "@/content/listings-data.json";
 import type { Listing } from "@/content/listings";
 import {
   applyCarillonPrice,
+  applyNov16StatusUpdates,
   applyHuntingtonListing,
   applyNewListingsNov2026,
   applyOglethorpeListing,
@@ -51,6 +52,7 @@ const MIGRATIONS: { path: string; apply: (current: Listing[]) => Listing[] }[] =
   { path: "content/migrations/2026-11-ingleside-for-sale-too.json", apply: applyInglesideForSaleToo },
   { path: "content/migrations/2026-11-ingleside-pet-policy.json", apply: applyInglesidePetPolicy },
   { path: "content/migrations/2026-11-carillon-price.json", apply: applyCarillonPrice },
+  { path: "content/migrations/2026-11-16-status-updates.json", apply: applyNov16StatusUpdates },
 ];
 
 /** One-time updates applied to the saved (Blob) listings, so later admin edits/removals stick. */

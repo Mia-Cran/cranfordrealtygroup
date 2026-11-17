@@ -111,3 +111,20 @@ export function applyCarillonPrice(current: Listing[]): Listing[] {
       : listing,
   );
 }
+
+/** Nov 16, 2026: 1316 Triple Hill and 3871 Tyler sold; 1046 Radio Dr listing let go (removed). */
+export function applyNov16StatusUpdates(current: Listing[]): Listing[] {
+  const sold = new Set(["1316-triple-hill-dr-macon", "3871-tyler-dr-macon"]);
+  return current
+    .filter((listing) => listing.slug !== "1046-radio-dr-macon")
+    .map((listing) =>
+      sold.has(listing.slug)
+        ? {
+            ...listing,
+            status: "sold" as const,
+            summary: listing.summary?.replace(" Currently under contract.", ""),
+            summaryEs: listing.summaryEs?.replace(" Actualmente bajo contrato.", ""),
+          }
+        : listing,
+    );
+}
