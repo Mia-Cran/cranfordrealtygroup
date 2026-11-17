@@ -128,3 +128,21 @@ export function applyNov16StatusUpdates(current: Listing[]): Listing[] {
         : listing,
     );
 }
+
+/** Nov 17, 2026: 330 Carillon Lane switches from for sale to FOR RENT ($2,600/mo), RentRedi unit MOQ352. */
+export function applyCarillonForRent(current: Listing[]): Listing[] {
+  return current.map((listing) =>
+    listing.slug === "330-carillon-ln-macon"
+      ? {
+          ...listing,
+          status: "rental" as const,
+          price: 2600,
+          applyUrl: "https://tenant.rentredi.com/getStarted/application/MOQ352",
+          summary:
+            "For rent: 4 bedroom, 3.5 bath home in the Providence (Carillon) neighborhood of North Macon, built in 2009 with about 2,265 sq ft. Hardwood floors, a stone fireplace, and an open kitchen with granite counters, an island and stainless appliances. Brick patio with a pergola and an attached garage. $2,600/month, $2,600 deposit, available now, 12-month lease preferred. Pet friendly ($300 one-time, non-refundable pet fee). Service animal: fee waived. Emotional support animal: $150 with a letter from a mental health professional explaining why it is needed. Apply online or call Maria.",
+          summaryEs:
+            "En renta: casa de 4 recámaras y 3.5 baños en el vecindario Providence (Carillon) en el norte de Macon, construida en 2009 con unos 2,265 pies². Pisos de madera, chimenea de piedra y cocina abierta con granito, isla y electrodomésticos de acero inoxidable. Patio de ladrillo con pérgola y garaje. $2,600 al mes, depósito de $2,600, disponible ahora, contrato de 12 meses preferido. Se aceptan mascotas (cuota única de $300, no reembolsable). Animal de servicio: sin cuota. Animal de apoyo emocional: $150 con una carta de un profesional de salud mental que explique por qué lo necesita. Solicite en línea o llame a Maria.",
+        }
+      : listing,
+  );
+}
